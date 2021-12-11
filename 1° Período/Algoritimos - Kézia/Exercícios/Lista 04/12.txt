@@ -1,0 +1,7 @@
+variavel = float(input('Digite aqui a variavel: '))
+acumulador = 0
+for y in range (1, 21):
+    conta1 = variavel * y
+    acumulador += conta1
+
+print(acumulador)

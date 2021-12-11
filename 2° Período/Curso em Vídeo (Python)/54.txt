@@ -1,0 +1,12 @@
+counterMaior = 0
+counterMenor = 0
+for a in range (1, 8):
+    nascimento = int(input('Digite aqui o ano de nascimento da {}° pessoa: ' .format(a)))
+    if 2020 - nascimento >= 18:
+        counterMaior += 1
+    elif 2020 - nascimento < 18 and 2020 - nascimento > 0:
+        counterMenor += 1
+    else:
+        print('Valor inválido')
+        break
+print('De um total de SETE pessoas, {} são Maiores de idade e {} são Menores de idade.' .format(counterMaior, counterMenor))

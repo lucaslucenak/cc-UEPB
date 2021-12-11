@@ -1,0 +1,71 @@
+print('Cardápio:\n'
+    'Especificação---Código---Preço\n\n'
+      'Cachorro quente - 100 - R$1,30\n'
+      'Bauru simples - 101 - R$1,30\n'
+      'Bauru com ovo - 102 - R$1,50\n'
+      'Hambúrguer - 103 - R$1,20\n'
+      'Cheeseburguer - 104 - R$1,30\n'
+      'Refrigerante - 105 - R$1,00\n\n')
+
+contador100 = 0
+contador101 = 0
+contador102 = 0
+contador103 = 0
+contador104 = 0
+contador105 = 0
+
+introducao = str(input('Deseja algo? '))
+
+if introducao == 'não':
+    print('TCHAU')
+    breakpoint()
+
+while introducao == 'sim':
+    codigo = int(input('Código: '))
+    quantidade = int(input('Quantidade: '))
+    continuar = int(input('Deseja pedir mais algo? [1]Sim [2]Não' ))
+
+    if codigo == 100:
+        contador100 = contador100 + quantidade
+    elif codigo == 101:
+        contador101 = contador101 + quantidade
+    elif codigo == 102:
+        contador102 = contador102 + quantidade
+    elif codigo == 103:
+        contador103 = contador103 + quantidade
+    elif codigo == 104:
+        contador104 = contador104 + quantidade
+    elif codigo == 105:
+        contador105 = contador105 + quantidade
+    else:
+        print('Código inválido, tente novamente')
+    if continuar == 2:
+        total = (contador100 * 1.30) + (contador101 * 1.30) + (contador102 * 1.50) + (contador103 * 1.20) + (contador104 * 1.30) + (contador105)
+        print('\n\nNota Fiscal:\n\n'
+              '---------------------------------------\n'
+              'Cachorro quente (R$1,30)\n'
+              'Quantidade: {}... R${:.2f}\n'
+              '---------------------------------------\n'
+              'Bauru simples (R$1,30)\n'
+              'Quantidade: {}... R${:.2f}\n'
+              '---------------------------------------\n'
+              'Bauru com ovo (R$1,50)\n'
+              'Quantidade: {}... R${:.2f}\n'
+              '---------------------------------------\n'
+              'Hambúrguer (R$1,20)\n'
+              'Quantidade: {}... R${:.2f}\n'
+              '---------------------------------------\n'
+              'Cheeseburguer (R$1,30)\n'
+              'Quantidade: {}... R${:.2f}\n'
+              '---------------------------------------\n'
+              'Refrigerante (R$1,00)\n'
+              'Quantidade: {}... R${:.2f}\n'
+              '---------------------------------------\n\n'
+              'TOTAL: R${:.2f}'
+              .format(contador100, contador100 * 1.30,
+                      contador101, contador101 * 1.30,
+                      contador102, contador102 * 1.50,
+                      contador103, contador103 * 1.20,
+                      contador104, contador104 * 1.30,
+                      contador105, contador105, total))
+        break

@@ -1,0 +1,8 @@
+counter = 0
+acumulador = 0
+for numeros in range (1, 7):
+    termo = int(input('Insira aqui o {}° número: ' .format(numeros)))
+    if termo % 2 == 0:
+        counter += 1
+        acumulador += termo
+print('O total de números pares inseridos é {} e a soma entre eles é {}' .format(counter, acumulador))

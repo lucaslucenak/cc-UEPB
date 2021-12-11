@@ -1,0 +1,6 @@
+inicioIntervalo = int(input('Digite aqui o primeiro número inteiro do intervalo: '))
+finalIntervalo = int(input('Digite aqui o último número inteiro do intervalo: '))
+print('Segue todos os números pares do intervalo de {} a {}:' .format(inicioIntervalo, finalIntervalo))
+for n in range (inicioIntervalo, finalIntervalo + 1):
+    if n % 2 == 0:
+        print(n, end= ' ')

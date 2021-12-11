@@ -1,0 +1,5 @@
+primeiroTermo = float(input('Digite aqui o primeiro termo da Progressão Aritimética: '))
+razao = float(input('Digite aqui a razão da Progressão Aritimética: '))
+for pa in range (1, 11):
+    progressao = primeiroTermo + (pa - 1) * razao
+    print('Termo {}: {}' .format(pa, progressao))

@@ -1,0 +1,4 @@
+numero = float(input('Digite aqui o número que você deseja ver a tabuada: '))
+print('A tabuada de {} é:' .format(numero))
+for tabuada in range (1, 11):
+    print('{} X {} = {:.2f}' .format(tabuada, numero, tabuada * numero))

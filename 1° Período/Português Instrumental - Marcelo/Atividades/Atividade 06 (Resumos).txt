@@ -1,0 +1,10 @@
+Texto base: “A crise continuada da educação”
+
+Resumo:
+O texto tem por objetivo discutir as instabilidades políticas presentes no âmbito educacional, tais como as dificuldades do presidente Jair Bolsonaro em nomear alguém como responsável pelo Ministério da Educação (MEC), que já estaria com o seu quarto ministro intitulado pelo presidente em menos de 2 anos de governo. É proposto que a inconstância no Ministério da Educação, conjuntamente com os conflitos e as dúvidas a respeito do encerramento do isolamento social regente que tem por fim a erradicação da pandemia de covid-19 no Brasil, coloca o sistema educacional brasileiro e o ensino a distância como grandes desafios a serem solucionados.
+
+
+Análise do segundo texto:
+
+O resumo se refere à relação entre a qualidade dos rastreadores oculares e o consumo de energia deles, tendo como objetivo a realização de testes e estudos para que se possa encontrar, objetivando uma boa qualidade que possa manter o consumo energético baixo, a melhor configuração eletrônica para as câmeras de forma geral. O autor exemplifica e comprova a importância desse estudo por meio de um breve contexto histórico, comparações e dados científicos de testes previamente realizados. Por fim, a Dissertação de Mestrado “Avaliação de desempenho de algoritmos de estimação do olhar para interação com computadores vestíveis”, feita por “Aluani, Fernando Omar”, conclui por meio de metodologias investigativas e científicas, que a partir da criação de algoritmos digitais que calculassem e monitorassem o consumo dos aparelhos eletrônicos considerando a qualidade dos mesmos, será possível obter ótimos resultados, utilizando-se como meio argumentativo a conclusão previamente obtida que afirma que a diminuição da resolução de 480 para 240 linhas de um aparelho já seria o suficiente pra se ter uma economia energética de no mínimo 66%, sem que houvesse  a perda significativa de qualidade.
+

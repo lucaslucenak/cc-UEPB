@@ -1,0 +1,10 @@
+acumulador = 0
+counter = 0
+termoInicial = int(input('Insira aqui o termo inicial do intervalo: '))
+termoFinal = int(input('Insira aqui o termo final do intervalo: '))
+for intervalo in range (termoInicial, termoFinal + 1, 2):
+    if intervalo % 3 == 0:
+        counter += 1
+        acumulador += intervalo
+print('A soma de todos os valores solicitados é: {}\n'
+      'A quantidade de termos que foram somados é: {}' .format(acumulador, counter))

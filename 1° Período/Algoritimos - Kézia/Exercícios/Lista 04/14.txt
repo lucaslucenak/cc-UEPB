@@ -1,0 +1,6 @@
+x = float(input('Digite o valor de x: '))
+acumulador = 0
+for i in range (1, 100 + 1):
+    conta = x + i
+    acumulador += conta
+print(acumulador)
