@@ -44,6 +44,7 @@ public class Uri2720 {
                 //printarMatriz(matriz, n);
                 //System.out.println();
                 //System.out.println("presentes do bruninho: ");
+                ordenarPresentes(presentesBruninho);
                 printarPresentes(presentesBruninho);
                 System.out.println();
             }
@@ -52,6 +53,7 @@ public class Uri2720 {
                 adicionarPresentes(presentesBruninho, matriz, k);
                 //printarMatriz(matriz, n);
                 //System.out.println("presentes do bruninho: ");
+                ordenarPresentes(presentesBruninho);
                 printarPresentes(presentesBruninho);
                 System.out.println();
             }
@@ -106,6 +108,18 @@ public class Uri2720 {
                     matrizF[j + 1][0] = aux;
                     matrizF[j + 1][1] = aux2;
 
+                }
+            }
+        }
+    }
+
+    public static void ordenarPresentes(int []presentes) {
+        for(int i = 0; i < presentes.length - 1; i++) {
+            for(int j = 0; j < presentes.length - 1 - i; j++) {
+                if(presentes[j] > presentes[j + 1]) {
+                    int aux = presentes[j];
+                    presentes[j] = presentes[j + 1];
+                    presentes[j + 1] = aux;
                 }
             }
         }
