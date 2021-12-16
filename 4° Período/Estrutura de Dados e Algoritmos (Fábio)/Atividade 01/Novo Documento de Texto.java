@@ -37,26 +37,18 @@ public class Uri2720 {
             ordenarVolumes(matriz, n);
 
             if (hasMesmoVolume) {
-                //System.out.println("tem mesmo volume");
                 ordenarIds(matriz, n);
                 ordenarVolumes(matriz, n);
                 adicionarPresentes(presentesBruninho, matriz, k);
-                //printarMatriz(matriz, n);
-                //System.out.println();
-                //System.out.println("presentes do bruninho: ");
-                ordenarPresentes(presentesBruninho);
-                printarPresentes(presentesBruninho);
-                System.out.println();
             }
 
             else {
                 adicionarPresentes(presentesBruninho, matriz, k);
-                //printarMatriz(matriz, n);
-                //System.out.println("presentes do bruninho: ");
-                ordenarPresentes(presentesBruninho);
-                printarPresentes(presentesBruninho);
-                System.out.println();
             }
+
+            ordenarPresentes(presentesBruninho);
+            printarPresentes(presentesBruninho);
+            System.out.println();
         }
     }
 
