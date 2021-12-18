@@ -1,7 +1,7 @@
 package Atividade01;
 import java.util.Scanner;
 
-public class Uri2720 {
+public class Uri2720Bubble {
     public static void main (String []args) {
         int k, n, t;
         int i, h, w, l, volume;
@@ -34,19 +34,19 @@ public class Uri2720 {
                 }
             }
 
-            ordenarVolumes(matriz, n);
+            ordenarVolumes(matriz, n); //Faz uma ordenação decrescente dos volumes, mantendo os ids congruentes
 
             if (hasMesmoVolume) {
-                ordenarIds(matriz, n);
-                ordenarVolumes(matriz, n);
-                adicionarPresentes(presentesBruninho, matriz, k);
+                ordenarIds(matriz, n); //Se houver mais de um presente com volume X, há também uma ordenação dos ids
+                ordenarVolumes(matriz, n); //Organiza-se novamente
+                adicionarPresentes(presentesBruninho, matriz, k); //Adiciona os k presentes em um array
             }
 
             else {
                 adicionarPresentes(presentesBruninho, matriz, k);
             }
 
-            ordenarPresentes(presentesBruninho);
+            ordenarPresentes(presentesBruninho); //Ordena o array com os presentes do Bruninho
             printarPresentes(presentesBruninho);
             System.out.println();
         }
@@ -61,7 +61,6 @@ public class Uri2720 {
                 System.out.print(array[i]);
             }
         }
-
     }
 
     public static void printarMatriz(int [][]matrizF, int n) {
@@ -83,7 +82,6 @@ public class Uri2720 {
                     matrizF[j][0] = matrizF[j + 1][0];
                     matrizF[j + 1][1] = aux;
                     matrizF[j + 1][0] = aux2;
-
                 }
             }
         }
@@ -99,7 +97,6 @@ public class Uri2720 {
                     matrizF[j][1] = matrizF[j + 1][1];
                     matrizF[j + 1][0] = aux;
                     matrizF[j + 1][1] = aux2;
-
                 }
             }
         }
@@ -121,7 +118,6 @@ public class Uri2720 {
         for (int z = 0; z < k; z++) { //adicionando os presentes que o bruninho quer
             listaPresentes[z] = matrizF[z][0];
         }
-
     }
 
 }
