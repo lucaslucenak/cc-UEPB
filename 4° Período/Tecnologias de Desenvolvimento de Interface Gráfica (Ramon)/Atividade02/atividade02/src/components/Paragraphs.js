@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from 'react';
+import Aos from "aos";
+import "aos/dist/aos.css";
 import memoriaRAM1 from "../images/dicasTL/memoriaRAM/1.png"
 import memoriaRAM2 from "../images/dicasTL/memoriaRAM/2.png"
 import memoriaRAM3 from "../images/dicasTL/memoriaRAM/3.png"
@@ -13,11 +15,13 @@ import preservarPC3 from "../images/dicasTL/7dicasPreservarPC/3.png"
 import preservarPC4 from "../images/dicasTL/7dicasPreservarPC/4.png"
 import preservarPC5 from "../images/dicasTL/7dicasPreservarPC/5.png"
 
-class Paragraphs extends React.Component {
-    render() {
+const Paragraphs = () => {
+    useEffect(() => {
+        Aos.init({ duration: 2000 });
+    }, [])
         return (
-            <div align="center" className="paragraphContainer">
-            <p className="FirstParagraph"><mark>Lorem Ipsum</mark> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+            <div data-aos= "fade" align="center" className="paragraphContainer">
+            <p data-aos= "fade-left" className="FirstParagraph"><mark>Lorem Ipsum</mark> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
                 been
                 the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
                 scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
@@ -29,7 +33,7 @@ class Paragraphs extends React.Component {
                 <img className="dicaMemoriaRAM" src={memoriaRAM2} alt="parte 2"></img>
                 <img className="dicaMemoriaRAM" src={memoriaRAM3} alt="parte 3"></img>
                 <img className="dicaMemoriaRAM" src={memoriaRAM4} alt="parte 4"></img>
-            <p className="paragraph">It is a long established fact that a reader will be distracted by the readable content of a
+            <p data-aos= "fade-right" className="paragraph">It is a long established fact that a reader will be distracted by the readable content of a
                 page when looking at
                 its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
                 opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing
@@ -42,7 +46,7 @@ class Paragraphs extends React.Component {
                 <img className="atalhosWin10" src={atalhos2} alt="parte 2"></img>
                 <img className="atalhosWin10" src={atalhos3} alt="parte 3"></img>
                 <img className="atalhosWin10" src={atalhos4} alt="parte 4"></img>        
-            <p className="paragraph">There are many variations of passages of Lorem Ipsum available, but the majority have
+            <p data-aos= "fade-left" className="paragraph">There are many variations of passages of Lorem Ipsum available, but the majority have
                 suffered alteration in some
                 form, by injected humour, or randomised words which don't look even slightly believable. If you are going to
                 use
@@ -59,7 +63,7 @@ class Paragraphs extends React.Component {
                 <img className="dicasPreservarPC" src= {preservarPC3} alt ="parte 3"></img>
                 <img className="dicasPreservarPC" src= {preservarPC4} alt ="parte 4"></img>
                 <img className="dicasPreservarPC" src= {preservarPC5} alt ="parte 5"></img>
-            <p className="LastParagraph">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece
+            <p data-aos= "fade-right" className="LastParagraph">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece
                 of classical Latin
                 literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
                 Hampden-Sydney
@@ -75,7 +79,7 @@ class Paragraphs extends React.Component {
                 <mark>Marcação importante</mark>
         </div>
         );
-    }
+
 }
 
 export default Paragraphs;

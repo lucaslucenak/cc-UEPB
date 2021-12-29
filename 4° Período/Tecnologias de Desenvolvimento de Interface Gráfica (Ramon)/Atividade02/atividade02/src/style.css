@@ -58,7 +58,7 @@ p {
 }
 
 .logoContainer {
-    margin: 5px auto;
+    margin: 125px auto;
 }
 
 .logoTecline {
@@ -93,7 +93,7 @@ p {
     /*largura da caixa*/
     width: 90rem;
     /*espaçamento entre uma caixa e outra*/
-    margin: 50px auto;
+    margin: 125px auto;
     background-color: rgb(20, 156, 197);
     padding: 1.5rem;
     border: 5px solid whitesmoke;

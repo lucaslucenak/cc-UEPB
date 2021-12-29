@@ -1,8 +1,12 @@
-import React from 'react';
-import LogoTL from "../images/logo.png"
+import React, { useEffect } from 'react';
+import LogoTL from "../images/logo.png";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
-class Hearders extends React.Component {
-    render() {
+const Hearders = () => {
+    useEffect(() => {
+        Aos.init({ duration: 2000 });
+    }, [])
         return (
             <div align="center" id="header">
             <table>
@@ -17,7 +21,6 @@ class Hearders extends React.Component {
             </table>
         </div>
         );
-    }
 }
 
 export default Hearders;
