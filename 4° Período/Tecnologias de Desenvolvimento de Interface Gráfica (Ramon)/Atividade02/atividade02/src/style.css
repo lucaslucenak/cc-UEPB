@@ -57,6 +57,13 @@ p {
     color: rgb(122, 122, 194);
 }
 
+.warning {
+    margin-top: 1px;
+    font-size: 25px;
+    text-decoration: overline underline;
+    color: rgb(179, 17, 17);
+}
+
 .logoContainer {
     margin: 125px auto;
 }

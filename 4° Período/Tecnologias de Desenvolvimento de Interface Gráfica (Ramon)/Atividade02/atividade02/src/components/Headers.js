@@ -15,6 +15,7 @@ const Hearders = () => {
                     <td>
                         <h1 className="titleHeader">Diário Eletrônico TecLine</h1>
                         <h2 align = "center" class="subtitleHeader">Manutenção em Computadores e Notebooks</h2>
+                        <h2 align = "center" class="warning">Pressionar F5 antes para acionar a biblioteca AOS corretamente</h2>
                     </td>
                     <td><img id="logoTeclineHeader" src={LogoTL} alt="Logo TecLine"/></td>
                 </tr>
