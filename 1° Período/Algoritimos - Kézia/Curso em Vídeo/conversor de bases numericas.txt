@@ -1,0 +1,17 @@
+numero = int(input('Digite um número inteiro para converte-lo: '))
+print('Para qual base você deseja converter?')
+print('[1] para BINÁRIO\n'
+      '[2] para octal\n'
+      '[3] para hexadecimal')
+conversao = int(input('Sua opção: '))
+if conversao == 1:
+    print('O número {} convertido para a base numerica BINÁRIA é {}'
+        .format(numero, bin(numero)[2:]))
+elif conversao == 2:
+    print('O número {} convertido para a base numerica OCTAL é {}'
+          .format(numero, oct(numero)[2:]))
+elif conversao == 3:
+    print('O número {} convertido para a base numerica HEXADECIMAL é {}'
+          .format(numero, hex(numero)[2:]))
+else:
+    print('Opção INVÁLIDA')

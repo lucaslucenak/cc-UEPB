@@ -1,0 +1,35 @@
+print( '=' * 20, 'LOJAS LUCENA', '=' *20 )
+valor = float(input('Preço das compras: R$'))
+print('FORMAS DE PAGAMENTO\n'
+      '[ 1 ] à vista dinheiro/cheque\n'
+      '[ 2 ] 1x no cartão\n'
+      '[ 3 ] 2x no cartão\n'
+      '[ 4 ] 3x ou mais no cartão')
+escolha = int(input('Sua opção: '))
+
+if escolha == 1:
+      desconto = valor * 0.1
+      total = valor - desconto
+      print('Sua compra de R${} será paga à vista terá um desconto de R${}\n'
+            'TOTAL: R${}'.format(valor, desconto, total))
+
+if escolha == 2:
+      desconto = (valor * 0.05)
+      total = valor - desconto
+      print('Sua compra de R${} será paga à vista no cartão e terá um desconto de R${}\n'
+            'TOTAL: R${}'
+            .format(valor, desconto, total))
+
+if escolha == 3:
+      desconto = (valor * 0.05)
+      total = valor - desconto
+      print('Sua compra de R${} será paga em 2x no cartão e terá um desconto de R${}\n'
+            'TOTAL: R${}'
+            .format(valor, desconto, total))
+
+if escolha == 4:
+      juros = (valor * 0.2)
+      total = valor + juros
+      print('Sua compra de R${} será paga em 3x ou mais no cartão e terá R${} de juros\n'
+            'TOTAL: R${}'
+            .format(valor, juros, total))

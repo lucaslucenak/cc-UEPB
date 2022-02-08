@@ -1,0 +1,13 @@
+from time import sleep
+s1 = float(input('Primeiro seguimento: '))
+s2 = float(input('Segundo seguimento: '))
+s3 = float(input('Terceiro seguimento: '))
+if s1 < s2 + s3 and s2 < s1 + s3 and s3 < s1 + s2:
+    print('Analisando os valores...')
+    sleep(2)
+    print('Os seguimentos {}, {} e {} podem SIM formar um triângulo!'.format(s1, s2, s3))
+else:
+    print('Analisando os valores...')
+    sleep(2)
+    print('Os seguimentos {}, {} e {} NÃO podem formar um triângulo.'.format(s1, s2, s3))
+    

@@ -1,0 +1,29 @@
+from datetime import date
+ano_atual = date.today().year
+nascimento = int(input('Informe o ano em que você nasceu: '))
+idade = ano_atual - nascimento
+if idade < 18:
+    ano_alistamento = 18 - idade + ano_atual
+    tempo = ano_alistamento - ano_atual
+    print('Você nasceu em {} e em {} você tem {} anos'
+          .format(nascimento, ano_atual, idade,nascimento))
+    print('Seu alistamento será daqui {} anos, em {}'
+          .format(tempo, ano_alistamento))
+    if tempo == 1:
+        print('Seu alistamento será daqui 1 ano em {}'
+              .format(ano_alistamento))
+if idade == 18:
+    print('Você nasceu em {} e tem {} anos'
+          .format(nascimento, idade))
+    print('Seu alistamento é esse ano!')
+
+if idade > 18:
+    tempo1 = (ano_atual - nascimento) - 18
+    deveria = nascimento + 18
+    print('Você nasceu em {} e em {} você tem {} anos'
+          .format(nascimento, ano_atual, idade))
+    print('Você deveria ter se alistado há {} anos em {}'
+          .format(tempo1, deveria))
+    if tempo1 == 1:
+        print('Seu alistamento foi há 1 ano atrás, em {}'
+              .format(deveria))

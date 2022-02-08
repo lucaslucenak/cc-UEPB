@@ -1,0 +1,15 @@
+contadorMasculino = 0
+contadorFeminino = 0
+pessoas = int(input('Quantas pessoas serão analisadas? '))
+for a in range (1, pessoas + 1):
+    sexoPessoa = str(input('A pessoa é do Sexo Masculino [M] ou Feminino [F]? '))
+
+    if sexoPessoa == 'M':
+        contadorMasculino += 1
+    elif sexoPessoa == 'F':
+        contadorFeminino += 1
+    else:
+        print('Sexo inválido')
+
+print('O total de pessoas do sexo Masculino é: {}\n'
+      'O total de pessoas do sexo Feminino é: {}' .format(contadorMasculino, contadorFeminino))

@@ -1,0 +1,49 @@
+from time import sleep
+print('-_-' * 22)
+print('Calculadora de IMC programada pela coisa mais linda desse planeta')
+print('-_-' * 22)
+peso = float(input('Insira sua massa corporal em quilogramas: '))
+altura = float(input('Insira sua altura em metros: '))
+resultado = peso/(altura**2)
+print('Processando seu resultado...')
+sleep(2)
+if resultado < 10:
+    print('Seu IMC é igual a {:.2f}\n'
+          'Seu Estado Nutricional se encontra na faixa de DESNUTRIÇÃO GRAU V'.format(resultado))
+    print('Vá a um médico URGENTEMENTE!')
+if resultado >= 10 and resultado <= 12.9:
+    print('Seu IMC é igual a {:.2f}\n'
+          'Seu Estado Nutricional se encontra na faixa de DESNUTRIÇÃO GRAU IV'.format(resultado))
+    print('Vá a um médico o mais rápido possível!')
+if resultado >= 13 and resultado <= 15.9:
+    print('Seu IMC é igual a {:.2f}\n'
+          'Seu Estado Nutricional se encontra na faixa de DESNUTRIÇÃO GRAU |||'.format(resultado))
+    print('Vá a um médico!')
+if resultado >= 16 and resultado <= 16.9:
+    print('Seu IMC é igaul a {:.2f}\n'
+          'Seu Estado Nutricional se encontra na faixa de DESNUTRIÇÃO GRAU ||'.format(resultado))
+    print('É ideal que você procure um médico!')
+if resultado >= 17 and resultado <= 18.4:
+    print('Seu IMC é igual a {:.2f}\n'
+          'Seu Estado Nutricional se encontra na faixa de DESNUTRIÇÃO GRAU |'.format(resultado))
+    print('Você poderia procurar um médico!')
+if resultado >= 18.5 and resultado <= 24.9:
+    print('Seu IMC é igual a {:.2f}\n'
+          'Seu Estado Nutricional se encontra na faixa NORMAL'.format(resultado))
+    print('Mantenha uma vida saudável e uma alimentação balanceada!')
+if resultado >= 25 and resultado <= 29.9:
+    print('Seu IMC é igual a {:.2f}\n'
+          'Seu Estado Nutricional se encontra na faixa de PRÉ-OBESIDADE'.format(resultado))
+    print('Procure regular sua alimentação um pouco melhor, talvez um nutricionista seja ideal.')
+if resultado >= 30 and resultado <= 34.9:
+    print('Seu IMC é igual a {:.2f}\n'
+          'Seu Estado Nutricional se encontra na faixa de OBESIDADE GRAU |'.format(resultado))
+    print('Procure um médico!')
+if resultado >= 35 and resultado <= 39.9:
+    print('Seu IMC é igual a {:.2f}\n'
+          'Seu Estado Nutricional se encontra na faixa de OBESIDADE GRAU |'.format(resultado))
+    print('Procure um médico o mais rápido possível!!!')
+if resultado >= 40:
+    print('Seu IMC é igual a {:.2f}\n'
+          'Seu Estado Nutricional se encontra na faixa de OBESIDADE GRAU |||'.format(resultado))
+    print('Procure um médico URGENTEMENTE!')

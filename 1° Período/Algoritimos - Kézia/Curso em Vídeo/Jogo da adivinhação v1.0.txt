@@ -1,0 +1,28 @@
+from random import randint
+from time import sleep
+ia = randint(0, 3)
+print('-+-' * 20)
+print('                     JOGO DA ADIVINHAÇÃO')
+print('-+-' * 20)
+print('Tente adivinhar o número a ser sorteado de 0 a 3')
+sleep(2)
+print('Já pensei em um número!')
+sleep(1)
+print('Eaí Vamos começar?')
+sleep(1)
+print('S para sim e N para não')
+resposta = str(input())
+if resposta == 'S':
+    print('Ótimo, vamos lá então')
+    sleep(1)
+    numero_jogador = int(input('Qual número você acha que eu escolhi? \n'))
+    if numero_jogador == ia:
+        print('Analisando resposta...')
+        sleep(3)
+        print('Parabéns, Você acertou!')
+    else:
+        print('Analisando resposta...')
+        sleep(3)
+        print('Poxa, você errou')
+else:
+    print('Fodase, nem queria brincar mesmo.')

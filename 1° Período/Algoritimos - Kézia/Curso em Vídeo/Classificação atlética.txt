@@ -1,0 +1,23 @@
+from datetime import date
+nascimento = int(input('Informe seu ano de nascimento: '))
+idade = date.today().year - nascimento
+
+if idade <= 9:
+    print('Você tem {} anos e sua classificação atlética de acordo com sua idade é MIRIM'
+          .format(idade))
+
+if idade > 9 and idade <= 14:
+    print('Você tem {} anos e sua classificação atlética de acordo com sua idade é INFANTIL'
+          .format(idade))
+
+if idade > 14 and idade <= 19:
+    print('Você tem {} anos e sua classificação atlética de acordo com sua idade é JUNIOR'
+          .format(idade))
+
+if idade > 19 and idade <= 25:
+    print('Você tem {} anos e sua classificação atlética de acordo com sua idade é SÊNIOR'
+          .format(idade))
+
+if idade > 25:
+    print('Você tem {} anos e sua classificação atléticade acordo com sua idade é MASTER'
+          .format(idade))
