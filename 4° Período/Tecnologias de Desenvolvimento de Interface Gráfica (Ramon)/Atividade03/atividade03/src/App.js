@@ -4,13 +4,13 @@ import * as Yup from 'yup';
 
 const FormSchema = Yup.object().shape({
   nome: Yup.string().required('Informe seu nome!'),
-  idade: Yup.number().required('Informe sua idade!').positive('Informe um número postivo!').integer('Informe um número inteiro!'),
+  idade: Yup.number().required('Informe sua idade!').positive('Informe um número postivo!').integer('Informe um número inteiro!').min(16, 'Idade menor que 16 anos!'),
   cpf: Yup.string().required('Informe seu CPF!').min(14, 'Informe um CPF válido (999.999.999-99)').max(14, 'Informe um CPF válido (999.999.999-99)').matches(/^[0-9\s\.\-]*$/,'Informe um CPF válido (999.999.999-99)'),
-  matricula: Yup.number().required('Informe sua matrícula!').min(9, 'Informe a matrícula com 9 dígitos!').max(9, 'Informe a matrícula com 9 dígitos!').positive('Informe um número postivo!').integer('Informe um número inteiro!'),
+  matricula: Yup.string().required('Informe sua matrícula!').min(9, 'Informe a matrícula com 9 dígitos!').max(9, 'Informe a matrícula com 9 dígitos!').matches(/^[0-9\s\-]*$/, 'Informe uma Matrícula com números apenas'),
   curso: Yup.string().required('Informe seu curso!'),
   endereco: Yup.string().required('Informe seu endereço!'),
-  numero: Yup.number().required('Informe seu número!').positive('Informe um número postivo!').integer('Informe um número inteiro!'),
-  complemento: Yup.string().required('Informe um complemento!'),
+  numero: Yup.number(),
+  complemento: Yup.string(),
   bairro: Yup.string().required('Informe seu bairro!'),
   cidade: Yup.string().required('Informe sua cidade!'),
   estado: Yup.string().required('Informe seu estado!'),
@@ -26,6 +26,7 @@ const App = () => {
       setSubmitting(false);
       setStatus({ isValidating: false });
     }, 1000)
+    alert(JSON.stringify(values));
   }
   return (
     <Formik validationSchema={FormSchema}
