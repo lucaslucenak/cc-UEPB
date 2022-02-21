@@ -3,18 +3,18 @@ import { Formik, ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';
 
 const FormSchema = Yup.object().shape({
-  nome: Yup.string().required('Required'),
-  idade: Yup.string().required('Required'),
-  cpf: Yup.string().required('Required').min(14, 'CPF must be size 14! (999.999.999-99)').max(14, 'CPF must be size 14! (999.999.999-99)').matches(/^[0-9\s\.\-]*$/,'CPF can only contain numbers, dash and dot. (999.999.999-99)'),
-  matricula: Yup.string().required('Required'),
-  curso: Yup.string().required('Required'),
-  endereco: Yup.string().required('Required'),
-  numero: Yup.string().required('Required'),
-  complemento: Yup.string().required('Required'),
-  bairro: Yup.string().required('Required'),
-  cidade: Yup.string().required('Required'),
-  estado: Yup.string().required('Required'),
-  cep: Yup.string().required('Required')
+  nome: Yup.string().required('Informe seu nome!'),
+  idade: Yup.number().required('Informe sua idade!').positive('Informe um número postivo!').integer('Informe um número inteiro!'),
+  cpf: Yup.string().required('Informe seu CPF!').min(14, 'Informe um CPF válido (999.999.999-99)').max(14, 'Informe um CPF válido (999.999.999-99)').matches(/^[0-9\s\.\-]*$/,'Informe um CPF válido (999.999.999-99)'),
+  matricula: Yup.number().required('Informe sua matrícula!').min(9, 'Informe a matrícula com 9 dígitos!').max(9, 'Informe a matrícula com 9 dígitos!').positive('Informe um número postivo!').integer('Informe um número inteiro!'),
+  curso: Yup.string().required('Informe seu curso!'),
+  endereco: Yup.string().required('Informe seu endereço!'),
+  numero: Yup.number().required('Informe seu número!').positive('Informe um número postivo!').integer('Informe um número inteiro!'),
+  complemento: Yup.string().required('Informe um complemento!'),
+  bairro: Yup.string().required('Informe seu bairro!'),
+  cidade: Yup.string().required('Informe sua cidade!'),
+  estado: Yup.string().required('Informe seu estado!'),
+  cep: Yup.string().required('Informe seu CEP!').min(9, 'Informe um CEP válido (00000-000)').max(9, 'Informe um CEP válido (00000-000)').matches(/^[0-9\s\-]*$/, 'Informe um CEP válido')
 });
 
 
@@ -29,9 +29,19 @@ const App = () => {
   }
   return (
     <Formik validationSchema={FormSchema}
-    initialValues={{}}
-    onSubmit={handleSubmitting}>
-      {({
+    initialValues={{ nome: '',
+      idade: '',
+      cpf: '',
+      matricula: '',
+      curso: '', 
+      endereco: '',
+      numero: '', 
+      complemento: '', 
+      bairro: '', 
+      cidade: '', 
+      estado: '', 
+      cep: ''}}
+    onSubmit={handleSubmitting}>{({
         handleChange,
         handleBlur,
         handleSubmit,
@@ -54,7 +64,7 @@ const App = () => {
               </div>
 
               <div class="input-group input-group-lg">
-                <span class="input-group-text" id="inputGroup-sizing-lg">Idade*: <Field class="form-control" type="text" name="idade" onBlur={handleBlur} onChange={handleChange}/> </span>
+                <span class="input-group-text" id="inputGroup-sizing-lg">Idade*: <Field class="form-control" type="number" name="idade" onBlur={handleBlur} onChange={handleChange}/> </span>
                 <ErrorMessage name="idade" className="error" component="span"/>
               </div>
 
@@ -79,7 +89,7 @@ const App = () => {
               </div>
 
               <div class="input-group input-group-lg">
-                <span class="input-group-text" id="inputGroup-sizing-lg">Número: <Field class="form-control" type="text" name="numero" onBlur={handleBlur} onChange={handleChange}/> </span>
+                <span class="input-group-text" id="inputGroup-sizing-lg">Número: <Field class="form-control" type="idade" name="numero" onBlur={handleBlur} onChange={handleChange}/> </span>
                 <ErrorMessage name="numero" className="error" component="span"/>
               </div>
 
@@ -108,7 +118,9 @@ const App = () => {
                 <ErrorMessage name="cep" className="error" component="span"/>
               </div>
 
-              <input type="submit" value="Enviar" class="btn btn-success" disabled={isSubmitting} />
+              <button type="submit">Enviar</button>
+
+              
 
             </form>
           </div>
