@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik, ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';
+import EstadoSelect from './EstadoSelect';
 
 const FormSchema = Yup.object().shape({
   nome: Yup.string().required('Informe seu nome!'),
@@ -28,6 +29,12 @@ const App = () => {
     }, 1000)
     alert(JSON.stringify(values));
   }
+
+  const options = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' }
+  ]
   return (
     <Formik validationSchema={FormSchema}
     initialValues={{ nome: '',
@@ -56,71 +63,115 @@ const App = () => {
             </div>
           </nav>
 
-          <div className="container">
-            <form onSubmit={handleSubmit}>
+          <div className="container" align="center">
+            <form  onSubmit={handleSubmit} className="centered">
 
-              <div class="input-group input-group-lg">
-                <span class="input-group-text" id="inputGroup-sizing-lg">Nome*: <Field class="form-control" type="text" name="nome" onBlur={handleBlur} onChange={handleChange}/> </span>
-                <ErrorMessage name="nome" className="error" component="span"/>
-              </div>
+              <label className="form-group">
+                Nome completo*:
+                <Field className="form-control" type="text" name="nome" onBlur={handleBlur} onChange={handleChange}/>
+              </label>
+              <ErrorMessage name="nome" className="error" component="span"/>
 
-              <div class="input-group input-group-lg">
-                <span class="input-group-text" id="inputGroup-sizing-lg">Idade*: <Field class="form-control" type="number" name="idade" onBlur={handleBlur} onChange={handleChange}/> </span>
-                <ErrorMessage name="idade" className="error" component="span"/>
-              </div>
+            <br/><br/>
 
-              <div class="input-group input-group-lg">
-                <span class="input-group-text" id="inputGroup-sizing-lg">CPF*: <Field class="form-control" type="text" name="cpf" onBlur={handleBlur} onChange={handleChange}/> </span>
-                <ErrorMessage name="cpf" className="error" component="span"/>
-              </div>
+            <label  className="form-group">
+              Idade*:
+              <Field className="form-control" type="number" name="idade" onBlur={handleBlur} onChange={handleChange}/>
+            </label>
+            <ErrorMessage name="idade" className="error" component="span" />
 
-              <div class="input-group input-group-lg">
-                <span class="input-group-text" id="inputGroup-sizing-lg">Matrícula*: <Field class="form-control" type="text" name="matricula" onBlur={handleBlur} onChange={handleChange}/> </span>
-                <ErrorMessage name="matricula" className="error" component="span"/>
-              </div>
+            <br/><br/>
 
-              <div class="input-group input-group-lg">
-                <span class="input-group-text" id="inputGroup-sizing-lg">Curso*: <Field class="form-control" type="text" name="curso" onBlur={handleBlur} onChange={handleChange}/> </span>
-                <ErrorMessage name="curso" className="error" component="span"/>
-              </div>
+            <label  className="form-group">
+              CPF*:
+              <Field className="form-control" type="text" name="cpf" onBlur={handleBlur} onChange={handleChange}/>
+            </label>
+            <ErrorMessage name="cpf" className="error" component="span"/>
 
-              <div class="input-group input-group-lg">
-                <span class="input-group-text" id="inputGroup-sizing-lg">Endereço*: <Field class="form-control" type="text" name="endereco" onBlur={handleBlur} onChange={handleChange}/> </span>
-                <ErrorMessage name="endereco" className="error" component="span"/>
-              </div>
+            <br/><br/>
 
-              <div class="input-group input-group-lg">
-                <span class="input-group-text" id="inputGroup-sizing-lg">Número: <Field class="form-control" type="idade" name="numero" onBlur={handleBlur} onChange={handleChange}/> </span>
-                <ErrorMessage name="numero" className="error" component="span"/>
-              </div>
+            <label  className="form-group">
+              Matrícula*:
+              <Field className="form-control" type="text" name="matricula" onBlur={handleBlur} onChange={handleChange}/>
+            </label>
+            <ErrorMessage name="matricula" className="error" component="span"/>
 
-              <div class="input-group input-group-lg">
-                <span class="input-group-text" id="inputGroup-sizing-lg">Complemento: <Field class="form-control" type="text" name="complemento" onBlur={handleBlur} onChange={handleChange}/> </span>
-                <ErrorMessage name="complemento" className="error" component="span"/>
-              </div>
+            <br/><br/>
 
-              <div class="input-group input-group-lg">
-                <span class="input-group-text" id="inputGroup-sizing-lg">Bairro*: <Field class="form-control" type="text" name="bairro" onBlur={handleBlur} onChange={handleChange}/> </span>
-                <ErrorMessage name="bairro" className="error" component="span"/>
-              </div>
+            <label  className="form-group">
+              Curso*:
+              <Field className="form-control" type="text" name="curso" onBlur={handleBlur} onChange={handleChange}/>
+            </label>
+            <ErrorMessage name="curso" className="error" component="span"/>
 
-              <div class="input-group input-group-lg">
-                <span class="input-group-text" id="inputGroup-sizing-lg">Cidade*: <Field class="form-control" type="text" name="cidade" onBlur={handleBlur} onChange={handleChange}/> </span>
-                <ErrorMessage name="cidade" className="error" component="span"/>
-              </div>
+            <br/><br/>
 
-              <div class="input-group input-group-lg">
-                <span class="input-group-text" id="inputGroup-sizing-lg">Estado*: <Field class="form-control" type="text" name="estado" onBlur={handleBlur} onChange={handleChange}/> </span>
-                <ErrorMessage name="estado" className="error" component="span"/>
-              </div>
+            <label  className="form-group">
+              Endereço*:
+              <Field className="form-control" type="text" name="endereco" onBlur={handleBlur} onChange={handleChange}/>
+            </label>
+            <ErrorMessage name="endereco" className="error" component="span"/>
 
-              <div class="input-group input-group-lg">
-                <span class="input-group-text" id="inputGroup-sizing-lg">CEP*: <Field class="form-control" type="text" name="cep" onBlur={handleBlur} onChange={handleChange}/> </span>
-                <ErrorMessage name="cep" className="error" component="span"/>
-              </div>
+            <br/><br/>
 
-              <button type="submit">Enviar</button>
+            <label  className="form-group">
+              Número:
+              <Field className="form-control" type="text" name="numero" onBlur={handleBlur} onChange={handleChange}/>
+            </label>
+            <ErrorMessage name="numero" className="error" component="span"/>
+
+            <br/><br/>
+
+            <label  className="form-group">
+              Complemento:
+              <Field className="form-control" type="text" name="complemento" onBlur={handleBlur} onChange={handleChange}/>
+            </label>
+            <ErrorMessage name="complemento" className="error" component="span"/>
+
+            <br/><br/>
+
+            <label  className="form-group">
+              Bairro*:
+              <Field className="form-control" type="text" name="bairro" onBlur={handleBlur} onChange={handleChange}/>
+            </label>
+            <ErrorMessage name="bairro" className="error" component="span"/>
+
+            <br/><br/>
+
+            <label  className="form-group">
+              Cidade*:
+              <Field className="form-control" type="text" name="cidade" onBlur={handleBlur} onChange={handleChange}/>
+            </label>
+            <ErrorMessage name="cidade" className="error" component="span"/>
+
+            <br/><br/>
+
+            <label  className="form-group">
+              Estado*:
+              <EstadoSelect name="estado">
+                {options.map((option) => (
+                <option key={option.value} value={option.value}>
+                    {option.label}
+                </option>
+                ))}
+              </EstadoSelect>
+            </label>
+            <ErrorMessage name="estado" className="error" component="span"/>
+
+            <br/><br/>
+
+            <label className="form-group">
+              CEP*:
+              <Field className="form-control" type="text" name="cep" onBlur={handleBlur} onChange={handleChange}/>
+            </label>
+            <ErrorMessage name="cep" className="error" component="span"/>
+
+            <br/><br/>
+
+            <input type="submit" value="Enviar" disabled={isSubmitting}/>
+
             </form>
+
           </div>
         </div>
       )}
