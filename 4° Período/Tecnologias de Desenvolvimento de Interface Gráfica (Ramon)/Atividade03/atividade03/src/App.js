@@ -30,7 +30,7 @@ const App = () => {
     alert(JSON.stringify(values));
   }
 
-  const options = [
+  const estados = [
     { value: 'Acre', label: 'AC' },
     { value: 'Alagoas', label: 'AL' },
     { value: 'Amapá', label: 'AP' },
@@ -59,6 +59,7 @@ const App = () => {
     { value: 'Sergipe', label: 'SE' },
     { value: 'Tocantins', label: 'TO' }
   ]
+
   return (
     <Formik validationSchema={FormSchema}
     initialValues={{ nome: '',
@@ -174,9 +175,9 @@ const App = () => {
               <span class="input-group-text" id="inputGroup-sizing-lg">Estado*:</span>
               <div class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" onBlur={handleBlur} onChange={handleChange}>
                 <EstadoSelect name="estado" >
-                  {options.map((option) => (
-                  <option key={option.value} value={option.value}>
-                      {option.label}
+                  {estados.map((estado) => (
+                  <option key={estado.value} value={estado.value}>
+                      {estado.label}
                   </option>
                   ))}
                 </EstadoSelect>
