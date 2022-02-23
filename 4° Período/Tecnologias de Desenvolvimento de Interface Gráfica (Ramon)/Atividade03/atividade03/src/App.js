@@ -31,9 +31,33 @@ const App = () => {
   }
 
   const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' }
+    { value: 'Acre', label: 'AC' },
+    { value: 'Alagoas', label: 'AL' },
+    { value: 'Amapá', label: 'AP' },
+    { value: 'Amazonas', label: 'AM' },
+    { value: 'Bahia', label: 'BA' },
+    { value: 'Ceará', label: 'CE' },
+    { value: 'Distrito Federal', label: 'DF' },
+    { value: 'Espírito Santo', label: 'ES' },
+    { value: 'Goiás', label: 'GO' },
+    { value: 'Maranhão', label: 'MA' },
+    { value: 'Mato Grosso', label: 'MT' },
+    { value: 'Mato Grosso do Sul', label: 'MS' },
+    { value: 'Minas Gerais', label: 'MG' },
+    { value: 'Pará', label: 'PA' },
+    { value: 'Paraíba', label: 'PB' },
+    { value: 'Paraná', label: 'PR' },
+    { value: 'Pernambuco', label: 'PE' },
+    { value: 'Piauí', label: 'PI' },
+    { value: 'Rio de Janeiro', label: 'RJ' },
+    { value: 'Rio Grande do Norte', label: 'RN' },
+    { value: 'Rio Grande do Sul', label: 'RS' },
+    { value: 'Rondônia', label: 'RO' },
+    { value: 'Roraima', label: 'RR' },
+    { value: 'Santa Catarina', label: 'SC' },
+    { value: 'São Paulo', label: 'SP' },
+    { value: 'Sergipe', label: 'SE' },
+    { value: 'Tocantins', label: 'TO' }
   ]
   return (
     <Formik validationSchema={FormSchema}
@@ -62,116 +86,117 @@ const App = () => {
               <a class="navbar-brand" href="#">TecLine Assistência Técnica</a>
             </div>
           </nav>
-
+          <br></br>
           <div className="container" align="center">
             <form  onSubmit={handleSubmit} className="centered">
 
-              <label className="form-group">
-                Nome completo*:
-                <Field className="form-control" type="text" name="nome" onBlur={handleBlur} onChange={handleChange}/>
-              </label>
-              <ErrorMessage name="nome" className="error" component="span"/>
+            <div class="input-group input-group-lg">
+              <span class="input-group-text" id="inputGroup-sizing-lg">Nome completo*:</span>
+              <input type="text" name="nome" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" onBlur={handleBlur} onChange={handleChange}/>
+            </div>
+            <ErrorMessage name="nome" className="error" component="span"/>
 
             <br/><br/>
 
-            <label  className="form-group">
-              Idade*:
-              <Field className="form-control" type="number" name="idade" onBlur={handleBlur} onChange={handleChange}/>
-            </label>
-            <ErrorMessage name="idade" className="error" component="span" />
+            <div class="input-group input-group-lg">
+              <span class="input-group-text" id="inputGroup-sizing-lg">Idade*:</span>
+              <input type="number" name="idade" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" onBlur={handleBlur} onChange={handleChange}/>
+            </div>
+            <ErrorMessage name="idade" className="error" component="span"/>
 
             <br/><br/>
 
-            <label  className="form-group">
-              CPF*:
-              <Field className="form-control" type="text" name="cpf" onBlur={handleBlur} onChange={handleChange}/>
-            </label>
+            <div class="input-group input-group-lg">
+              <span class="input-group-text" id="inputGroup-sizing-lg">CPF*:</span>
+              <input type="text" name="cpf" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" onBlur={handleBlur} onChange={handleChange}/>
+            </div>
             <ErrorMessage name="cpf" className="error" component="span"/>
 
             <br/><br/>
 
-            <label  className="form-group">
-              Matrícula*:
-              <Field className="form-control" type="text" name="matricula" onBlur={handleBlur} onChange={handleChange}/>
-            </label>
+            <div class="input-group input-group-lg">
+              <span class="input-group-text" id="inputGroup-sizing-lg">Matrícula*:</span>
+              <input type="text" name="matricula" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" onBlur={handleBlur} onChange={handleChange}/>
+            </div>
             <ErrorMessage name="matricula" className="error" component="span"/>
 
             <br/><br/>
 
-            <label  className="form-group">
-              Curso*:
-              <Field className="form-control" type="text" name="curso" onBlur={handleBlur} onChange={handleChange}/>
-            </label>
+            <div class="input-group input-group-lg">
+              <span class="input-group-text" id="inputGroup-sizing-lg">Curso*:</span>
+              <input type="text" name="curso" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" onBlur={handleBlur} onChange={handleChange}/>
+            </div>
             <ErrorMessage name="curso" className="error" component="span"/>
 
             <br/><br/>
 
-            <label  className="form-group">
-              Endereço*:
-              <Field className="form-control" type="text" name="endereco" onBlur={handleBlur} onChange={handleChange}/>
-            </label>
+            <div class="input-group input-group-lg">
+              <span class="input-group-text" id="inputGroup-sizing-lg">Endereço*:</span>
+              <input type="text" name="endereco" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" onBlur={handleBlur} onChange={handleChange}/>
+            </div>
             <ErrorMessage name="endereco" className="error" component="span"/>
 
             <br/><br/>
 
-            <label  className="form-group">
-              Número:
-              <Field className="form-control" type="text" name="numero" onBlur={handleBlur} onChange={handleChange}/>
-            </label>
+            <div class="input-group input-group-lg">
+              <span class="input-group-text" id="inputGroup-sizing-lg">Número:</span>
+              <input type="text" name="numero" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" onBlur={handleBlur} onChange={handleChange}/>
+            </div>
             <ErrorMessage name="numero" className="error" component="span"/>
 
             <br/><br/>
 
-            <label  className="form-group">
-              Complemento:
-              <Field className="form-control" type="text" name="complemento" onBlur={handleBlur} onChange={handleChange}/>
-            </label>
+            <div class="input-group input-group-lg">
+              <span class="input-group-text" id="inputGroup-sizing-lg">Complemento:</span>
+              <input type="text" name="complemento" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" onBlur={handleBlur} onChange={handleChange}/>
+            </div>
             <ErrorMessage name="complemento" className="error" component="span"/>
 
             <br/><br/>
 
-            <label  className="form-group">
-              Bairro*:
-              <Field className="form-control" type="text" name="bairro" onBlur={handleBlur} onChange={handleChange}/>
-            </label>
+            <div class="input-group input-group-lg">
+              <span class="input-group-text" id="inputGroup-sizing-lg">Bairro*:</span>
+              <input type="text" name="bairro" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" onBlur={handleBlur} onChange={handleChange}/>
+            </div>
             <ErrorMessage name="bairro" className="error" component="span"/>
 
             <br/><br/>
 
-            <label  className="form-group">
-              Cidade*:
-              <Field className="form-control" type="text" name="cidade" onBlur={handleBlur} onChange={handleChange}/>
-            </label>
+            <div class="input-group input-group-lg">
+              <span class="input-group-text" id="inputGroup-sizing-lg">Cidade*:</span>
+              <input type="text" name="cidade" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" onBlur={handleBlur} onChange={handleChange}/>
+            </div>
             <ErrorMessage name="cidade" className="error" component="span"/>
 
             <br/><br/>
 
-            <label  className="form-group">
-              Estado*:
-              <EstadoSelect name="estado">
-                {options.map((option) => (
-                <option key={option.value} value={option.value}>
-                    {option.label}
-                </option>
-                ))}
-              </EstadoSelect>
-            </label>
+            <div class="input-group input-group-lg">
+              <span class="input-group-text" id="inputGroup-sizing-lg">Estado*:</span>
+              <div class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" onBlur={handleBlur} onChange={handleChange}>
+                <EstadoSelect name="estado" >
+                  {options.map((option) => (
+                  <option key={option.value} value={option.value}>
+                      {option.label}
+                  </option>
+                  ))}
+                </EstadoSelect>
+              </div>
+            </div>
             <ErrorMessage name="estado" className="error" component="span"/>
 
             <br/><br/>
 
-            <label className="form-group">
-              CEP*:
-              <Field className="form-control" type="text" name="cep" onBlur={handleBlur} onChange={handleChange}/>
-            </label>
+            <div class="input-group input-group-lg">
+              <span class="input-group-text" id="inputGroup-sizing-lg">CEP*:</span>
+              <input type="text" name="cep" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" onBlur={handleBlur} onChange={handleChange}/>
+            </div>
             <ErrorMessage name="cep" className="error" component="span"/>
 
             <br/><br/>
 
-            <input type="submit" value="Enviar" disabled={isSubmitting}/>
+            <button type="submit" class="btn btn-primary" disabled={isSubmitting}>Enviar</button>
 
             </form>
-
           </div>
         </div>
       )}

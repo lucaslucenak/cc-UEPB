@@ -14,8 +14,8 @@ function EstadoSelect({ label, ...props }) {
   };
 
   return (
-    <div className="mb-3">
-      <label htmlFor={props.id || props.name} className="form-label">
+    <div >
+      <label htmlFor={props.id || props.name}>
         {label}
       </label>
       <Select
@@ -24,9 +24,7 @@ function EstadoSelect({ label, ...props }) {
         onChange={onChange}
         onBlur={setTouched}
       />
-      {meta.touched && meta.error ? (
-        <div className="form-text text-danger">{meta.error}</div>
-      ) : null}
+
     </div>
   );
 }
