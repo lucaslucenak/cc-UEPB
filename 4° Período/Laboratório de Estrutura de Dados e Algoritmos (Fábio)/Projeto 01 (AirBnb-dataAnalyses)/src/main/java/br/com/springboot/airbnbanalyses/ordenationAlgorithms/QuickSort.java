@@ -3,17 +3,17 @@ package br.com.springboot.airbnbanalyses.ordenationAlgorithms;
 public class QuickSort {
 
     public static void quickSort_Prices(Integer[] array, Integer[] array2, Integer[] array3, Integer[] array4, Integer[] array5, Integer[] array6, Integer[] array7, String[] array8,
-                                 String[] array9, String[] array10, String[] array11, String[] array12, String[] array13, Double[] array14, Double[] array15, Double[] array16, int a, int b) {
+                                        String[] array9, String[] array10, String[] array11, String[] array12, String[] array13, Double[] array14, Double[] array15, int a, int b) {
 
         if (a < b) {
-            int q = particiona(array, array2, array3, array4, array5, array6, array7, array8, array9, array10, array11, array12, array13, array14, array15, array16, a, b);
-            quickSort_Prices(array, array2, array3, array4, array5, array6, array7, array8, array9, array10, array11, array12, array13, array14, array15, array16, a, q - 1);
-            quickSort_Prices(array, array2, array3, array4, array5, array6, array7, array8, array9, array10, array11, array12, array13, array14, array15, array16, q + 1, b);
+            int q = particiona(array, array2, array3, array4, array5, array6, array7, array8, array9, array10, array11, array12, array13, array14, array15, a, b);
+            quickSort_Prices(array, array2, array3, array4, array5, array6, array7, array8, array9, array10, array11, array12, array13, array14, array15, a, q - 1);
+            quickSort_Prices(array, array2, array3, array4, array5, array6, array7, array8, array9, array10, array11, array12, array13, array14, array15, q + 1, b);
         }
     }
 
     public static int particiona(Integer[] array, Integer[] array2, Integer[] array3, Integer[] array4, Integer[] array5, Integer[] array6, Integer[] array7, String[] array8,
-                                 String[] array9, String[] array10, String[] array11, String[] array12, String[] array13, Double[] array14, Double[] array15, Double[] array16, int p, int r) {
+                                 String[] array9, String[] array10, String[] array11, String[] array12, String[] array13, Double[] array14, Double[] array15, int p, int r) {
         int i = p - 1;
         Integer x = array[r];
         Integer aux;
@@ -84,10 +84,6 @@ public class QuickSort {
                 array15[i] = array15[j];
                 array15[j] = auxDouble;
 
-                auxDouble = array16[i];
-                array16[i] = array16[j];
-                array16[j] = auxDouble;
-
             }
 
         }
@@ -152,21 +148,17 @@ public class QuickSort {
         array15[i + 1] = array15[r];
         array15[r] = auxDouble;
 
-        auxDouble = array16[i + 1];
-        array16[i + 1] = array16[r];
-        array16[r] = auxDouble;
-
         return i + 1;
 
     }
 
-    public static void quickSortStr(String[] arrayName, Integer[] arrayPrice, Integer[] arrayId, Integer[] arrayHostId, Integer[] arrayMinimumNights, Integer[] arrayNumberOfReviews, Integer[] arrayCalculatedHostListingsCount, Integer[] arrayAvailability365 ,
+    public static void quickSort_Names(String[] arrayName, Integer[] arrayPrice, Integer[] arrayId, Integer[] arrayHostId, Integer[] arrayMinimumNights, Integer[] arrayNumberOfReviews, Integer[] arrayCalculatedHostListingsCount, Integer[] arrayAvailability365 ,
                                     String[] arrayHostName, String[] arrayNeighbourhoodGroup, String[] arrayNeighbourhood, String[] arrayRoomType, String[] arrayLastReview, Double[] arrayLatitude, Double[] arrayLongitude, int a, int b) {
 
         if (a < b) {
             int q = particionaStr(arrayName, arrayPrice, arrayId, arrayHostId, arrayMinimumNights, arrayNumberOfReviews, arrayCalculatedHostListingsCount, arrayAvailability365, arrayHostName, arrayNeighbourhoodGroup, arrayNeighbourhood, arrayRoomType, arrayLastReview, arrayLatitude, arrayLongitude, a, b);
-            quickSortStr(arrayName, arrayPrice, arrayId, arrayHostId, arrayMinimumNights, arrayNumberOfReviews, arrayCalculatedHostListingsCount, arrayAvailability365, arrayHostName, arrayNeighbourhoodGroup, arrayNeighbourhood, arrayRoomType, arrayLastReview, arrayLatitude, arrayLongitude, a, q - 1);
-            quickSortStr(arrayName, arrayPrice, arrayId, arrayHostId, arrayMinimumNights, arrayNumberOfReviews, arrayCalculatedHostListingsCount, arrayAvailability365, arrayHostName, arrayNeighbourhoodGroup, arrayNeighbourhood, arrayRoomType, arrayLastReview, arrayLatitude, arrayLongitude, q + 1, b);
+            quickSort_Names(arrayName, arrayPrice, arrayId, arrayHostId, arrayMinimumNights, arrayNumberOfReviews, arrayCalculatedHostListingsCount, arrayAvailability365, arrayHostName, arrayNeighbourhoodGroup, arrayNeighbourhood, arrayRoomType, arrayLastReview, arrayLatitude, arrayLongitude, a, q - 1);
+            quickSort_Names(arrayName, arrayPrice, arrayId, arrayHostId, arrayMinimumNights, arrayNumberOfReviews, arrayCalculatedHostListingsCount, arrayAvailability365, arrayHostName, arrayNeighbourhoodGroup, arrayNeighbourhood, arrayRoomType, arrayLastReview, arrayLatitude, arrayLongitude, q + 1, b);
         }
     }
 

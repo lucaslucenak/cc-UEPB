@@ -2,20 +2,20 @@ package br.com.springboot.airbnbanalyses.ordenationAlgorithms;
 
 public class QuickSort_MedianaDe3 {
 
-    public static void quickSortMD3_Price(Integer[] array, Integer[] array2, Integer[] array3, Integer[] array4, Integer[] array5, Integer[] array6, Integer[] array7, Integer[] array8,
-                                 String[] array9, String[] array10, String[] array11, String[] array12, String[] array13, String[] array14,
-                                 Double[] array15, Double[] array16, Integer a, Integer b) {
+    public static void quickSortMD3Crescent(Integer[] array, Integer[] array2, Integer[] array3, Integer[] array4, Integer[] array5, Integer[] array6, Integer[] array7, String[] array8,
+                                 String[] array9, String[] array10, String[] array11, String[] array12, String[] array13, Double[] array14,
+                                 Double[] array15, Integer a, Integer b) {
 
         if (a < b) {
-            int q = particiona(array, array2, array3, array4, array5, array6, array7, array8, array9, array10, array11, array12, array13, array14, array15, array16, a, b);
-            quickSortMD3_Price(array, array2, array3, array4, array5, array6, array7, array8, array9, array10, array11, array12, array13, array14, array15, array16, a, q - 1);
-            quickSortMD3_Price(array, array2, array3, array4, array5, array6, array7, array8, array9, array10, array11, array12, array13, array14, array15, array16, q + 1, b);
+            int q = particiona(array, array2, array3, array4, array5, array6, array7, array8, array9, array10, array11, array12, array13, array14, array15, a, b);
+            quickSortMD3Crescent(array, array2, array3, array4, array5, array6, array7, array8, array9, array10, array11, array12, array13, array14, array15, a, q - 1);
+            quickSortMD3Crescent(array, array2, array3, array4, array5, array6, array7, array8, array9, array10, array11, array12, array13, array14, array15, q + 1, b);
         }
     }
 
-    public static int particiona(Integer[] array, Integer[] array2, Integer[] array3, Integer[] array4, Integer[] array5, Integer[] array6, Integer[] array7, Integer[] array8,
-                                 String[] array9, String[] array10, String[] array11, String[] array12, String[] array13, String[] array14,
-                                 Double[] array15, Double[] array16, Integer p, Integer r) {
+    public static int particiona(Integer[] array, Integer[] array2, Integer[] array3, Integer[] array4, Integer[] array5, Integer[] array6, Integer[] array7, String[] array8,
+                                 String[] array9, String[] array10, String[] array11, String[] array12, String[] array13, Double[] array14,
+                                 Double[] array15, Integer p, Integer r) {
         // procura a mediana entre inicio, meio e fim
         int meio = (p + r) / 2;
         Integer a = array[p];
@@ -59,15 +59,14 @@ public class QuickSort_MedianaDe3 {
         swap(array5, medianaIndice, p);
         swap(array6, medianaIndice, p);
         swap(array7, medianaIndice, p);
-        swap(array8, medianaIndice, p);
+        swapStr(array8, medianaIndice, p);
         swapStr(array9, medianaIndice, p);
         swapStr(array10, medianaIndice, p);
         swapStr(array11, medianaIndice, p);
         swapStr(array12, medianaIndice, p);
         swapStr(array13, medianaIndice, p);
-        swapStr(array14, medianaIndice, p);
+        swapDouble(array14, medianaIndice, p);
         swapDouble(array15, medianaIndice, p);
-        swapDouble(array16, medianaIndice, p);
 
         int i = p - 1;
         Integer x = array[r];
@@ -107,9 +106,9 @@ public class QuickSort_MedianaDe3 {
                 array7[i] = array7[j];
                 array7[j] = aux;
 
-                aux = array8[i];
+                auxStr = array8[i];
                 array8[i] = array8[j];
-                array8[j] = aux;
+                array8[j] = auxStr;
 
                 auxStr = array9[i];
                 array9[i] = array9[j];
@@ -131,17 +130,13 @@ public class QuickSort_MedianaDe3 {
                 array13[i] = array13[j];
                 array13[j] = auxStr;
 
-                auxStr = array14[i];
+                auxDouble = array14[i];
                 array14[i] = array14[j];
-                array14[j] = auxStr;
+                array14[j] = auxDouble;
 
                 auxDouble = array15[i];
                 array15[i] = array15[j];
                 array15[j] = auxDouble;
-
-                auxDouble = array16[i];
-                array16[i] = array16[j];
-                array16[j] = auxDouble;
 
             }
 
@@ -175,9 +170,9 @@ public class QuickSort_MedianaDe3 {
         array7[i + 1] = array7[r];
         array7[r] = aux;
 
-        aux = array8[i + 1];
+        auxStr = array8[i + 1];
         array8[i + 1] = array8[r];
-        array8[r] = aux;
+        array8[r] = auxStr;
 
         auxStr = array9[i + 1];
         array9[i + 1] = array9[r];
@@ -199,17 +194,13 @@ public class QuickSort_MedianaDe3 {
         array13[i + 1] = array13[r];
         array13[r] = auxStr;
 
-        auxStr = array14[i + 1];
+        auxDouble = array14[i + 1];
         array14[i + 1] = array14[r];
-        array14[r] = auxStr;
+        array14[r] = auxDouble;
 
         auxDouble = array15[i + 1];
         array15[i + 1] = array15[r];
         array15[r] = auxDouble;
-
-        auxDouble = array16[i + 1];
-        array16[i + 1] = array16[r];
-        array16[r] = auxDouble;
 
         return i + 1;
 
@@ -254,7 +245,7 @@ public class QuickSort_MedianaDe3 {
         String a = arrayName[p];
         String b = arrayName[meio];
         String c = arrayName[r];
-        Integer medianaIndice; // índice da mediana
+        int medianaIndice; // índice da mediana
         // A sequência de if...else a seguir verifica qual é a mediana
         if (a.compareToIgnoreCase(b) < 0) {
             if (b.compareToIgnoreCase(c) < 0) {
@@ -304,9 +295,9 @@ public class QuickSort_MedianaDe3 {
         int i = p - 1;
         String x = arrayName[r];
 
-        Integer aux;
+        int aux;
         String auxStr;
-        Double auxDouble;
+        double auxDouble;
 
         for (int j = p; j < r; j++) {
             if (arrayName[j].compareToIgnoreCase(x) < 0) {
@@ -438,4 +429,6 @@ public class QuickSort_MedianaDe3 {
 
         return i + 1;
     }
+
+
 }

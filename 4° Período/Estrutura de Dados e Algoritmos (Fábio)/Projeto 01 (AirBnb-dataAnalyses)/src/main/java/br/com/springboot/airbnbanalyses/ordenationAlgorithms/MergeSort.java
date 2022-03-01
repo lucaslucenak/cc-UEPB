@@ -127,17 +127,18 @@ public class MergeSort {
     }
 
     public static void mergeSortCrescent_Names(String[] arrayName, String[] auxArrayName, Integer[] arrayPrice, Integer[] auxArrayPrice, Integer[] arrayId, Integer[] auxArrayId, Integer[] arrayHostId, Integer[] auxArrayHostId, Integer[] arrayMinimumNights, Integer[] auxArrayMinimumNights, Integer[] arrayNumberOfReviews, Integer[] auxArrayNumberOfReviews, Integer[] arrayCalculatedHostListingsCount, Integer[] auxArrayCalculatedHostListingsCount, Integer[] arrayAvailability365 , Integer[] auxArrayAvailability365 ,
-                                       String[] arrayHostName, String[] auxArrayHostName, String[] arrayNeighbourhoodGroup, String[] auxArrayNeighbourhoodGroup, String[] arrayNeighbourhood, String[] auxArrayNeighbourhood, String[] arrayRoomType, String[] auxArrayRoomType, String[] arrayLastReview, String[] auxArrayLastReview, Double[] arrayLatitude, Double[] auxArrayLatitude, Double[] arrayLongitude, Double[] auxArrayLongitude, int ini, int fim) {
+                                       String[] arrayHostName, String[] auxArrayHostName, String[] arrayNeighbourhoodGroup, String[] auxArrayNeighbourhoodGroup, String[] arrayNeighbourhood, String[] auxArrayNeighbourhood, String[] arrayRoomType, String[] auxArrayRoomType, String[] arrayLastReview, String[] auxArrayLastReview, Double[] arrayLatitude, Double[] auxArrayLatitude, Double[] arrayLongitude, Double[] auxArrayLongitude, Double[] arrayReviewsPerMonth, Double[] auxArrayReviewsPerMonth, int ini, int fim) {
         if(ini<fim) {
             int meio= (ini+fim)/2;
-            mergeSortCrescent_Names(arrayName, auxArrayName, arrayPrice, auxArrayPrice, arrayId, auxArrayId, arrayHostId, auxArrayHostId, arrayMinimumNights, auxArrayMinimumNights, arrayNumberOfReviews, auxArrayNumberOfReviews, arrayCalculatedHostListingsCount, auxArrayCalculatedHostListingsCount, arrayAvailability365, auxArrayAvailability365, arrayHostName, auxArrayHostName, arrayNeighbourhoodGroup, auxArrayNeighbourhoodGroup, arrayNeighbourhood, auxArrayNeighbourhood, arrayRoomType, auxArrayRoomType, arrayLastReview, auxArrayLastReview, arrayLatitude, auxArrayLatitude, arrayLongitude, auxArrayLongitude, ini,meio);
-            mergeSortCrescent_Names(arrayName, auxArrayName, arrayPrice, auxArrayPrice, arrayId, auxArrayId, arrayHostId, auxArrayHostId, arrayMinimumNights, auxArrayMinimumNights, arrayNumberOfReviews, auxArrayNumberOfReviews, arrayCalculatedHostListingsCount, auxArrayCalculatedHostListingsCount, arrayAvailability365, auxArrayAvailability365, arrayHostName, auxArrayHostName, arrayNeighbourhoodGroup, auxArrayNeighbourhoodGroup, arrayNeighbourhood, auxArrayNeighbourhood, arrayRoomType, auxArrayRoomType, arrayLastReview, auxArrayLastReview, arrayLatitude, auxArrayLatitude, arrayLongitude, auxArrayLongitude,meio+1,fim);
-            intercarlaStrings(arrayName, auxArrayName, arrayPrice, auxArrayPrice, arrayId, auxArrayId, arrayHostId, auxArrayHostId, arrayMinimumNights, auxArrayMinimumNights, arrayNumberOfReviews, auxArrayNumberOfReviews, arrayCalculatedHostListingsCount, auxArrayCalculatedHostListingsCount, arrayAvailability365, auxArrayAvailability365, arrayHostName, auxArrayHostName, arrayNeighbourhoodGroup, auxArrayNeighbourhoodGroup, arrayNeighbourhood, auxArrayNeighbourhood, arrayRoomType, auxArrayRoomType, arrayLastReview, auxArrayLastReview, arrayLatitude, auxArrayLatitude, arrayLongitude, auxArrayLongitude,ini,meio,fim);
+            mergeSortCrescent_Names(arrayName, auxArrayName, arrayPrice, auxArrayPrice, arrayId, auxArrayId, arrayHostId, auxArrayHostId, arrayMinimumNights, auxArrayMinimumNights, arrayNumberOfReviews, auxArrayNumberOfReviews, arrayCalculatedHostListingsCount, auxArrayCalculatedHostListingsCount, arrayAvailability365, auxArrayAvailability365, arrayHostName, auxArrayHostName, arrayNeighbourhoodGroup, auxArrayNeighbourhoodGroup, arrayNeighbourhood, auxArrayNeighbourhood, arrayRoomType, auxArrayRoomType, arrayLastReview, auxArrayLastReview, arrayLatitude, auxArrayLatitude, arrayLongitude, auxArrayLongitude, arrayReviewsPerMonth, auxArrayReviewsPerMonth, ini,meio);
+            mergeSortCrescent_Names(arrayName, auxArrayName, arrayPrice, auxArrayPrice, arrayId, auxArrayId, arrayHostId, auxArrayHostId, arrayMinimumNights, auxArrayMinimumNights, arrayNumberOfReviews, auxArrayNumberOfReviews, arrayCalculatedHostListingsCount, auxArrayCalculatedHostListingsCount, arrayAvailability365, auxArrayAvailability365, arrayHostName, auxArrayHostName, arrayNeighbourhoodGroup, auxArrayNeighbourhoodGroup, arrayNeighbourhood, auxArrayNeighbourhood, arrayRoomType, auxArrayRoomType, arrayLastReview, auxArrayLastReview, arrayLatitude, auxArrayLatitude, arrayLongitude, auxArrayLongitude, arrayReviewsPerMonth, auxArrayReviewsPerMonth, meio+1,fim);
+
+            intercarlaStrings(arrayName, auxArrayName, arrayPrice, auxArrayPrice, arrayId, auxArrayId, arrayHostId, auxArrayHostId, arrayMinimumNights, auxArrayMinimumNights, arrayNumberOfReviews, auxArrayNumberOfReviews, arrayCalculatedHostListingsCount, auxArrayCalculatedHostListingsCount, arrayAvailability365, auxArrayAvailability365, arrayHostName, auxArrayHostName, arrayNeighbourhoodGroup, auxArrayNeighbourhoodGroup, arrayNeighbourhood, auxArrayNeighbourhood, arrayRoomType, auxArrayRoomType, arrayLastReview, auxArrayLastReview, arrayLatitude, auxArrayLatitude, arrayLongitude, auxArrayLongitude, arrayReviewsPerMonth, auxArrayReviewsPerMonth, ini,meio,fim);
 
         }
     }
     public static void intercarlaStrings(String[] arrayName, String[] auxArrayName, Integer[] arrayPrice, Integer[] auxArrayPrice, Integer[] arrayId, Integer[] auxArrayId, Integer[] arrayHostId, Integer[] auxArrayHostId, Integer[] arrayMinimumNights, Integer[] auxArrayMinimumNights, Integer[] arrayNumberOfReviews, Integer[] auxArrayNumberOfReviews, Integer[] arrayCalculatedHostListingsCount, Integer[] auxArrayCalculatedHostListingsCount, Integer[] arrayAvailability365 , Integer[] auxArrayAvailability365 ,
-                                         String[] arrayHostName, String[] auxArrayHostName, String[] arrayNeighbourhoodGroup, String[] auxArrayNeighbourhoodGroup, String[] arrayNeighbourhood, String[] auxArrayNeighbourhood, String[] arrayRoomType, String[] auxArrayRoomType, String[] arrayLastReview, String[] auxArrayLastReview, Double[] arrayLatitude, Double[] auxArrayLatitude, Double[] arrayLongitude, Double[] auxArrayLongitude, int ini, int meio, int fim) {
+                                         String[] arrayHostName, String[] auxArrayHostName, String[] arrayNeighbourhoodGroup, String[] auxArrayNeighbourhoodGroup, String[] arrayNeighbourhood, String[] auxArrayNeighbourhood, String[] arrayRoomType, String[] auxArrayRoomType, String[] arrayLastReview, String[] auxArrayLastReview, Double[] arrayLatitude, Double[] auxArrayLatitude, Double[] arrayLongitude, Double[] auxArrayLongitude, Double[] arrayReviewsPerMonth, Double[] auxArrayReviewsPerMonth, int ini, int meio, int fim) {
 
         for(int k=ini;k<=fim;k++) {
             auxArrayName[k]=arrayName[k];
@@ -155,6 +156,7 @@ public class MergeSort {
             auxArrayLastReview[k]=arrayLastReview[k];
             auxArrayLatitude[k]=arrayLatitude[k];
             auxArrayLongitude[k]=arrayLongitude[k];
+            auxArrayReviewsPerMonth[k]=arrayReviewsPerMonth[k];
 
         }
 
@@ -178,6 +180,7 @@ public class MergeSort {
                 arrayLastReview[k]=auxArrayLastReview[j];
                 arrayLatitude[k]=auxArrayLatitude[j];
                 arrayLongitude[k]=auxArrayLongitude[j];
+                arrayReviewsPerMonth[k]=auxArrayReviewsPerMonth[j];
                 j++;
             }
             else if(j>fim) {
@@ -196,6 +199,7 @@ public class MergeSort {
                 arrayLastReview[k]=auxArrayLastReview[i];
                 arrayLatitude[k]=auxArrayLatitude[i];
                 arrayLongitude[k]=auxArrayLongitude[i];
+                arrayReviewsPerMonth[k]=auxArrayReviewsPerMonth[i];
                 i++;
             }
             else if(auxArrayName[i].compareTo(auxArrayName[j])<0) {
@@ -214,6 +218,7 @@ public class MergeSort {
                 arrayLastReview[k]=auxArrayLastReview[i];
                 arrayLatitude[k]=auxArrayLatitude[i];
                 arrayLongitude[k]=auxArrayLongitude[i];
+                arrayReviewsPerMonth[k]=auxArrayReviewsPerMonth[i];
                 i++;
             }
             else {
@@ -232,6 +237,7 @@ public class MergeSort {
                 arrayLastReview[k]=auxArrayLastReview[j];
                 arrayLatitude[k]=auxArrayLatitude[j];
                 arrayLongitude[k]=auxArrayLongitude[j];
+                arrayReviewsPerMonth[k]=auxArrayReviewsPerMonth[j];
                 j++;
             }
         }
