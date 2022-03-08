@@ -32,6 +32,7 @@ public class TestaConjuntoDinamico {
 	
 	@Test
 	public void inserirTeste() {
+
 		Assert.assertEquals(0, cd.tamanho());
 		cd.inserir(9);
 		Assert.assertEquals(1, cd.tamanho());

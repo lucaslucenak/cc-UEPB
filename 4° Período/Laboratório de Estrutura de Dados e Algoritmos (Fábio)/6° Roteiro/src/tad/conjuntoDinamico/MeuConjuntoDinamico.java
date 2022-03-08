@@ -1,11 +1,13 @@
 package tad.conjuntoDinamico;
 
-public class MeuConjuntoDinamico implements ConjuntoDinamicoIF<Integer>{
+import tad.pilha.MinhaPilha;
 
+public class MeuConjuntoDinamico implements ConjuntoDinamicoIF<Integer>{
+	MinhaPilha pilha = new MinhaPilha(10);
 	@Override
 	public void inserir(Integer item) {
 		throw new UnsupportedOperationException("Implementar");
-		
+		pilha.empilhar(item);
 	}
 
 	@Override
