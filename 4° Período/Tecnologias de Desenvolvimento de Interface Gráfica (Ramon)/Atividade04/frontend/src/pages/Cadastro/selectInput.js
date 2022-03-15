@@ -1,8 +1,7 @@
-import React from "react";
 import { useField } from "formik";
 import Select from "react-select";
 
-function EstadoSelect({ label, ...props }) {
+function SelectInput({ label, ...props }) {
   const [field, meta, { setValue, setTouched }] = useField(props);
   const options = props.children.map((option) => ({
     value: option.props.value,
@@ -14,8 +13,8 @@ function EstadoSelect({ label, ...props }) {
   };
 
   return (
-    <div >
-      <label htmlFor={props.id || props.name}>
+    <div className="mb-3">
+      <label htmlFor={props.id || props.name} className="form-label">
         {label}
       </label>
       <Select
@@ -24,8 +23,10 @@ function EstadoSelect({ label, ...props }) {
         onChange={onChange}
         onBlur={setTouched}
       />
-
+      {meta.touched && meta.error ? (
+        null
+      ) : null}
     </div>
   );
 }
-export default EstadoSelect;
+export default SelectInput;
