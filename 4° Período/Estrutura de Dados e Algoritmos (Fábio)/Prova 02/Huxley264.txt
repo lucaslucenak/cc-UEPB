@@ -1,0 +1,92 @@
+import java.io.*;
+import java.util.*;
+
+public class HuxleyCode {
+
+    public static void main(String[] args) {
+        Scanner leitor = new Scanner(System.in);
+        String entrada = leitor.nextLine();
+        ListaEncadeada lista = new ListaEncadeada();
+        String[] listaSplit = entrada.split(" ");
+
+        for (String s : listaSplit) {
+            lista.add(s);
+        }
+        lista.invertList();
+
+        String elementos = lista.returnElements();
+        System.out.println(elementos);
+    }
+}
+
+
+class ListaEncadeada {
+
+    public static No inicio = null;
+    public No fim = null;
+    public int count = 0;
+
+    public void add(String elemento) {
+        if(count == 0) {
+            addInicio(elemento);
+        } else {
+            No no = new No();
+            no.setElement(elemento);
+            no.proximo = null;
+            fim.proximo= no;
+            fim = no;
+            count++;
+        }
+    }
+
+    public void addInicio(String elemento) {
+        No no = new No();
+        no.elemento = elemento;
+        no.proximo = inicio;
+        inicio = no;
+        if(count == 0) {
+            fim = inicio;
+        }
+        count++;
+    }
+
+
+    public void invertList() {
+        No atual = inicio;
+        No ant = null;
+        No proximo = null;
+        while (atual != null) {
+            proximo = atual.proximo;
+            atual.proximo = ant;
+            ant = atual;
+            atual = proximo;
+        }
+        inicio = ant;
+    }
+
+    String returnElements() {
+        StringBuilder elementos = new StringBuilder("");
+
+        No atual = inicio;
+
+        while (atual.proximo != null) {
+            elementos.append(atual.elemento);
+            elementos.append(" ");
+            atual = atual.proximo;
+        }
+
+        elementos.append(atual.elemento);
+
+        return elementos.toString();
+    }
+}
+
+class No {
+
+    String elemento;
+    No proximo;
+
+    public void setElement(String elemento) {
+        this.elemento = elemento;
+    }
+}
