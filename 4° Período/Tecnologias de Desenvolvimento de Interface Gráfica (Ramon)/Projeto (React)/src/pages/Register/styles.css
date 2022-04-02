@@ -1,0 +1,18 @@
+#cardRegister{
+    height: 580px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    color: whitesmoke;
+    font-weight: bold;
+    }
+
+.labelRegister {
+    color: rgb(0, 0, 0);
+}
+
+.marginRegister {
+    margin-top: 100px;
+}

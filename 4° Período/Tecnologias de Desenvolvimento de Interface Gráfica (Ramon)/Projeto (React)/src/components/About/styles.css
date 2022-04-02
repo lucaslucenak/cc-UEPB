@@ -1,0 +1,17 @@
+.about {
+    color: #fff;
+    font-weight: bold;
+    padding: 50px;
+}
+
+.redes {
+    display: flex;
+}
+
+a {
+   color: #fff;
+}
+
+.image {
+    margin-top: -14px;
+}

@@ -1,0 +1,18 @@
+#cardRegisterProject {
+    height: 280px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    color: whitesmoke;
+    font-weight: bold;
+    }
+
+.label {
+    color: rgb(0, 0, 0);
+}
+
+.margin {
+    margin-top: 100px
+}
