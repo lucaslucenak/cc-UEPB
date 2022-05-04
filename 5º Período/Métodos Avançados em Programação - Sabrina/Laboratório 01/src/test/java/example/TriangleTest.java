@@ -6,69 +6,6 @@ import org.junit.jupiter.api.Test;
 public class TriangleTest {
 
     @Test
-    public void ShouldThrowExceptionWhenAllSidesAreZero() {
-        TriangleException exception = Assertions.assertThrows(TriangleException.class, () -> {
-            Triangle triangle = new Triangle(0, 0, 0);
-        });
-
-        Assertions.assertNull(exception.getMessage());
-    }
-
-    @Test
-    public void ShouldThrowExceptionWhenSide1IsZero() {
-        TriangleException exception = Assertions.assertThrows(TriangleException.class, () -> {
-            Triangle triangle = new Triangle(0, 5, 5);
-        });
-
-        Assertions.assertNull(exception.getMessage());
-    }
-
-    @Test
-    public void ShouldThrowExceptionWhenSide2IsZero() {
-        TriangleException exception = Assertions.assertThrows(TriangleException.class, () -> {
-            Triangle triangle = new Triangle(5, 0, 5);
-        });
-
-        Assertions.assertNull(exception.getMessage());
-    }
-
-    @Test
-    public void ShouldThrowExceptionWhenSide3IsZero() {
-        TriangleException exception = Assertions.assertThrows(TriangleException.class, () -> {
-            Triangle triangle = new Triangle(5, 5, 0);
-        });
-
-        Assertions.assertNull(exception.getMessage());
-    }
-
-    @Test
-    public void ShouldThrowExceptionWhenSide1And3AreZero() {
-        TriangleException exception = Assertions.assertThrows(TriangleException.class, () -> {
-            Triangle triangle = new Triangle(0, 5, 0);
-        });
-
-        Assertions.assertNull(exception.getMessage());
-    }
-
-    @Test
-    public void ShouldThrowExceptionWhenSide1And2AreZero() {
-        TriangleException exception = Assertions.assertThrows(TriangleException.class, () -> {
-            Triangle triangle = new Triangle(0, 0, 5);
-        });
-
-        Assertions.assertNull(exception.getMessage());
-    }
-
-    @Test
-    public void ShouldThrowExceptionWhenSide3And2AreZero() {
-        TriangleException exception = Assertions.assertThrows(TriangleException.class, () -> {
-            Triangle triangle = new Triangle(5, 0, 0);
-        });
-
-        Assertions.assertNull(exception.getMessage());
-    }
-
-    @Test
     public void ShouldReturnEQUILATERALWhenAllSidesAreEqual() throws Exception {
         Triangle triangle = new Triangle(5, 5, 5);
 
@@ -87,5 +24,117 @@ public class TriangleTest {
         Triangle triangle = new Triangle(10, 11, 12);
 
         Assertions.assertEquals(TriangleKind.SCALENE, triangle.getKind());
+    }
+
+    @Test
+    public void ShouldThrowExceptionWhenAllSidesAreZero() {
+        Assertions.assertThrows(TriangleException.class, () -> {
+            Triangle triangle = new Triangle(0, 0, 0);
+        });
+    }
+
+    @Test
+    public void ShouldThrowExceptionWhenSide1IsZero() {
+        Assertions.assertThrows(TriangleException.class, () -> {
+            Triangle triangle = new Triangle(0, 5, 5);
+        });
+    }
+
+    @Test
+    public void ShouldThrowExceptionWhenSide2IsZero() {
+        Assertions.assertThrows(TriangleException.class, () -> {
+            Triangle triangle = new Triangle(5, 0, 5);
+        });
+    }
+
+    @Test
+    public void ShouldThrowExceptionWhenSide3IsZero() {
+        Assertions.assertThrows(TriangleException.class, () -> {
+            Triangle triangle = new Triangle(5, 5, 0);
+        });
+    }
+
+    @Test
+    public void ShouldThrowExceptionWhenSide1And3AreZero() {
+        Assertions.assertThrows(TriangleException.class, () -> {
+            Triangle triangle = new Triangle(0, 5, 0);
+        });
+    }
+
+    @Test
+    public void ShouldThrowExceptionWhenSide1And2AreZero() {
+        Assertions.assertThrows(TriangleException.class, () -> {
+            Triangle triangle = new Triangle(0, 0, 5);
+        });
+    }
+
+    @Test
+    public void ShouldThrowExceptionWhenSide3And2AreZero() {
+        Assertions.assertThrows(TriangleException.class, () -> {
+            Triangle triangle = new Triangle(5, 0, 0);
+        });
+    }
+
+    @Test
+    public void ShouldThrowExceptionWhenAllSidesAreNegative() {
+        Assertions.assertThrows(TriangleException.class, () -> {
+            Triangle triangle = new Triangle(-5, -5, -5);
+        });
+    }
+
+    @Test
+    public void ShouldThrowExceptionWhenSide1IsNegative() {
+        Assertions.assertThrows(TriangleException.class, () -> {
+            Triangle triangle = new Triangle(-5, 0, 0);
+        });
+    }
+
+    @Test
+    public void ShouldThrowExceptionWhenSide2IsNegative() {
+        Assertions.assertThrows(TriangleException.class, () -> {
+            Triangle triangle = new Triangle(0, -5, 0);
+        });
+    }
+
+    @Test
+    public void ShouldThrowExceptionWhenSide3IsNegative() {
+        Assertions.assertThrows(TriangleException.class, () -> {
+            Triangle triangle = new Triangle(0, 0, -5);
+        });
+    }
+
+    @Test
+    public void ShouldThrowExceptionWhenSide1And2AreNegative() {
+        Assertions.assertThrows(TriangleException.class, () -> {
+            Triangle triangle = new Triangle(-5, -5, 0);
+        });
+    }
+
+    @Test
+    public void ShouldThrowExceptionWhenSide1And3AreNegative() {
+        Assertions.assertThrows(TriangleException.class, () -> {
+            Triangle triangle = new Triangle(-5, 0, -5);
+        });
+    }
+
+    @Test
+    public void ShouldThrowExceptionWhenSide3And2AreNegative() {
+        Assertions.assertThrows(TriangleException.class, () -> {
+            Triangle triangle = new Triangle(0, -5, -5);
+        });
+    }
+
+    @Test
+    public void ShouldThrowExceptionWhenSide1PlusSide2IsMinorToSide3() {
+        Assertions.assertThrows(TriangleException.class, () -> {
+            Triangle triangle = new Triangle(3, 2, 6);
+        });
+    }
+
+    @Test
+    public void ShouldThrowExceptionWhenSide1PlusSide2IsEqualToSide3() {
+        Assertions.assertThrows(TriangleException.class, () -> {
+            Triangle triangle = new Triangle(3, 2, 5);
+        });
     }
 }
