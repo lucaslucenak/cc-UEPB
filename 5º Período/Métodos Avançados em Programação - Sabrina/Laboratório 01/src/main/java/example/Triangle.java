@@ -32,7 +32,7 @@ public class Triangle {
         return TriangleKind.SCALENE;
     }
 
-    public boolean allSidesAreZero() {
+    private boolean allSidesAreZero() {
         return side1 == 0 && side2 == 0 && side3 == 0;
     }
 
