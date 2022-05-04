@@ -13,8 +13,22 @@ public class TriangleTest {
     }
 
     @Test
-    public void ShouldReturnISOSCELESWhenTwoSidesAreEqual() throws Exception {
+    public void ShouldReturnISOSCELESWhensSide1AndSide2AreEqual() throws Exception {
         Triangle triangle = new Triangle(10, 10, 12);
+
+        Assertions.assertEquals(TriangleKind.ISOSCELES, triangle.getKind());
+    }
+
+    @Test
+    public void ShouldReturnISOSCELESWhensSide1AndSide3AreEqual() throws Exception {
+        Triangle triangle = new Triangle(10, 12, 10);
+
+        Assertions.assertEquals(TriangleKind.ISOSCELES, triangle.getKind());
+    }
+
+    @Test
+    public void ShouldReturnISOSCELESWhensSide2AndSide3AreEqual() throws Exception {
+        Triangle triangle = new Triangle(12, 10, 10);
 
         Assertions.assertEquals(TriangleKind.ISOSCELES, triangle.getKind());
     }
@@ -54,6 +68,7 @@ public class TriangleTest {
         });
     }
 
+    //ESSE FOI A MAIS
     @Test
     public void ShouldThrowExceptionWhenSide1And3AreZero() {
         Assertions.assertThrows(TriangleException.class, () -> {
@@ -61,6 +76,7 @@ public class TriangleTest {
         });
     }
 
+    //ESSE FOI A MAIS
     @Test
     public void ShouldThrowExceptionWhenSide1And2AreZero() {
         Assertions.assertThrows(TriangleException.class, () -> {
@@ -68,6 +84,7 @@ public class TriangleTest {
         });
     }
 
+    //ESSE FOI A MAIS
     @Test
     public void ShouldThrowExceptionWhenSide3And2AreZero() {
         Assertions.assertThrows(TriangleException.class, () -> {
@@ -103,6 +120,7 @@ public class TriangleTest {
         });
     }
 
+    //ESSE FOI A MAIS
     @Test
     public void ShouldThrowExceptionWhenSide1And2AreNegative() {
         Assertions.assertThrows(TriangleException.class, () -> {
@@ -110,6 +128,7 @@ public class TriangleTest {
         });
     }
 
+    //ESSE FOI A MAIS
     @Test
     public void ShouldThrowExceptionWhenSide1And3AreNegative() {
         Assertions.assertThrows(TriangleException.class, () -> {
@@ -117,6 +136,7 @@ public class TriangleTest {
         });
     }
 
+    //ESSE FOI A MAIS
     @Test
     public void ShouldThrowExceptionWhenSide3And2AreNegative() {
         Assertions.assertThrows(TriangleException.class, () -> {
@@ -135,6 +155,34 @@ public class TriangleTest {
     public void ShouldThrowExceptionWhenSide1PlusSide2IsEqualToSide3() {
         Assertions.assertThrows(TriangleException.class, () -> {
             Triangle triangle = new Triangle(3, 2, 5);
+        });
+    }
+
+    @Test
+    public void ShouldThrowExceptionWhenSide1PlusSide3IsMinorToSide2() {
+        Assertions.assertThrows(TriangleException.class, () -> {
+            Triangle triangle = new Triangle(3, 6, 2);
+        });
+    }
+
+    @Test
+    public void ShouldThrowExceptionWhenSide1PlusSide3IsEqualToSide2() {
+        Assertions.assertThrows(TriangleException.class, () -> {
+            Triangle triangle = new Triangle(3, 5, 2);
+        });
+    }
+
+    @Test
+    public void ShouldThrowExceptionWhenSide2PlusSide3IsMinorToSide1() {
+        Assertions.assertThrows(TriangleException.class, () -> {
+            Triangle triangle = new Triangle(6, 3, 2);
+        });
+    }
+
+    @Test
+    public void ShouldThrowExceptionWhenSide2PlusSide3IsEqualToSide1() {
+        Assertions.assertThrows(TriangleException.class, () -> {
+            Triangle triangle = new Triangle(5, 3, 2);
         });
     }
 }
