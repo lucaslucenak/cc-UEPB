@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Triangle {
+
     private double side1;
     private double side2;
     private double side3;

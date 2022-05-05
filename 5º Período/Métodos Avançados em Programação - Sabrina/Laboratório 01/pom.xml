@@ -7,18 +7,6 @@
     <groupId>org.example</groupId>
     <artifactId>Laboratorio01</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>17</source>
-                    <target>17</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
     <properties>
         <maven.compiler.source>18</maven.compiler.source>
@@ -26,11 +14,14 @@
     </properties>
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.8.2</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
+
 </project>
