@@ -93,6 +93,7 @@ public class TriangleTest {
         });
     }
 
+    //ESSE FOI A MAIS
     @Test
     public void ShouldThrowExceptionWhenAllSidesAreNegative() {
         Assertions.assertThrows(TriangleException.class, () -> {
