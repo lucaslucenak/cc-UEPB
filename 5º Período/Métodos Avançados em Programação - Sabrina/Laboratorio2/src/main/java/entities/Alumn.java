@@ -1,5 +1,6 @@
 package entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Alumn {
@@ -7,16 +8,15 @@ public class Alumn {
     private Long id;
     private String name;
     private String schedule;
-    private List<Subject> subjects;
+    private List<Subject> subjects = new ArrayList<>();
 
     public Alumn() {
     }
 
-    public Alumn(Long id, String name, String schedule, List<Subject> subjects) {
+    public Alumn(Long id, String name, String schedule) {
         this.id = id;
         this.name = name;
         this.schedule = schedule;
-        this.subjects = subjects;
     }
 
     public Long getId() {
@@ -45,5 +45,10 @@ public class Alumn {
 
     public List<Subject> getSubjects() {
         return subjects;
+    }
+
+    public void addSubject(Subject subject) {
+        subjects.add(subject);
+
     }
 }
