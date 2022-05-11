@@ -5,23 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d3676c3-0502-473c-8093-4d032cbe3376" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/example/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/example/Triangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Triangle/src/example/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Triangle/src/example/Triangle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/example/TriangleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/example/TriangleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Triangle/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Triangle/.classpath" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Triangle/.project" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Triangle/.project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Triangle/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Triangle/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Triangle/.settings/org.eclipse.ltk.core.refactoring.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Triangle/.settings/org.eclipse.ltk.core.refactoring.prefs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Triangle/src/example/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Triangle/src/example/Triangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Triangle/src/example/TriangleException.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Triangle/src/example/TriangleException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Triangle/src/example/TriangleKind.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Triangle/src/example/TriangleKind.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Triangle/test/example/TriangleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Triangle/test/example/TriangleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Triangle/test/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Triangle/test/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/example/Triangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/example/Triangle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/example/TriangleException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/example/TriangleException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/example/TriangleKind.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/example/TriangleKind.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/example/TriangleTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/example/TriangleTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,6 +38,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -67,19 +57,6 @@
       <option name="PACKAGE_NAME" value="example" />
       <option name="MAIN_CLASS_NAME" value="example.TriangleTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="Laboratorio01" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Laboratorio01" />
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -111,5 +88,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
