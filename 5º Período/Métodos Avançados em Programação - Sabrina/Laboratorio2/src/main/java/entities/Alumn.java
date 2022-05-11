@@ -49,6 +49,5 @@ public class Alumn {
 
     public void addSubject(Subject subject) {
         subjects.add(subject);
-
     }
 }
