@@ -4,8 +4,8 @@ alumn: eu acho
 	exceção de matricualr uma materia de outro turno OK
 	
 subject:
-	addAlumn()
-	getAlumnsQtt()
+	addAlumn() OK
+	getAlumnsQtt() OK
 
 
 teacher:
