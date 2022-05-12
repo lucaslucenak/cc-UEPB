@@ -1,6 +1,8 @@
 package entities;
 
 import enumns.ScheduleEnum;
+import exceptions.SchedulesDoesntMatchException;
+import exceptions.SubjectNotOfferedException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,6 +76,12 @@ public class Subject {
     }
 
     public void addAlumn(Alumn alumn) {
+        if (!getOffered()) {
+            throw new SubjectNotOfferedException("Materia nao ofertada.");
+        }
+        if (getSchedule() != alumn.getSchedule() && alumn.getSchedule() != ScheduleEnum.INTEGRAL){
+            throw new SchedulesDoesntMatchException("Matéria de outro turno.");
+        }
         alumns.add(alumn);
     }
 }
