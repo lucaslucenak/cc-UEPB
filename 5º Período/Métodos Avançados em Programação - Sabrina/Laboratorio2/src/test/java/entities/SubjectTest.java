@@ -65,31 +65,29 @@ public class SubjectTest {
         Assertions.assertEquals(alumn.getSchedule(), subject.getAlumns().get(0).getSchedule());
     }
 
-//    @Test
-//    public void shouldThrowSchedulesDoesntMatchExceptionWhenAlumnScheduleIsDIURNOAndSubjectScheduleIsNOTURNO() {
-//        subject.setSchedule(ScheduleEnum.NOTURNO);
-//        alumn.setSchedule(ScheduleEnum.DIURNO);
-//        Assertions.assertThrows(SchedulesDoesntMatchException.class, () -> {
-//            alumn.addSubject(subject);
-//        });
-//    }
-//
-//    @Test
-//    public void shouldThrowSchedulesDoesntMatchExceptionWhenAlumnScheduleIsNOTURNOAndSubjectScheduleIsDIURNO() {
-//        subject.setSchedule(ScheduleEnum.DIURNO);
-//        alumn.setSchedule(ScheduleEnum.NOTURNO);
-//        Assertions.assertThrows(SchedulesDoesntMatchException.class, () -> {
-//            alumn.addSubject(subject);
-//        });
-//    }
-//
-//    @Test
-//    public void shouldThrowSubjectNotOfferedExceptionWhenSubjectIsntOffered() {
-//        subject.setOffered(false);
-//        Assertions.assertThrows(SubjectNotOfferedException.class, () -> {
-//            alumn.addSubject(subject);
-//        });
-//    }
+    @Test
+    public void shouldThrowSchedulesDoesntMatchExceptionWhenSubjectScheduleIsDIURNOAndAlumnScheduleIsNOTURNO() {
+        subject.setSchedule(ScheduleEnum.DIURNO);
+        alumn.setSchedule(ScheduleEnum.NOTURNO);
+        Assertions.assertThrows(SchedulesDoesntMatchException.class, () -> {
+            subject.addAlumn(alumn);
+        });
+    }
 
+    @Test
+    public void shouldThrowSchedulesDoesntMatchExceptionWhenSubjectScheduleIsNOTURNOAndAlumnScheduleIsDIURNO() {
+        subject.setSchedule(ScheduleEnum.NOTURNO);
+        alumn.setSchedule(ScheduleEnum.DIURNO);
+        Assertions.assertThrows(SchedulesDoesntMatchException.class, () -> {
+            subject.addAlumn(alumn);
+        });
+    }
 
+    @Test
+    public void shouldThrowSubjectNotOfferedExceptionWhenSubjectIsntOffered() {
+        subject.setOffered(false);
+        Assertions.assertThrows(SubjectNotOfferedException.class, () -> {
+            subject.addAlumn(alumn);
+        });
+    }
 }

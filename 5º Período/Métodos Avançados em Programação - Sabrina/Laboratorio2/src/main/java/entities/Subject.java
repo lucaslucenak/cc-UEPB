@@ -76,8 +76,6 @@ public class Subject {
     }
 
     public void addAlumn(Alumn alumn) {
-        //subject integral
-        //aluno noturno
         if (!getOffered()) {
             throw new SubjectNotOfferedException("Materia nao ofertada.");
         }
