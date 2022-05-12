@@ -76,10 +76,13 @@ public class Subject {
     }
 
     public void addAlumn(Alumn alumn) {
+        //subject integral
+        //aluno noturno
         if (!getOffered()) {
             throw new SubjectNotOfferedException("Materia nao ofertada.");
         }
-        if (getSchedule() != alumn.getSchedule() && alumn.getSchedule() != ScheduleEnum.INTEGRAL){
+
+        if (getSchedule() != alumn.getSchedule() && getSchedule() != ScheduleEnum.INTEGRAL) {
             throw new SchedulesDoesntMatchException("Matéria de outro turno.");
         }
         alumns.add(alumn);

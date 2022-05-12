@@ -47,23 +47,23 @@ public class SubjectTest {
         Assertions.assertEquals(alumn.getSchedule(), subject.getAlumns().get(0).getSchedule());
     }
 
-//    @Test
-//    public void shouldAddNOTURNOAlumnWhenSubjectScheduleIsINTEGRAL() {
-//        subject.setSchedule(ScheduleEnum.INTEGRAL);
-//        alumn.setSchedule(ScheduleEnum.NOTURNO);
-//        subject.addAlumn(alumn);
-//        Assertions.assertEquals(alumn, subject.getAlumns().get(0));
-//        Assertions.assertEquals(alumn.getSchedule(), subject.getAlumns().get(0).getSchedule());
-//    }
-//
-//    @Test
-//    public void shouldAddDIURNOAlumnWhenSubjectScheduleIsINTEGRAL() {
-//        subject.setSchedule(ScheduleEnum.INTEGRAL);
-//        alumn.setSchedule(ScheduleEnum.DIURNO);
-//        subject.addAlumn(alumn);
-//        Assertions.assertEquals(alumn, subject.getAlumns().get(0));
-//        Assertions.assertEquals(alumn.getSchedule(), subject.getAlumns().get(0).getSchedule());
-//    }
+    @Test
+    public void shouldAddNOTURNOAlumnWhenSubjectScheduleIsINTEGRAL() {
+        subject.setSchedule(ScheduleEnum.INTEGRAL);
+        alumn.setSchedule(ScheduleEnum.NOTURNO);
+        subject.addAlumn(alumn);
+        Assertions.assertEquals(alumn, subject.getAlumns().get(0));
+        Assertions.assertEquals(alumn.getSchedule(), subject.getAlumns().get(0).getSchedule());
+    }
+
+    @Test
+    public void shouldAddDIURNOAlumnWhenSubjectScheduleIsINTEGRAL() {
+        subject.setSchedule(ScheduleEnum.INTEGRAL);
+        alumn.setSchedule(ScheduleEnum.DIURNO);
+        subject.addAlumn(alumn);
+        Assertions.assertEquals(alumn, subject.getAlumns().get(0));
+        Assertions.assertEquals(alumn.getSchedule(), subject.getAlumns().get(0).getSchedule());
+    }
 
 //    @Test
 //    public void shouldThrowSchedulesDoesntMatchExceptionWhenAlumnScheduleIsDIURNOAndSubjectScheduleIsNOTURNO() {
