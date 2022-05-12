@@ -5,7 +5,7 @@ alumn: eu acho
 	
 subject:
 	addAlumn()
-	addAlumnsQtt()
+	getAlumnsQtt()
 
 
 teacher:

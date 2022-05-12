@@ -13,6 +13,14 @@ public class SubjectTest {
     private Subject subject = new Subject(1L, "Matemática", teacher, ScheduleEnum.INTEGRAL, true);
 
     @Test
+    public void shouldReturnSubjectAlumnQuantity() {
+        Alumn alumn1 = new Alumn(1L, "Daniel", ScheduleEnum.INTEGRAL);
+        subject.addAlumn(alumn);
+        subject.addAlumn(alumn1);
+        Assertions.assertEquals(2, subject.getAlumnsQtt());
+    }
+
+    @Test
     public void shouldAddAlumn() {
         alumn.addSubject(subject);
         Assertions.assertEquals(subject, alumn.getSubjects().get(0));
