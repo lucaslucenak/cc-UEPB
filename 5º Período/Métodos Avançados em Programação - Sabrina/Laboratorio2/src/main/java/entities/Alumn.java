@@ -1,5 +1,8 @@
 package entities;
 
+import enumns.ScheduleEnum;
+import exceptions.SubjectNotOfferedException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,13 +10,13 @@ public class Alumn {
 
     private Long id;
     private String name;
-    private String schedule;
+    private ScheduleEnum schedule;
     private List<Subject> subjects = new ArrayList<>();
 
     public Alumn() {
     }
 
-    public Alumn(Long id, String name, String schedule) {
+    public Alumn(Long id, String name, ScheduleEnum schedule) {
         this.id = id;
         this.name = name;
         this.schedule = schedule;
@@ -35,11 +38,11 @@ public class Alumn {
         this.name = name;
     }
 
-    public String getSchedule() {
+    public ScheduleEnum getSchedule() {
         return schedule;
     }
 
-    public void setSchedule(String schedule) {
+    public void setSchedule(ScheduleEnum schedule) {
         this.schedule = schedule;
     }
 
@@ -48,6 +51,13 @@ public class Alumn {
     }
 
     public void addSubject(Subject subject) {
+        if (!subject.getOffered()) {
+            throw new SubjectNotOfferedException("Materia nao ofertada.");
+        }
+        if (getSchedule() != subject.getSchedule()){
+            throw new SubjectNotOfferedException("Materia nao " +
+                    ",3030.");
+        }
         subjects.add(subject);
     }
 }

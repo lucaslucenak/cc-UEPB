@@ -1,6 +1,7 @@
 import entities.Alumn;
 import entities.Subject;
 import entities.Teacher;
+import enumns.ScheduleEnum;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,12 +11,12 @@ public class Application {
 
         Teacher teacher = new Teacher(1L, "Sabrina", "Integral");
 
-        Alumn lucas = new Alumn(1L, "Lucas", "Integral");
-        Alumn daniel = new Alumn(2L, "Daniel", "Integral");
+        Alumn lucas = new Alumn(1L, "Lucas", ScheduleEnum.INTEGRAL);
+        Alumn daniel = new Alumn(2L, "Daniel", ScheduleEnum.NOTURNO);
 
-        Subject math = new Subject(1L, "Matemática", teacher, "Diurno", true);
-        Subject science = new Subject(2L, "Ciência", teacher, "Noturno", true);
-        Subject history = new Subject(3L, "História", teacher, "Diurno", true);
+        Subject math = new Subject(1L, "Matemática", teacher, ScheduleEnum.INTEGRAL, true);
+        Subject science = new Subject(2L, "Ciência", teacher, ScheduleEnum.NOTURNO, true);
+        Subject history = new Subject(3L, "História", teacher, ScheduleEnum.DIURNO, true);
 
         teacher.addSubject(math);
         teacher.addSubject(science);
