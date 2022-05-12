@@ -1,5 +1,7 @@
 package entities;
 
+import enumns.ScheduleEnum;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,13 +9,13 @@ public class Teacher {
 
     private Long id;
     private String name;
-    private String schedule;
+    private ScheduleEnum schedule;
     private List<Subject> subjects = new ArrayList<>();
 
     public Teacher() {
     }
 
-    public Teacher(Long id, String name, String schedule) {
+    public Teacher(Long id, String name, ScheduleEnum schedule) {
         this.id = id;
         this.name = name;
         this.schedule = schedule;
@@ -35,11 +37,11 @@ public class Teacher {
         this.name = name;
     }
 
-    public String getSchedule() {
+    public ScheduleEnum getSchedule() {
         return schedule;
     }
 
-    public void setSchedule(String schedule) {
+    public void setSchedule(ScheduleEnum schedule) {
         this.schedule = schedule;
     }
 

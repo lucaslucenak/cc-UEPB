@@ -9,10 +9,10 @@ import java.util.List;
 public class Application {
     public static void main(String[] args) {
 
-        Teacher teacher = new Teacher(1L, "Sabrina", "Integral");
+        Teacher teacher = new Teacher(1L, "Sabrina", ScheduleEnum.INTEGRAL);
 
         Alumn lucas = new Alumn(1L, "Lucas", ScheduleEnum.INTEGRAL);
-        Alumn daniel = new Alumn(2L, "Daniel", ScheduleEnum.NOTURNO);
+        Alumn daniel = new Alumn(2L, "Daniel", ScheduleEnum.INTEGRAL);
 
         Subject math = new Subject(1L, "Matemática", teacher, ScheduleEnum.INTEGRAL, true);
         Subject science = new Subject(2L, "Ciência", teacher, ScheduleEnum.NOTURNO, true);
