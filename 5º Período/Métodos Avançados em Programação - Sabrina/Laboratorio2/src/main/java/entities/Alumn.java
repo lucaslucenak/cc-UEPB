@@ -2,6 +2,7 @@ package entities;
 
 import enumns.ScheduleEnum;
 import exceptions.SubjectNotOfferedException;
+import exceptions.DifferentShedule;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,8 +56,7 @@ public class Alumn {
             throw new SubjectNotOfferedException("Materia nao ofertada.");
         }
         if (getSchedule() != subject.getSchedule()){
-            throw new SubjectNotOfferedException("Materia nao " +
-                    ",3030.");
+            throw new DifferentShedule("Aluno matriculado em outro turno.");
         }
         subjects.add(subject);
     }
