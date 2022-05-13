@@ -12,14 +12,6 @@ public class TeacherTest {
     private Alumn alumn = new Alumn(1L, "Lucas", ScheduleEnum.INTEGRAL);
     private Subject subject = new Subject(1L, "Matemática", teacher, ScheduleEnum.INTEGRAL, true);
 
-
-//    @Test
-//    public void shouldAddSubjectIfSchedulesMatches() {
-//        teacher.addSubject(subject);
-//        Assertions.assertEquals(subject, teacher.getSubjects().get(0));
-//        Assertions.assertEquals(1, teacher.getSubjects().size());
-//    }
-
     @Test
     public void shouldAddSubject() {
         teacher.addSubject(subject);

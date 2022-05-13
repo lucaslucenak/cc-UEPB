@@ -38,18 +38,25 @@ public class Application {
         for(Subject subject : teacher.getSubjects()) {
             System.out.println("Professor(a): " + subject.getTeacher().getName() + " | Matéria: "+ subject.getName());
         }
+
         System.out.println("b. Qual o horário de um professor:");
-        System.out.println(teacher.getSchedule());
+        System.out.println("Professora: " + teacher.getName() + " | Horário: " + teacher.getSchedule());
+
         System.out.println("c. Quais os alunos de uma dada disciplina:");
+        System.out.println(science.getName());
         for(Alumn alumn : science.getAlumns()) {
             System.out.println(alumn.getName());
         }
+
         System.out.println("d. Quais as disciplinas de um aluno:");
+        System.out.println(lucas.getName());
         for(Subject subject : lucas.getSubjects()) {
             System.out.println(subject.getName());
         }
+
         System.out.println("e. Qual o horário de um aluno:");
         System.out.println("Aluno: " + daniel.getName() + " | Horário: " + daniel.getSchedule());
+
         System.out.println("f. Qual o número de alunos de uma disciplina:");
         System.out.println("Matemática tem " + math.getAlumnsQtt() + " alunos");
     }

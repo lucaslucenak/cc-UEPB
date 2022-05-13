@@ -9,9 +9,9 @@ subject:
 
 
 teacher:
-	addSubject()
+	addSubject() OK
 	Turno que não existe
 	Matéria ...
-	adicionar materia que nao se refere ao seu turno (abrir exceção para caso seja integral) -
+	adicionar materia que nao se refere ao seu turno (abrir exceção para caso seja integral) - OK
 
 * Testar se vai colocar algum atributo em branco em trodas as classes
