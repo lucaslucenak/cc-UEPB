@@ -10,7 +10,7 @@ public class TeacherTest {
 
     private Teacher teacher = new Teacher(1L, "Sabrina", ScheduleEnum.INTEGRAL);
     private Alumn alumn = new Alumn(1L, "Lucas", ScheduleEnum.INTEGRAL);
-    private Subject subject = new Subject(1L, "Matemática", teacher, ScheduleEnum.INTEGRAL, true);
+    private Subject subject = new Subject(1L, "Matematica", teacher, ScheduleEnum.INTEGRAL, true);
 
     @Test
     public void shouldAddSubject() {

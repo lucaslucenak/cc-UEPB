@@ -10,7 +10,7 @@ public class AlumnTest {
 
     private final Teacher teacher = new Teacher(1L, "Sabrina", ScheduleEnum.INTEGRAL);
     private final Alumn alumn = new Alumn(1L, "Lucas", ScheduleEnum.INTEGRAL);
-    private final Subject subject = new Subject(1L, "Matemática", teacher, ScheduleEnum.INTEGRAL, true);
+    private final Subject subject = new Subject(1L, "Matematica", teacher, ScheduleEnum.INTEGRAL, true);
 
 
     @Test

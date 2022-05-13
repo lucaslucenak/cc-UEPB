@@ -3,9 +3,6 @@ import entities.Subject;
 import entities.Teacher;
 import enumns.ScheduleEnum;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Application {
     public static void main(String[] args) {
 
@@ -14,9 +11,9 @@ public class Application {
         Alumn lucas = new Alumn(1L, "Lucas", ScheduleEnum.INTEGRAL);
         Alumn daniel = new Alumn(2L, "Daniel", ScheduleEnum.INTEGRAL);
 
-        Subject math = new Subject(1L, "Matemática", teacher, ScheduleEnum.INTEGRAL, true);
-        Subject science = new Subject(2L, "Ciência", teacher, ScheduleEnum.NOTURNO, true);
-        Subject history = new Subject(3L, "História", teacher, ScheduleEnum.DIURNO, true);
+        Subject math = new Subject(1L, "Matematica", teacher, ScheduleEnum.INTEGRAL, true);
+        Subject science = new Subject(2L, "Ciencia", teacher, ScheduleEnum.NOTURNO, true);
+        Subject history = new Subject(3L, "Historia", teacher, ScheduleEnum.DIURNO, true);
 
         teacher.addSubject(math);
         teacher.addSubject(science);
