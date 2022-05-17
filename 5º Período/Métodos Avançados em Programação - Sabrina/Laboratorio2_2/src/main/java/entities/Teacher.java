@@ -25,4 +25,8 @@ public class Teacher extends People {
 
     public Teacher() {
     }
+
+    public void addSubject(Subject subject) {
+        subjects.add(subject);
+    }
 }
