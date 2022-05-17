@@ -1,5 +1,5 @@
 package enumerations;
 
-public class CourseEnum {
+public enum CourseEnum {
     Computacao
 }

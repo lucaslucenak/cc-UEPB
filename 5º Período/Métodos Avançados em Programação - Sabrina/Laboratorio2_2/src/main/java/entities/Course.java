@@ -12,15 +12,17 @@ import java.util.List;
 public class Course {
 
     private CourseEnum name;
-    private List<Student> students = new ArrayList<>();
-    private List<Subject> subjects = new ArrayList<>();
-    private List<Teacher> teachers = new ArrayList<>();
     private Coordination coordination;
+    private List<Subject> subjects = new ArrayList<>();
 
-    public Course(Coordination coordination) {
-        this.coordination = coordination;
+    public Course(CourseEnum name) {
+        this.name = name;
     }
 
     public Course() {
+    }
+
+    public void addSubject(Subject subject) {
+        subjects.add(subject);
     }
 }

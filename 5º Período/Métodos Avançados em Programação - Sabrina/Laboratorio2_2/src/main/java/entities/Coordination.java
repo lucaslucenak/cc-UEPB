@@ -12,8 +12,7 @@ public class Coordination {
     private Coordinator coordinator;
     private Course course;
 
-    public Coordination(Coordinator coordinator, Course course) {
-        this.coordinator = coordinator;
+    public Coordination( Course course) {
         this.course = course;
     }
 

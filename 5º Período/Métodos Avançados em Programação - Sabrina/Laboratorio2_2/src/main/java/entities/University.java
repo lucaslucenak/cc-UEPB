@@ -16,4 +16,15 @@ public class University {
     public University() {
     }
 
+    public void addTeacher(Teacher teacher) {
+        teachers.add(teacher);
+    }
+
+    public void addStudent(Student student) {
+        students.add(student);
+    }
+
+    public void addCourse(Course course) {
+        courses.add(course);
+    }
 }
