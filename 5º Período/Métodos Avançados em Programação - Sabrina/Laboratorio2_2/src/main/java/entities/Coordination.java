@@ -19,7 +19,7 @@ public class Coordination {
     public Coordination() {
     }
 
-    public int getAlumnsQtt(Subject subject) {
+    public int getStudentsQtt(Subject subject) {
         return subject.getStudents().size();
     }
 

@@ -61,7 +61,7 @@ public class Laboratorio2Application {
         System.out.println("Aluno: " + lucas.getName() + " | Horário: " + lucas.getSchedule());
 
         System.out.println("\nf. Qual o número de alunos de uma disciplina:");
-        System.out.println("Aluno: " + calculo.getName() + " | Quantidade de alunos: " + coordinationComputacao.getAlumnsQtt(calculo));
+        System.out.println("Aluno: " + calculo.getName() + " | Quantidade de alunos: " + coordinationComputacao.getStudentsQtt(calculo));
 
     }
 }
