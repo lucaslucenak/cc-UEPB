@@ -31,6 +31,7 @@ public class Student extends People {
     public Student() {
     }
 
+
 //    public void addNewRdm(ScheduleEnum schedule) {
 //        setRdm(new Rdm(schedule));
 //    }

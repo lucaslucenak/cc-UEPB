@@ -27,6 +27,12 @@ public class Subject {
         this.teacher = teacher;
     }
 
+    public Subject(SubjectEnum name, ScheduleEnum schedule, Boolean isOffered) {
+        this.name = name;
+        this.schedule = schedule;
+        this.isOffered = isOffered;
+    }
+
     public Subject() {
     }
 

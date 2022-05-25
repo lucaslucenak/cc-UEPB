@@ -2,6 +2,7 @@ package com.map.labdois.entities;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import com.map.labdois.enums.ScheduleEnum;
@@ -36,5 +37,6 @@ public class University {
 
     public void addNewSubject(SubjectEnum name, ScheduleEnum schedule, Boolean isOffered, Teacher teacher) {
         subjects.add(new Subject(name, schedule, isOffered, teacher));
+        teacher.addSubject(subjects.stream().filter(subject -> subject.getName() == name).collect(Collectors.toList()).get(0));
     }
 }

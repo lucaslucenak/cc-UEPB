@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Objects;
 import java.util.concurrent.Callable;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @SpringBootApplication
@@ -26,7 +27,6 @@ public class LabdoisApplication {
 		UEPB.addNewTeacher("Sabrina", 25, "sabrina@uepb.com", "83987654321", ScheduleEnum.INTEGRAL);
 //		CA.addTeacherIntoUniversity(sabrina, UEPB);
 
-
 //		Student daniel = new Student("Daniel", 21, "daniel@uepb.com", "83912341234", 10.0, ScheduleEnum.INTEGRAL);
 		UEPB.addNewStudent("Daniel", 21, "daniel@uepb.com", "83912341234", 10.0, ScheduleEnum.INTEGRAL);
 //		UEPB.getCA().addStudentIntoUniversity(daniel, UEPB);
@@ -34,29 +34,48 @@ public class LabdoisApplication {
 		UEPB.addNewStudent("Lucas", 20, "lucas@uepb.com", "83943214321", 10.0, ScheduleEnum.INTEGRAL);
 //		UEPB.getCA().addStudentIntoUniversity(lucas, UEPB);
 
+		UEPB.addNewSubject(SubjectEnum.Calculo, ScheduleEnum.INTEGRAL, true, UEPB.getTeachers().stream().filter(teacher -> Objects.equals(teacher.getName(), "Sabrina")).collect(Collectors.toList()).get(0));
+		UEPB.addNewSubject(SubjectEnum.Algoritmos, ScheduleEnum.DIURNO, true, UEPB.getTeachers().stream().filter(teacher -> Objects.equals(teacher.getName(), "Sabrina")).collect(Collectors.toList()).get(0));
 
-//		UEPB.addNewSubject(SubjectEnum.Calculo, ScheduleEnum.INTEGRAL, true, UEPB.getTeachers().stream().filter(teacher -> Objects.equals(teacher.getName(), "Sabrina")));
-//		System.exit(0);
-//		UEPB.getCA().setSubjectTeacher(UEPB.getTeachers().stream().filter(teacher -> Objects.equals(teacher.getName(), "Sabrina")));
-//		System.out.println(UEPB.getSubjects().get(0).getTeacher());
+		//professor da materia
+//		UEPB.getSubjects().stream().filter(subject -> subject.getName() == SubjectEnum.Calculo).forEach(subject -> {
+//			System.out.println(subject.getTeacher().getName());
+//		});
 
-
-//		Subject calculo = new Subject(SubjectEnum.Calculo, sabrina, ScheduleEnum.INTEGRAL, true);
-//		UEPB.getCA().addSubjectIntoUniversity(calculo, UEPB);
-//
 //		Subject algoritmos = new Subject(SubjectEnum.Algoritmos, sabrina, ScheduleEnum.DIURNO, true);
 //		UEPB.getCA().addSubjectIntoUniversity(algoritmos, UEPB);
-//
-//		System.out.println("a. Quais disciplinas um professor está ministrando:");
+
+
+		System.out.println("a. Quais disciplinas um professor está ministrando:");
+		//Materias do professor
+		UEPB.getTeachers().stream().filter(teacher -> teacher.getName().equals("Sabrina")).forEach(teacher -> {
+			System.out.println("Professora: " + teacher.getName());
+			for (Subject subject : teacher.getSubjects()) {
+				System.out.println(subject.getName());
+			}
+		});
+
 //		UEPB.getCA().addTeacherIntoSubject(sabrina, calculo);
 //		UEPB.getCA().addTeacherIntoSubject(sabrina, algoritmos);
 //		for (Subject subject : UEPB.getCA().getTeacherSubjects(sabrina)) {
 //			System.out.println("Professor(a): " + subject.getTeacher().getName() + " | Matéria: "+ subject.getName());
 //		}
 //
-//		System.out.println("\nb. Qual o horário de um professor:");
+		System.out.println("\nb. Qual o horário de um professor:");
+		UEPB.getTeachers().stream().filter(teacher -> teacher.getName().equals("Sabrina")).forEach(teacher -> {
+			System.out.println("Professora: " + teacher.getName() + " | " + teacher.getSchedule());
+		});
+
 //		System.out.println("Professora: " + sabrina.getName() + " | Horário: " + UEPB.getCA().getTeacherSchedule(sabrina));
-//		System.out.println("\nc. Quais os alunos de uma dada disciplina:");
+		System.out.println("\nc. Quais os alunos de uma dada disciplina:");
+		UEPB.getCA().addSubjectIntoStudent("Daniel", SubjectEnum.Calculo, UEPB);
+		System.out.println("Matéria: " + SubjectEnum.Calculo);
+		UEPB.getSubjects().stream().filter(subject -> subject.getName() == SubjectEnum.Calculo).forEach(subject -> {
+			for (Student student : subject.getStudents()) {
+				System.out.println(student.getName());
+			}
+		});
+		System.exit(0);
 //		UEPB.getCA().addSubjectIntoStudent(lucas, calculo);
 //		UEPB.getCA().addSubjectIntoStudent(daniel, calculo);
 //		UEPB.getCA().addSubjectIntoStudent(daniel, algoritmos);

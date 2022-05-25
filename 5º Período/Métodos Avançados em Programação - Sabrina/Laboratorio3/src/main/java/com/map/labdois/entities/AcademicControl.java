@@ -1,6 +1,7 @@
 package com.map.labdois.entities;
 
 import com.map.labdois.enums.ScheduleEnum;
+import com.map.labdois.enums.SubjectEnum;
 import com.map.labdois.exceptions.SchedulesDoesntMatchException;
 import com.map.labdois.exceptions.SubjectNotOfferedException;
 import lombok.Builder;
@@ -17,6 +18,23 @@ public class AcademicControl {
 
 
     public AcademicControl() {
+    }
+
+    public void addSubjectIntoStudent(String studentName, SubjectEnum subject, University university) {
+        Student studentToSet = null;
+        Subject subjectToSet = null;
+
+        for (Subject sbj : university.getSubjects()) {
+            if (sbj.getName() == subject) {
+                subjectToSet = sbj;
+            }
+        }
+        for (Student std : university.getStudents()) {
+            if (std.getName().equals(studentName)) {
+                studentToSet = std;
+            }
+        }
+        studentToSet.getRdm().addSubjectIntoRdm(subjectToSet);
     }
 
     public List<Teacher> getUniversityTeachers(University university) {
