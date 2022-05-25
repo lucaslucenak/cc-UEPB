@@ -2,6 +2,7 @@ package com.map.labdois.entities;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 import com.map.labdois.enums.ScheduleEnum;
 import com.map.labdois.enums.SubjectEnum;
@@ -19,11 +20,11 @@ public class Subject {
     private ScheduleEnum schedule;
     private Boolean isOffered;
 
-    public Subject(SubjectEnum name, Teacher teacher, ScheduleEnum schedule, Boolean isOffered) {
+    public Subject(SubjectEnum name, ScheduleEnum schedule, Boolean isOffered, Teacher teacher) {
         this.name = name;
-        this.teacher = teacher;
         this.schedule = schedule;
         this.isOffered = isOffered;
+        this.teacher = teacher;
     }
 
     public Subject() {

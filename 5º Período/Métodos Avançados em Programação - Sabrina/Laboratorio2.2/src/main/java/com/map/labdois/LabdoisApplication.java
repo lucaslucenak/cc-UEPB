@@ -14,19 +14,25 @@ public class LabdoisApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(LabdoisApplication.class, args);
 
+		University UEPB = new University();
 		AcademicControl CA = new AcademicControl();
 
-//		Course computacao = new Course(CourseEnum.Computacao);
+		Course computacao = new Course(CourseEnum.Computacao);
 
 		Teacher sabrina = new Teacher("Sabrina", 25, "sabrina@uepb.com", "83987654321", ScheduleEnum.INTEGRAL);
+		CA.addTeacherIntoUniversity(sabrina, UEPB);
 
 		Student daniel = new Student("Daniel", 21, "daniel@uepb.com", "83912341234", new Rdm(ScheduleEnum.INTEGRAL), 10.0);
+		CA.addStudentIntoUniversity(daniel, UEPB);
 
 		Student lucas = new Student("Lucas", 20, "lucas@uepb.com", "83943214321", new Rdm(ScheduleEnum.INTEGRAL), 10.0);
+		CA.addStudentIntoUniversity(lucas, UEPB);
 
 		Subject calculo = new Subject(SubjectEnum.Calculo, sabrina, ScheduleEnum.INTEGRAL, true);
+		CA.addSubjectIntoUniversity(calculo, UEPB);
 
 		Subject algoritmos = new Subject(SubjectEnum.Algoritmos, sabrina, ScheduleEnum.DIURNO, true);
+		CA.addSubjectIntoUniversity(algoritmos, UEPB);
 
 		System.out.println("a. Quais disciplinas um professor está ministrando:");
 		CA.addTeacherIntoSubject(sabrina, calculo);

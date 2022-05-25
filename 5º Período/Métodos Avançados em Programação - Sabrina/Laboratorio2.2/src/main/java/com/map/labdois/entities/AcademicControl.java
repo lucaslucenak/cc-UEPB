@@ -72,4 +72,16 @@ public class AcademicControl {
         return teacher.getSubjects();
     }
 
+    public void addTeacherIntoUniversity(Teacher teacher, University university) {
+        university.getTeachers().add(teacher);
+    }
+
+    public void addStudentIntoUniversity(Student student, University university) {
+        university.getStudents().add(student);
+    }
+
+    public void addSubjectIntoUniversity(Subject subject, University university) {
+        university.getSubjects().add(subject);
+    }
+
 }

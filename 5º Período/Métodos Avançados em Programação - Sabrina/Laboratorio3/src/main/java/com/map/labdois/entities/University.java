@@ -1,29 +1,40 @@
-//package com.map.labdois.entities;
-//
-//import java.util.ArrayList;
-//import java.util.List;
-//
-//import lombok.Getter;
-//
-//@Getter
-//public class University {
-//
-//    private List<Course> courses = new ArrayList<>();
-//    private List<Teacher> teachers = new ArrayList<>();
-//    private List<Student> students = new ArrayList<>();
-//
-//    public University() {
-//    }
-//
-//    public void addTeacher(Teacher teacher) {
-//        teachers.add(teacher);
-//    }
-//
-//    public void addStudent(Student student) {
-//        students.add(student);
-//    }
-//
-//    public void addCourse(Course course) {
-//        courses.add(course);
-//    }
-//}
+package com.map.labdois.entities;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
+
+import com.map.labdois.enums.ScheduleEnum;
+import com.map.labdois.enums.SubjectEnum;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class University {
+
+    private List<Subject> subjects;
+    private List<Teacher> teachers;
+    private List<Student> students;
+    private AcademicControl CA;
+
+    public University() {
+        subjects = new ArrayList<>();
+        teachers = new ArrayList<>();
+        students = new ArrayList<>();
+
+        this.CA = new AcademicControl();
+    }
+
+    public void addNewTeacher(String name, Integer age, String email, String phoneNumber, ScheduleEnum schedule) {
+        teachers.add(new Teacher(name, age, email, phoneNumber, schedule));
+    }
+
+    public void addNewStudent(String name, Integer age, String email, String phoneNumber, Double cra, ScheduleEnum schedule) {
+        students.add(new Student(name, age, email, phoneNumber, cra, schedule));
+    }
+
+    public void addNewSubject(SubjectEnum name, ScheduleEnum schedule, Boolean isOffered, Teacher teacher) {
+        subjects.add(new Subject(name, schedule, isOffered, teacher));
+    }
+}

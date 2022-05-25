@@ -16,10 +16,11 @@ public class Student extends People {
     private Rdm rdm;
     private Double cra;
 
-    public Student(String name, Integer age, String email, String phoneNumber, Rdm rdm, Double cra) {
+    public Student(String name, Integer age, String email, String phoneNumber, Double cra, ScheduleEnum rdmSchedule) {
         super(name, age, email, phoneNumber);
-        this.rdm = rdm;
         this.cra = cra;
+
+        rdm = new Rdm(rdmSchedule);
     }
 
     public Student(Rdm rdm, Double cra) {
@@ -29,6 +30,10 @@ public class Student extends People {
 
     public Student() {
     }
+
+//    public void addNewRdm(ScheduleEnum schedule) {
+//        setRdm(new Rdm(schedule));
+//    }
 
 //    public void addSubject(Subject subject) {
 //        subjects.add(subject);

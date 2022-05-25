@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 @Getter
 @Setter
@@ -16,6 +17,10 @@ public class AcademicControl {
 
 
     public AcademicControl() {
+    }
+
+    public List<Teacher> getUniversityTeachers(University university) {
+        return university.getTeachers();
     }
 
     public void addSubjectIntoStudent(Student student, Subject subject) {
@@ -48,17 +53,17 @@ public class AcademicControl {
         return student.getRdm().getSchedule();
     }
 
-    public void addTeacherIntoSubject(Teacher teacher, Subject subject) {
-        if (!subject.getIsOffered()) {
-            throw new SubjectNotOfferedException("Materia nao ofertada.");
-        }
-        if (subject.getSchedule() != teacher.getSchedule() && subject.getSchedule() != ScheduleEnum.INTEGRAL &&
-                teacher.getSchedule() != ScheduleEnum.INTEGRAL) {
-            throw new SchedulesDoesntMatchException("O horário do professor e o horário da matéria não batem.");
-        }
-        teacher.addSubject(subject);
-        subject.setTeacher(teacher);
-    }
+//    public void addTeacherIntoSubject(Teacher teacher, Subject subject) {
+//        if (!subject.getIsOffered()) {
+//            throw new SubjectNotOfferedException("Materia nao ofertada.");
+//        }
+//        if (subject.getSchedule() != teacher.getSchedule() && subject.getSchedule() != ScheduleEnum.INTEGRAL &&
+//                teacher.getSchedule() != ScheduleEnum.INTEGRAL) {
+//            throw new SchedulesDoesntMatchException("O horário do professor e o horário da matéria não batem.");
+//        }
+//        teacher.addSubject(subject);
+//        subject.setTeacher(teacher);
+//    }
 
     public List<Student> getSubjectStudents(Subject subject) {
         return subject.getStudents();
@@ -71,5 +76,18 @@ public class AcademicControl {
     public List<Subject> getTeacherSubjects(Teacher teacher) {
         return teacher.getSubjects();
     }
+
+    public void addTeacherIntoUniversity(Teacher teacher, University university) {
+        university.getTeachers().add(teacher);
+    }
+
+    public void addStudentIntoUniversity(Student student, University university) {
+        university.getStudents().add(student);
+    }
+
+    public void addSubjectIntoUniversity(Subject subject, University university) {
+        university.getSubjects().add(subject);
+    }
+
 
 }

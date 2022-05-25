@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.map.labdois.enums.ScheduleEnum;
 
+import com.map.labdois.enums.SubjectEnum;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,9 +26,5 @@ public class Teacher extends People {
     }
 
     public Teacher() {
-    }
-
-    public void addSubject(Subject subject) {
-        subjects.add(subject);
     }
 }
