@@ -39,4 +39,8 @@ public class University {
         subjects.add(new Subject(name, schedule, isOffered, teacher));
         teacher.addSubject(subjects.stream().filter(subject -> subject.getName() == name).collect(Collectors.toList()).get(0));
     }
+
+    public void addStudentIntoSubject(SubjectEnum subject, String studentName) {
+
+    }
 }

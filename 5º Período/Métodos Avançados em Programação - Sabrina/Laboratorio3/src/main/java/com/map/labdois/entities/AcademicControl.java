@@ -20,6 +20,17 @@ public class AcademicControl {
     public AcademicControl() {
     }
 
+    public Integer getSubjectStudentQuantity(SubjectEnum subject, University university) {
+        Subject sbj = null;
+        for (Subject x : university.getSubjects()) {
+            if (x.getName() == subject) {
+                sbj = x;
+            }
+        }
+        return  sbj.getStudents().size();
+//        university.getSubjects().stream().filter(sbj -> sbj.getName() == subject).forEach(sbj -> sbj.getStudents().size());
+    }
+
     public void addSubjectIntoStudent(String studentName, SubjectEnum subject, University university) {
         Student studentToSet = null;
         Subject subjectToSet = null;
@@ -35,6 +46,7 @@ public class AcademicControl {
             }
         }
         studentToSet.getRdm().addSubjectIntoRdm(subjectToSet);
+        subjectToSet.addStudent(studentToSet);
     }
 
     public List<Teacher> getUniversityTeachers(University university) {
@@ -87,9 +99,9 @@ public class AcademicControl {
         return subject.getStudents();
     }
 
-    public int getSubjectStudentQuantity(Subject subject) {
-        return subject.getStudents().size();
-    }
+//    public int getSubjectStudentQuantity(Subject subject) {
+//        return subject.getStudents().size();
+//    }
 
     public List<Subject> getTeacherSubjects(Teacher teacher) {
         return teacher.getSubjects();

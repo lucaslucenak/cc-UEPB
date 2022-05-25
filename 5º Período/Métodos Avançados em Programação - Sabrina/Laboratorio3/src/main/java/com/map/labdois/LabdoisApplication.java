@@ -69,13 +69,15 @@ public class LabdoisApplication {
 //		System.out.println("Professora: " + sabrina.getName() + " | Horário: " + UEPB.getCA().getTeacherSchedule(sabrina));
 		System.out.println("\nc. Quais os alunos de uma dada disciplina:");
 		UEPB.getCA().addSubjectIntoStudent("Daniel", SubjectEnum.Calculo, UEPB);
+		UEPB.getCA().addSubjectIntoStudent("Lucas", SubjectEnum.Calculo, UEPB);
+		UEPB.getCA().addSubjectIntoStudent("Daniel", SubjectEnum.Algoritmos, UEPB);
 		System.out.println("Matéria: " + SubjectEnum.Calculo);
 		UEPB.getSubjects().stream().filter(subject -> subject.getName() == SubjectEnum.Calculo).forEach(subject -> {
 			for (Student student : subject.getStudents()) {
-				System.out.println(student.getName());
+				System.out.println("Aluno: " + student.getName());
 			}
 		});
-		System.exit(0);
+
 //		UEPB.getCA().addSubjectIntoStudent(lucas, calculo);
 //		UEPB.getCA().addSubjectIntoStudent(daniel, calculo);
 //		UEPB.getCA().addSubjectIntoStudent(daniel, algoritmos);
@@ -83,15 +85,26 @@ public class LabdoisApplication {
 //			System.out.println("Disciplina: " + calculo.getName() + " | Aluno: " + student.getName());
 //		}
 //
-//		System.out.println("\nd. Quais as disciplinas de um aluno:");
+		System.out.println("\nd. Quais as disciplinas de um aluno:");
+		UEPB.getStudents().stream().filter(student -> student.getName().equals("Daniel")).forEach(student -> {
+			System.out.println("Aluno: " + student.getName());
+			for (Subject subject : student.getRdm().getSubjects()) {
+				System.out.println("Materia: " + subject.getName());
+			}
+		});
+
 //		for (Subject subject : UEPB.getCA().getStudentSubjects(daniel)) {
 //			System.out.println("Aluno: " + daniel.getName() + " | Disciplina: " + subject.getName());
 //		}
 //
-//		System.out.println("\ne. Qual o horário de um aluno:");
+		System.out.println("\ne. Qual o horário de um aluno:");
+		UEPB.getStudents().stream().filter(student -> student.getName().equals("Lucas")).forEach(student -> System.out.println("Aluno: " + student.getName() + " | Horario: " + student.getRdm().getSchedule()));
+
 //		System.out.println("Aluno: " + lucas.getName() + " | Horário: " + UEPB.getCA().getStudentSchedule(lucas));
 //
-//		System.out.println("\nf. Qual o número de alunos de uma disciplina:");
+		System.out.println("\nf. Qual o número de alunos de uma disciplina:");
+		System.out.println("Matéria: " + SubjectEnum.Calculo + " | Qtd de alunos: " + UEPB.getCA().getSubjectStudentQuantity(SubjectEnum.Calculo, UEPB));
+		System.exit(0);
 //		System.out.println("Aluno: " + calculo.getName() + " | Quantidade de alunos: " + UEPB.getCA().getSubjectStudentQuantity(calculo));
 
 	}
