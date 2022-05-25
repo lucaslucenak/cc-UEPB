@@ -45,6 +45,14 @@ public class AcademicControl {
                 studentToSet = std;
             }
         }
+
+        if (!subjectToSet.getIsOffered()) {
+            throw new SubjectNotOfferedException("Matéria não ofertada");
+        }
+
+        if (studentToSet.getRdm().getSchedule() != subjectToSet.getSchedule() && subjectToSet.getSchedule() != ScheduleEnum.INTEGRAL && studentToSet.getRdm().getSchedule() != ScheduleEnum.INTEGRAL) {
+            throw new SchedulesDoesntMatchException("Horários não compatíveis");
+        }
         studentToSet.getRdm().addSubjectIntoRdm(subjectToSet);
         subjectToSet.addStudent(studentToSet);
     }

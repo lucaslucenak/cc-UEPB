@@ -7,6 +7,8 @@ import java.util.stream.Stream;
 
 import com.map.labdois.enums.ScheduleEnum;
 import com.map.labdois.enums.SubjectEnum;
+import com.map.labdois.exceptions.SchedulesDoesntMatchException;
+import com.map.labdois.exceptions.SubjectNotOfferedException;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -36,11 +38,15 @@ public class University {
     }
 
     public void addNewSubject(SubjectEnum name, ScheduleEnum schedule, Boolean isOffered, Teacher teacher) {
+        if (!isOffered) {
+            throw new SubjectNotOfferedException("Matéria não ofertada");
+        }
+        if (teacher.getSchedule() != schedule && schedule != ScheduleEnum.INTEGRAL && teacher.getSchedule() != ScheduleEnum.INTEGRAL) {
+            throw new SchedulesDoesntMatchException("Horários não compatíveis");
+        }
+
         subjects.add(new Subject(name, schedule, isOffered, teacher));
         teacher.addSubject(subjects.stream().filter(subject -> subject.getName() == name).collect(Collectors.toList()).get(0));
     }
 
-    public void addStudentIntoSubject(SubjectEnum subject, String studentName) {
-
-    }
 }
