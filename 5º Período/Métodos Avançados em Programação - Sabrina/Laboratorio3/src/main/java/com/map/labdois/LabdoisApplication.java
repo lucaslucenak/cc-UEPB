@@ -23,22 +23,18 @@ public class LabdoisApplication {
 
 //		Teacher sabrina = new Teacher("Sabrina", 25, "sabrina@uepb.com", "83987654321", ScheduleEnum.INTEGRAL);
 		UEPB.addNewTeacher("Sabrina", 25, "sabrina@uepb.com", "83987654321", ScheduleEnum.INTEGRAL);
-//		CA.addTeacherIntoUniversity(sabrina, UEPB);
 
 //		Student daniel = new Student("Daniel", 21, "daniel@uepb.com", "83912341234", 10.0, ScheduleEnum.INTEGRAL);
 		UEPB.addNewStudent("Daniel", 21, "daniel@uepb.com", "83912341234", 10.0, ScheduleEnum.INTEGRAL);
-//		UEPB.getCA().addStudentIntoUniversity(daniel, UEPB);
 
 		UEPB.addNewStudent("Lucas", 20, "lucas@uepb.com", "83943214321", 10.0, ScheduleEnum.INTEGRAL);
-//		UEPB.getCA().addStudentIntoUniversity(lucas, UEPB);
 
 		UEPB.addNewSubject(SubjectEnum.Calculo, ScheduleEnum.INTEGRAL, true, UEPB.getTeachers().stream().filter(teacher -> Objects.equals(teacher.getName(), "Sabrina")).collect(Collectors.toList()).get(0));
 		UEPB.addNewSubject(SubjectEnum.Algoritmos, ScheduleEnum.DIURNO, true, UEPB.getTeachers().stream().filter(teacher -> Objects.equals(teacher.getName(), "Sabrina")).collect(Collectors.toList()).get(0));
 
 		//professor da materia
 //		UEPB.getSubjects().stream().filter(subject -> subject.getName() == SubjectEnum.Calculo).forEach(subject -> {
-//			System.out.println(subject.getTeacher().getName());
-//		});
+
 
 //		Subject algoritmos = new Subject(SubjectEnum.Algoritmos, sabrina, ScheduleEnum.DIURNO, true);
 //		UEPB.getCA().addSubjectIntoUniversity(algoritmos, UEPB);

@@ -17,7 +17,6 @@ public class LabdoisApplication {
 		University UEPB = new University();
 		AcademicControl CA = new AcademicControl();
 
-		Course computacao = new Course(CourseEnum.Computacao);
 
 		Teacher sabrina = new Teacher("Sabrina", 25, "sabrina@uepb.com", "83987654321", ScheduleEnum.INTEGRAL);
 		CA.addTeacherIntoUniversity(sabrina, UEPB);
