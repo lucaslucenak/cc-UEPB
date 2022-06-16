@@ -36,4 +36,9 @@ public class EmployeeTest {
         joelEdgerton.addMovieIntoFilmography(oPresente);
         Assertions.assertEquals(oPresente, joelEdgerton.getFilmography().get(0));
     }
+
+    @Test
+    public void shouldPunchTheClock() {
+        Assertions.assertEquals(joelEdgerton.clockIn(), "Punched the clock!");
+    }
 }

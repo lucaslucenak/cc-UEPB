@@ -2,7 +2,7 @@ package interfaces;
 
 public interface EmployeeIf {
 
-    void clockIn();
+    String clockIn();
 
     void showFilmography();
 }

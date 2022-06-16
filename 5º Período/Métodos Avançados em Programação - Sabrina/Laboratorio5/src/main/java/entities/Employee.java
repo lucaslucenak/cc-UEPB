@@ -18,8 +18,8 @@ public class Employee extends People implements EmployeeIf {
         super(name, CPF, address);
     }
 
-    public void clockIn() {
-        System.out.println("Punched the clock!");
+    public String clockIn() {
+        return "Punched the clock!";
     }
 
     public void showFilmography() {
