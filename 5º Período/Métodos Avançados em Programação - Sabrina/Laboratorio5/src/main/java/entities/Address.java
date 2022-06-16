@@ -1,14 +1,9 @@
 package entities;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@RequiredArgsConstructor
 public class Address {
     private String street;
     private String number;
@@ -17,4 +12,15 @@ public class Address {
     private String state;
     private String country;
 
+    public Address(String street, String number, String neighbourhood, String city, String state, String country) {
+        this.street = street;
+        this.number = number;
+        this.neighbourhood = neighbourhood;
+        this.city = city;
+        this.state = state;
+        this.country = country;
+    }
+
+    public Address() {
+    }
 }

@@ -7,12 +7,12 @@ import lombok.Setter;
 @Getter
 @Setter
 public class People {
-    private String nome;
+    private String name;
     private String CPF;
     private Address address;
 
-    public People(String nome, String CPF, Address address) {
-        this.nome = nome;
+    public People(String name, String CPF, Address address) {
+        this.name = name;
         this.CPF = CPF;
         this.address = address;
     }
