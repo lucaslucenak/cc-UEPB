@@ -24,29 +24,23 @@ public class Employee extends People implements EmployeeIf {
 
     public void showFilmography() {
         for (Movie i : filmography) {
+            System.out.println("Filme: " + i.getName());
             i.getMovieDirectors().stream().filter(director -> director.getName().equals(this.getName())).forEach(x -> {
-                System.out.println("\"" + x.getName() + "\" foi diretor do filme \"" + i.getName() + "\"");
+                System.out.println("\"" + x.getName() + "\" foi Diretor");
             });
-        }
-        for (Movie i : filmography) {
             i.getCast().stream().filter(actor -> actor.getName().equals(this.getName())).forEach(x -> {
-                System.out.println("\"" + x.getName() + "\" foi ator do filme \"" + i.getName() + "\"");
+                System.out.println("\"" + x.getName() + "\" foi Ator");
             });
-        }
-        for (Movie i : filmography) {
             i.getScreenwriters().stream().filter(screenwriter -> screenwriter.getName().equals(this.getName())).forEach(x -> {
-                System.out.println("\"" + x.getName() + "\" foi roteirista do filme \"" + i.getName() + "\"");
+                System.out.println("\"" + x.getName() + "\" foi Roteirista");
             });
-        }
-        for (Movie i : filmography) {
             i.getCameramans().stream().filter(cameraman -> cameraman.getName().equals(this.getName())).forEach(x -> {
-                System.out.println("\"" + x.getName() + "\" foi cameraman do filme \"" + i.getName() + "\"");
+                System.out.println("\"" + x.getName() + "\" foi Cameraman");
             });
-        }
-        for (Movie i : filmography) {
             i.getProductors().stream().filter(productor -> productor.getName().equals(this.getName())).forEach(x -> {
-                System.out.println("\"" + x.getName() + "\" foi produtor do filme \"" + i.getName() + "\"");
+                System.out.println("\"" + x.getName() + "\" foi Produtor");
             });
+
         }
     }
 

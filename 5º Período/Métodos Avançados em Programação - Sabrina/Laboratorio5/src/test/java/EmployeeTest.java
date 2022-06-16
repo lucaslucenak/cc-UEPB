@@ -22,7 +22,7 @@ public class EmployeeTest {
                 new Address("Rua tal", "Numero tal", "Bairro tal", "Cidade tal",
                         "Estado tal", "Pais tal"));
 
-        oPresente = new Movie("O Presente", 2015, "SOUNDTRACK");
+        oPresente = new Movie("O Presente", 2015, "O Presente SOUNDTRACK");
     }
 
     @Test
