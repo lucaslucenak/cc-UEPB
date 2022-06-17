@@ -1,6 +1,7 @@
 package entities;
 
 import enumns.RoleEnumn;
+import exceptions.EmployeeCantBeActorAndCameramanException;
 import interfaces.EmployeeIf;
 import lombok.Getter;
 import lombok.Setter;
@@ -45,6 +46,11 @@ public class Employee extends People implements EmployeeIf {
     }
 
     public void addRole(RoleEnumn role) {
+        for (RoleEnumn i : roles) {
+            if (role == RoleEnumn.Cameraman && i == RoleEnumn.Actor) {
+                throw new EmployeeCantBeActorAndCameramanException("O empregado não pode ser cameraman e ator ao mesmo tempo");
+            }
+        }
         roles.add(role);
     }
 
