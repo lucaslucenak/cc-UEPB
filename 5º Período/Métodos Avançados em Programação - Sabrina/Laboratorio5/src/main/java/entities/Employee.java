@@ -2,12 +2,15 @@ package entities;
 
 import enumns.RoleEnumn;
 import exceptions.EmployeeCantBeActorAndCameramanException;
+import exceptions.RoleExistsExceptions;
 import interfaces.EmployeeIf;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -46,7 +49,12 @@ public class Employee extends People implements EmployeeIf {
     }
 
     public void addRole(RoleEnumn role) {
+
+
         for (RoleEnumn i : roles) {
+            if (role == i) {
+                throw new RoleExistsExceptions("O empregado já foi cadastrado com essa função");
+            }
             if (role == RoleEnumn.Cameraman && i == RoleEnumn.Actor) {
                 throw new EmployeeCantBeActorAndCameramanException("O empregado não pode ser cameraman e ator ao mesmo tempo");
             }

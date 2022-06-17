@@ -2,6 +2,8 @@ import entities.Address;
 import entities.Employee;
 import entities.Movie;
 import enumns.RoleEnumn;
+import exceptions.EmployeeCantBeActorAndCameramanException;
+import exceptions.RoleExistsExceptions;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -35,6 +37,22 @@ public class EmployeeTest {
     public void shouldAddMovieIntoFilmography() {
         joelEdgerton.addMovieIntoFilmography(oPresente);
         Assertions.assertEquals(oPresente, joelEdgerton.getFilmography().get(0));
+    }
+
+    @Test
+    public void shouldThrowEmployeeCantBeActorAndCameramanException() {
+        Assertions.assertThrows(EmployeeCantBeActorAndCameramanException.class, () -> {
+            joelEdgerton.addRole(RoleEnumn.Actor);
+            joelEdgerton.addRole(RoleEnumn.Cameraman);
+        });
+    }
+
+    @Test
+    public void shouldThrowRoleExistsExceptions() {
+        Assertions.assertThrows(RoleExistsExceptions.class, () -> {
+            joelEdgerton.addRole(RoleEnumn.Actor);
+            joelEdgerton.addRole(RoleEnumn.Actor);
+        });
     }
 
     @Test
