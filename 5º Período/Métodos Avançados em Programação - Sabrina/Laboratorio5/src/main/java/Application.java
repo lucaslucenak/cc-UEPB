@@ -56,6 +56,7 @@ public class Application {
         System.out.println("-----");
         jasonBlum.showFilmography();
 
+        System.out.println("\nCaracteristicas do filme:");
         System.out.println(oPresente.showFeatures());
 
     }

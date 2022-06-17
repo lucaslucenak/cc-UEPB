@@ -48,15 +48,31 @@ public class Movie implements MovieIf {
 
     @Override
     public String showFeatures() {
-        return "Movie{" +
-                "name='" + name + '\'' +
-                ", year=" + year +
-                ", soundtrack='" + soundtrack + '\'' +
-                ", movieDirectors=" + movieDirectors +
-                ", cast=" + cast +
-                ", screenwriters=" + screenwriters +
-                ", cameramans=" + cameramans +
-                ", productors=" + productors +
-                '}';
+        String features = "";
+        features += "Filme: " + name +
+                "\nAno: " + year +
+                "\nTrilha Sonora: " + soundtrack;
+        features += "\nDiretores:";
+        for (Employee i : movieDirectors) {
+            features += i.getName() + ", ";
+        }
+        features +="\nAtores:";
+        for (Employee i : cast) {
+            features += i.getName() + ", ";
+        }
+        features += "\nRoteiristas:";
+        for (Employee i : cast) {
+            features += i.getName() + ", ";
+        }
+        features += "\nCinegrafistas:";
+        for (Employee i : screenwriters) {
+            features += i.getName() + ", ";
+        }
+        features += "Produtores:";
+        for (Employee i : productors) {
+            features += i.getName() + ", ";
+        }
+
+        return features;
     }
 }
