@@ -1,5 +1,7 @@
 package entities;
 
+import exceptions.DiscountsGreaterThanGrossAmount;
+
 import java.util.List;
 
 public class Financial {
@@ -16,13 +18,16 @@ public class Financial {
         return accountBalance;
     }
 
-    public StringBuilder getPayRoll(String title, Double discounts, Double bruteValue) {
+    public StringBuilder getPayRoll(String title, Double discounts, Double grossAmount) {
         StringBuilder payroll = new StringBuilder("Título: ");
-        return payroll.append(title).append("\nValor Bruto: ").append(bruteValue).append("\nDiscontos: ")
-                .append(discounts).append("\nValor Líquido: ").append(calculateLiquidValue(bruteValue, discounts));
+        return payroll.append(title).append("\nValor Bruto: ").append(grossAmount).append("\nDiscontos: ")
+                .append(discounts).append("\nValor Líquido: ").append(calculateLiquidValue(grossAmount, discounts));
     }
 
-    public Double calculateLiquidValue(Double bruteValue, Double discounts) {
-        return bruteValue - discounts;
+    public Double calculateLiquidValue(Double grossAmount, Double discounts) {
+        if (discounts > grossAmount) {
+            throw new DiscountsGreaterThanGrossAmount("Descontos maiores que o valor bruto");
+        }
+        return grossAmount - discounts;
     }
 }

@@ -7,6 +7,8 @@ public class Facade {
     Financial financial = new Financial();
     TeacherPortal teacherPortal = new TeacherPortal();
     StudentPortal studentPortal = new StudentPortal();
+    Warehouse warehouse = new Warehouse();
+    InfrastructuralSystem infrastructuralSystem = new InfrastructuralSystem();
 
     public Facade() {
     }
@@ -25,13 +27,17 @@ public class Facade {
         System.out.println(financial.getAccountBalance(payroll));
     }
 
-    public void showPayroll(String title, Double discounts, Double bruteValue) {
-        System.out.println(financial.getPayRoll(title, discounts, bruteValue));
+    public void showPayroll(String title, Double discounts, Double grossAmount) {
+        System.out.println(financial.getPayRoll(title, discounts, grossAmount));
     }
 
     public void allocateSubjectIntoTeacher(String teacher, String subject) {
-        System.out.println(teacherPortal.verifyTeachersDisponibility(teacher));
+        System.out.println(teacherPortal.checkTeachersDisponibility(teacher));
         System.out.println(teacherPortal.allocateSubjectIntoTeacher(teacher, subject));
+    }
+
+    public void getCompanyTime(String teacher) {
+        System.out.println(teacherPortal.getCompanyTime(teacher));
     }
 
     public void getStudentHistory(String student) {
@@ -41,4 +47,19 @@ public class Facade {
     public void getStudentRDM(String student) {
         System.out.println(studentPortal.getStudentRDM(student));
     }
+
+    public void getWarehouseInventory() {
+        System.out.println(warehouse.getInventory());
+    }
+
+    public void requestPurchaseOrder(String product) {
+        System.out.println(warehouse.requestPurchaseOrder(product));
+        System.out.println(warehouse.confirmPurchaseOrder(product));
+    }
+
+    public void allocateClassroom(String classroom) {
+        System.out.println(infrastructuralSystem.checkClassroomDisponibility(classroom));
+        System.out.println(infrastructuralSystem.allocateClassroom(classroom));
+    }
+
 }

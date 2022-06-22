@@ -24,10 +24,18 @@ public class Application {
         System.out.println("------------------------------------------------------------------------");
         System.out.println("------------------------------------------------------------------------");
         facade.allocateSubjectIntoTeacher("Sabrina", "MAP");
+        facade.getCompanyTime("Sabrina");
         System.out.println("------------------------------------------------------------------------");
         System.out.println("------------------------------------------------------------------------");
         facade.getStudentHistory("Daniel");
         facade.getStudentRDM("Lucas");
+        System.out.println("------------------------------------------------------------------------");
+        System.out.println("------------------------------------------------------------------------");
+        facade.getWarehouseInventory();
+        facade.requestPurchaseOrder("Cloro");
+        System.out.println("------------------------------------------------------------------------");
+        System.out.println("------------------------------------------------------------------------");
+        facade.allocateClassroom("200B");
 
     }
 }
