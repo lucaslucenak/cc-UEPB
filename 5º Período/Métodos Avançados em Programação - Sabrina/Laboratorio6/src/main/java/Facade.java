@@ -1,12 +1,12 @@
-import entities.Administrative;
-import entities.Bill;
-import entities.Financial;
+import entities.*;
 
 import java.util.List;
 
 public class Facade {
     Administrative administrative = new Administrative();
     Financial financial = new Financial();
+    TeacherPortal teacherPortal = new TeacherPortal();
+    StudentPortal studentPortal = new StudentPortal();
 
     public Facade() {
     }
@@ -27,5 +27,18 @@ public class Facade {
 
     public void showPayroll(String title, Double discounts, Double bruteValue) {
         System.out.println(financial.getPayRoll(title, discounts, bruteValue));
+    }
+
+    public void allocateSubjectIntoTeacher(String teacher, String subject) {
+        System.out.println(teacherPortal.verifyTeachersDisponibility(teacher));
+        System.out.println(teacherPortal.allocateSubjectIntoTeacher(teacher, subject));
+    }
+
+    public void getStudentHistory(String student) {
+        System.out.println(studentPortal.getStudentHistory(student));
+    }
+
+    public void getStudentRDM(String student) {
+        System.out.println(studentPortal.getStudentRDM(student));
     }
 }

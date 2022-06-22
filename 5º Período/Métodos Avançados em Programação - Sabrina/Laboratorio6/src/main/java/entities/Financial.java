@@ -18,9 +18,8 @@ public class Financial {
 
     public StringBuilder getPayRoll(String title, Double discounts, Double bruteValue) {
         StringBuilder payroll = new StringBuilder("Título: ");
-        payroll.append(title).append("\nValor Bruto: ").append(bruteValue).append("\nDiscontos: ").append(discounts)
-                .append("\nValor Líquido: ").append(calculateLiquidValue(bruteValue, discounts));
-        return payroll;
+        return payroll.append(title).append("\nValor Bruto: ").append(bruteValue).append("\nDiscontos: ")
+                .append(discounts).append("\nValor Líquido: ").append(calculateLiquidValue(bruteValue, discounts));
     }
 
     public Double calculateLiquidValue(Double bruteValue, Double discounts) {

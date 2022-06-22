@@ -21,6 +21,13 @@ public class Application {
         facade.showAccountBalance(accountBalance);
         System.out.println("------------------------------------------------------------------------");
         facade.showPayroll("Folha de pagamento de lucas", 100.00, 1000.00);
+        System.out.println("------------------------------------------------------------------------");
+        System.out.println("------------------------------------------------------------------------");
+        facade.allocateSubjectIntoTeacher("Sabrina", "MAP");
+        System.out.println("------------------------------------------------------------------------");
+        System.out.println("------------------------------------------------------------------------");
+        facade.getStudentHistory("Daniel");
+        facade.getStudentRDM("Lucas");
 
     }
 }
