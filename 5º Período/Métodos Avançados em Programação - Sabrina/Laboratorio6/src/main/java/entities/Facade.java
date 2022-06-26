@@ -1,3 +1,5 @@
+package entities;
+
 import entities.*;
 
 import java.util.List;

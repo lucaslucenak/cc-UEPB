@@ -1,6 +1,6 @@
 package entities;
 
-import exceptions.DiscountsGreaterThanGrossAmount;
+import exceptions.DiscountsGreaterThanGrossAmountException;
 
 import java.util.List;
 
@@ -26,7 +26,7 @@ public class Financial {
 
     public Double calculateLiquidValue(Double grossAmount, Double discounts) {
         if (discounts > grossAmount) {
-            throw new DiscountsGreaterThanGrossAmount("Descontos maiores que o valor bruto");
+            throw new DiscountsGreaterThanGrossAmountException("Descontos maiores que o valor bruto");
         }
         return grossAmount - discounts;
     }

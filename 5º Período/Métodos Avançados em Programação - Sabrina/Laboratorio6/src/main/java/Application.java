@@ -1,5 +1,5 @@
-import entities.Administrative;
 import entities.Bill;
+import entities.Facade;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ public class Application {
         participants.add("Daniel");
         facade.scheduleNewMeeting(participants, "22/06/2022", "18:00", "Promoção");
         System.out.println("------------------------------------------------------------------------");
-        facade.scheduleNewInterview(participants, "22/06/2022", "18:00", "Promoção");
+        facade.scheduleNewInterview(participants, "22/06/2022", "18:00", "Estágio");
         System.out.println("------------------------------------------------------------------------");
         System.out.println("------------------------------------------------------------------------");
         List<Bill> accountBalance = new ArrayList<>();
