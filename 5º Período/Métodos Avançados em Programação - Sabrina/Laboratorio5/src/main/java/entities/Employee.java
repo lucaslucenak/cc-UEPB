@@ -49,8 +49,6 @@ public class Employee extends People implements EmployeeIf {
     }
 
     public void addRole(RoleEnumn role) {
-
-
         for (RoleEnumn i : roles) {
             if (role == i) {
                 throw new RoleExistsExceptions("O empregado já foi cadastrado com essa função");
