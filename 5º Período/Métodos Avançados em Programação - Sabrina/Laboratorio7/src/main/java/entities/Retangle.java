@@ -1,5 +1,5 @@
 package entities;
-import exceptions.FigureCongruenceAndParallelismBreakException;
+import exceptions.FigureCongruenceOrParallelismBreakException;
 import exceptions.FigureWithAttributeEqualsZeroException;
 import exceptions.FigureWithNegativeAttributeException;
 import lombok.Getter;
@@ -27,6 +27,7 @@ public class Retangle {
     }
 
     public void setSide1(Double side1) {
+        this.side1 = null;
         if (side1 < 0) {
             throw new FigureWithNegativeAttributeException("Lado negativo nao existe.");
         }
@@ -36,14 +37,15 @@ public class Retangle {
         this.side1 = side1;
 
         if (side3 != null && !side1.equals(side3)) {
-            throw new FigureCongruenceAndParallelismBreakException("Lados 1 e 3 não são iguais");
+            throw new FigureCongruenceOrParallelismBreakException("Lados 1 e 3 não são iguais");
         }
         if (side2 != null && side4 != null && !side2.equals(side4)) {
-            throw new FigureCongruenceAndParallelismBreakException("Lados 2 e 4 não são iguais");
+            throw new FigureCongruenceOrParallelismBreakException("Lados 2 e 4 não são iguais");
         }
     }
 
     public void setSide2(Double side2) {
+        this.side2 = null;
         if (side2 < 0) {
             throw new FigureWithNegativeAttributeException("Lado negativo nao existe.");
         }
@@ -53,14 +55,15 @@ public class Retangle {
         this.side2 = side2;
 
         if (side1 != null && side3 != null && !side1.equals(side3)) {
-            throw new FigureCongruenceAndParallelismBreakException("Lados 1 e 3 não são iguais");
+            throw new FigureCongruenceOrParallelismBreakException("Lados 1 e 3 não são iguais");
         }
         if (side4 != null && !side2.equals(side4)) {
-            throw new FigureCongruenceAndParallelismBreakException("Lados 2 e 4 não são iguais");
+            throw new FigureCongruenceOrParallelismBreakException("Lados 2 e 4 não são iguais");
         }
     }
 
     public void setSide3(Double side3) {
+        this.side3 = null;
         if (side3 < 0) {
             throw new FigureWithNegativeAttributeException("Lado negativo nao existe.");
         }
@@ -70,14 +73,15 @@ public class Retangle {
         this.side3 = side3;
 
         if (side1 != null && !side1.equals(side3)) {
-            throw new FigureCongruenceAndParallelismBreakException("Lados 1 e 3 não são iguais");
+            throw new FigureCongruenceOrParallelismBreakException("Lados 1 e 3 não são iguais");
         }
         if (side2 != null && side4 != null && !side2.equals(side4)) {
-            throw new FigureCongruenceAndParallelismBreakException("Lados 2 e 4 não são iguais");
+            throw new FigureCongruenceOrParallelismBreakException("Lados 2 e 4 não são iguais");
         }
     }
 
     public void setSide4(Double side4) {
+        this.side4 = null;
         if (side4 < 0) {
             throw new FigureWithNegativeAttributeException("Lado negativo nao existe.");
         }
@@ -87,10 +91,10 @@ public class Retangle {
         this.side4 = side4;
 
         if (side1 != null && side3 != null && !side1.equals(side3)) {
-            throw new FigureCongruenceAndParallelismBreakException("Lados 1 e 3 não são iguais");
+            throw new FigureCongruenceOrParallelismBreakException("Lados 1 e 3 não são iguais");
         }
         if (side2 != null && !side2.equals(side4)) {
-            throw new FigureCongruenceAndParallelismBreakException("Lados 2 e 4 não são iguais");
+            throw new FigureCongruenceOrParallelismBreakException("Lados 2 e 4 não são iguais");
         }
     }
 }

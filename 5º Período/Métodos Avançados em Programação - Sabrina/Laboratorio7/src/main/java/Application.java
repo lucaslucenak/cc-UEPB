@@ -13,18 +13,21 @@ public class Application {
         System.out.printf("%n------------------------------------------------%n%n");
 
         Triangle trianguloIsosceles = Triangle.getInstance();
-        trianguloIsosceles.setSide1(10);
-        trianguloIsosceles.setSide2(10);
-        trianguloIsosceles.setSide3(5);
+        trianguloIsosceles.setSide1(10.0);
+        trianguloIsosceles.setSide2(10.0);
+        trianguloIsosceles.setSide3(5.0);
         Triangle tianguloEquilatero = Triangle.getInstance();
-        tianguloEquilatero.setSide1(10);
-        tianguloEquilatero.setSide2(10);
-        tianguloEquilatero.setSide3(10);
+        tianguloEquilatero.setSide1(10.0);
+        tianguloEquilatero.setSide2(10.0);
+        tianguloEquilatero.setSide3(10.0);
         Triangle trianguloRetangulo = Triangle.getInstance();
-        trianguloRetangulo.setSide1(13);
-        trianguloRetangulo.setSide2(12);
-        trianguloRetangulo.setSide3(5);
+        trianguloRetangulo.setSide1(13.0);
+        trianguloRetangulo.setSide2(12.0);
+        trianguloRetangulo.setSide3(5.0);
         Triangle triangulo = Triangle.getInstance();
+        triangulo.setSide1(10.0);
+        triangulo.setSide2(5.0);
+        triangulo.setSide3(9.0);
 
         System.out.printf("%n------------------------------------------------%n%n");
 
