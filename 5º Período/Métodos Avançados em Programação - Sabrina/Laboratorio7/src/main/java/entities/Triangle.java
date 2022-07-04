@@ -34,4 +34,24 @@ public class Triangle {
         }
         this.side1 = side1;
     }
+
+    public void setSide2(double side2) {
+        if (side2 < 0) {
+            throw new FigureWithNegativeAttributeException("Lado negativo nao existe.");
+        }
+        else if (side2 == 0) {
+            throw new FigureWithAttributeEqualsZeroException("Lado igual a 0 nao existe.");
+        }
+        this.side2 = side2;
+    }
+
+    public void setSide3(double side3) {
+        if (side3 < 0) {
+            throw new FigureWithNegativeAttributeException("Lado negativo nao existe.");
+        }
+        else if (side3 == 0) {
+            throw new FigureWithAttributeEqualsZeroException("Lado igual a 0 nao existe.");
+        }
+        this.side3 = side3;
+    }
 }

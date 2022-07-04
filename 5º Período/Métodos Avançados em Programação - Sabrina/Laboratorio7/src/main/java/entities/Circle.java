@@ -9,10 +9,6 @@ public class Circle {
     private static Circle uniqueInstance = null;
     private Double radius;
 
-    private Circle(Double radius) {
-        this.radius = radius;
-    }
-
     private Circle() {
     }
 
