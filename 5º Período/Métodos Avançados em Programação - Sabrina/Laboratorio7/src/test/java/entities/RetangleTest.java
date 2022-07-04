@@ -25,19 +25,19 @@ public class RetangleTest {
     @Test
     public void shouldSetSide2() {
         retangle.setSide2(5.0);
-        Assertions.assertEquals(10.0, retangle.getSide1());
+        Assertions.assertEquals(5.0, retangle.getSide2());
     }
 
     @Test
     public void shouldSetSide3() {
         retangle.setSide3(10.0);
-        Assertions.assertEquals(10.0, retangle.getSide1());
+        Assertions.assertEquals(10.0, retangle.getSide3());
     }
 
     @Test
     public void shouldSetSide4() {
         retangle.setSide4(5.0);
-        Assertions.assertEquals(10.0, retangle.getSide1());
+        Assertions.assertEquals(5.0, retangle.getSide4());
     }
 
     @Test
@@ -97,18 +97,11 @@ public class RetangleTest {
     }
 
     @Test
-    public void shouldThrowFigureCongruenceOrParallelismBreakExceptionWhenSide1And3AreDifferent() {
+    public void shouldThrowFigureCongruenceOrParallelismBreakException() {
         Assertions.assertThrows(FigureCongruenceOrParallelismBreakException.class, () -> {
             retangle.setSide1(10.0);
             retangle.setSide3(5.0);
         });
     }
 
-    @Test
-    public void shouldThrowFigureCongruenceOrParallelismBreakExceptionWhenSide2And4AreDifferent() {
-        Assertions.assertThrows(FigureCongruenceOrParallelismBreakException.class, () -> {
-            retangle.setSide2(10.0);
-            retangle.setSide4(5.0);
-        });
-    }
 }
