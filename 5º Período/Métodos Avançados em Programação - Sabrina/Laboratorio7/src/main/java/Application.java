@@ -36,5 +36,12 @@ public class Application {
         retangulo1.setSide2(5.0);
         retangulo1.setSide3(10.0);
         retangulo1.setSide4(5.0);
+
+        Retangle retangulo2 = Retangle.getInstance();
+        retangulo2.setSide1(5.0);
+        retangulo2.setSide2(6.0);
+        retangulo2.setSide3(5.0);
+        retangulo2.setSide4(6.0);
+
     }
 }

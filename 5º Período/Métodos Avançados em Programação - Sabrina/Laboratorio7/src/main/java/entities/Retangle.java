@@ -17,10 +17,8 @@ public class Retangle {
     }
 
     public static Retangle getInstance() {
-        if (uniqueInstance == null){
             System.out.println("Criando instancia unica do Retangulo");
             uniqueInstance = new Retangle();
-        }
 
         System.out.println("Retornando instancia unica do Retangulo");
         return uniqueInstance;
