@@ -6,9 +6,8 @@ public class Application {
     public static void main(String[] args) {
 
         Circle circle = Circle.getInstance();
-        Circle circle2 = Circle.getInstance();
         circle.setRadius(10.5);
-        System.out.println(circle.getRadius());
+        Circle circle2 = Circle.getInstance();
 
         System.out.printf("%n------------------------------------------------%n%n");
 
@@ -25,9 +24,7 @@ public class Application {
         trianguloRetangulo.setSide2(12.0);
         trianguloRetangulo.setSide3(5.0);
         Triangle triangulo = Triangle.getInstance();
-        triangulo.setSide1(10.0);
-        triangulo.setSide2(5.0);
-        triangulo.setSide3(9.0);
+//        System.out.println(triangulo.getSide1());
 
         System.out.printf("%n------------------------------------------------%n%n");
 
@@ -39,9 +36,9 @@ public class Application {
 
         Retangle retangulo2 = Retangle.getInstance();
         retangulo2.setSide1(5.0);
-        retangulo2.setSide2(6.0);
+        retangulo2.setSide2(5.0);
         retangulo2.setSide3(5.0);
-        retangulo2.setSide4(6.0);
+        retangulo2.setSide4(5.0);
 
     }
 }

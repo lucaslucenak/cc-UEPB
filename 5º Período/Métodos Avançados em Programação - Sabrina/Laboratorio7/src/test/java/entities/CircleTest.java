@@ -35,4 +35,13 @@ public class CircleTest {
             circle.setRadius(-10.0);
         });
     }
+
+    @Test
+    public void shouldGerTheSameValueFromUniqueInstance() {
+        Circle circle1 = Circle.getInstance();
+        circle1.setRadius(10.0);
+        Circle circle2 = Circle.getInstance();
+        Assertions.assertEquals(10.0, circle2.getRadius());
+    }
+
 }

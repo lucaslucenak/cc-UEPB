@@ -1,0 +1,138 @@
+Cliente ( _mat, nome, profissao, end, sexo, email, telefone)
+CREATE TABLE Cliente (
+	mat SERIAL,
+	nome varchar(255),
+	profissao varchar(100),
+	endereco varchar(255),
+	sexo varchar(30),
+	email varchar(100),
+	telefone varchar(20),
+	PRIMARY KEY (mat)
+	);
+
+Dependente (_id, #matCliente, nome, endereco, sexo, email)
+CREATE TABLE Dependente (
+	id SERIAL,
+	matCliente int,
+	nome varchar(255),
+	endereco varchar(255),
+	sexo varchar(30),	
+	email varchar(100),
+	PRIMARY KEY (id),
+	FOREIGN KEY (matCliente) REFERENCES cliente(mat)
+	);
+
+Categoria (_id, nome)
+  CREATE TABLE Categoria (
+	id SERIAL,
+	nome VARCHAR(200),
+    PRIMARY key (id)
+	);
+
+Filme (_cod, titulo, ano, numOscars)
+CREATE TABLE Filme (
+	cod SERIAL,
+	nome varchar(100)
+	);
+
+Copia (_oid, fabricante, #codFilme)
+CREATE TABLE Copia (
+  oid SERIAL,
+  fabricante VARCHAR(200),
+  codFilme INT,
+  PRIMARY KEY (oid),
+  FOREIGN KEY (codFilme) REFERENCES filme(cod)
+  );
+
+VHS (_#oidCopia, dataGrav)
+CREATE TABLE vhs (
+  oidCopia int,
+  dataGrav DATE,
+  PRIMARY KEY (oidCopia),
+  FOREIGN KEY (oidCopia) REFERENCES copia(oid)
+  );
+
+DVD (_#oidCopia, zonas, idiomas)
+CREATE TABLE dvd (
+  oidcopia int,
+  zonas varchar(100),
+  idiomas varchar(255),
+  PRIMARY KEY (oidcopia),
+  FOREIGN KEY (oidcopia) REFERENCES copia(oid)
+  );
+
+Profissional (_id, nome, foto, homePage)
+create table profissional (
+  id serial,
+  nome varchar(255),
+  foto text,
+  homePage text,
+  primary key (id)
+  );
+
+Trabalham (_#codFilme, _#idProfissional)
+CREATE TABLE trabalham (
+  codFilme int,
+  idProfissional INT,
+  primary key (codFilme, idProfissional),
+  FOREIGN key (codFilme) REFERENCES filme(cod),
+  FOREIGN key (idProfissional) REFERENCES profissional(id)
+  );
+
+Ator (_#idProfissional, numOscars)
+CREATE TABLE ator (
+  idprofissional INT,
+  numOscars int,
+  PRIMARY key (idprofissional),
+  FOREIGN key (idprofissional) REFERENCES profissional(id)
+  );
+
+Diretor (_#idProfissional, especialidades)
+CREATE TABLE diretor (
+  idprofissional int,
+  especialidades text,
+  PRIMARY key (idprofissional),
+  FOREIGN key (idprofissional) REFERENCES profissional(id)
+  );
+
+Aluga (_#matCliente, _#oidCopia, dataOut, dataIn, multa)
+CREATE TABLE aluga (
+  matcliente int,
+  oidcopia int,
+  dataOut DATE,
+  dataIn DATE,
+  multa decimal,
+  primary key (matcliente, oidcopia),
+  FOREIGN key (matcliente) references cliente(mat),
+  FOREIGN KEY (oidcopia) REFERENCES copia(oid)
+  );
+
+Reserva (_#matCliente, _#codFilme, dataReserva)
+CREATE TAblE reserva (
+  matcliente int,
+  codFilme int,
+  dataReserva date,
+  primary key (matcliente, codFilme),
+  FOREIGN key (matcliente) references cliente(mat),
+  FOREIGN KEY (codfilme) REFERENCES filme(cod)
+  );
+
+Opina (_#matCliente, _#codFilme, opiniao, dataOpiniao)
+create table opina (
+  matcliente int,
+  codfilme int,
+  opiniao TEXT,
+  dataOpiniao DATE,
+  primary key (matcliente),
+  FOREIGN key (matcliente) REFERENCES cliente(mat),
+  FOREIGN key (codfilme) REFERENCES filme(cod)
+  );
+
+Gosta (_#matCliente, _#idCategoria)
+CREATE TABLE gosta (
+  matCliente int,
+  idCategoria int,
+  PRIMARY key (matcliente, idcategoria),
+  FOREIGN key (matcliente) REFERENCES cliente(mat),
+  FOREIGN key (idcategoria) REFERENCES categoria(id)
+  );
