@@ -31,7 +31,9 @@ CREATE TABLE filme (
   titulo VARCHAR(200),
   ano VARCHAR(4),
   num_oscars INT,
-  PRIMARY KEY (cod)
+  id_categoria INT,
+  PRIMARY KEY (cod),
+  FOREIGN KEY (id_categoria) REFERENCES categoria (id)
 	);
 
 CREATE TABLE copia (

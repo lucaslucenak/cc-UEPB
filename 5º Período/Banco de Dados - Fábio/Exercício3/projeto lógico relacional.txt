@@ -1,10 +1,10 @@
-Cliente ( _mat, nome, profissao, endereco, sexo, email, telefone)
+Cliente (_mat, nome, profissao, endereco, sexo, email, telefone)
 
 Dependente (_id, #mat_cliente, nome, endereco, sexo, email)
 
 Categoria (_id, nome)
 
-Filme (_cod, titulo, ano, num_oscars)
+Filme (_cod, titulo, ano, num_oscars, #id_categoria)
 
 Copia (_oid, fabricante, #cod_filme)
 
