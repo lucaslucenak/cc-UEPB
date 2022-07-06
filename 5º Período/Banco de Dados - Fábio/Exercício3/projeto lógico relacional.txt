@@ -1,0 +1,29 @@
+Cliente ( _mat, nome, profissao, endereco, sexo, email, telefone)
+
+Dependente (_id, #mat_cliente, nome, endereco, sexo, email)
+
+Categoria (_id, nome)
+
+Filme (_cod, titulo, ano, num_oscars)
+
+Copia (_oid, fabricante, #cod_filme)
+
+VHS (_#oid_copia, data_grav)
+
+DVD (_#oid_copia, zonas, idiomas)
+
+Profissional (_id, nome, foto, home_page)
+
+Trabalham (_#cod_filme, _#id_profissional)
+
+Ator (_#id_profissional, num_oscars)
+
+Diretor (_#id_profissional, especialidades)
+
+Aluga (_#mat_cliente, _#oid_copia, data_out, data_in, multa)
+
+Reserva (_#mat_cliente, _#cod_filme, data_reserva)
+
+Opina (_#mat_cliente, _#cod_filme, opiniao, data_opiniao)
+
+Gosta (_#mat_cliente, _#id_categoria)
