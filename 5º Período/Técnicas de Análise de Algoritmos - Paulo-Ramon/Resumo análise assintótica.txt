@@ -30,9 +30,17 @@ Sendo n o número de execuções temos: n é maior que 0 e f(n) terá que ser ma
 
 sempre serão os limites iguais ou inferiores à maior constante da expressão, ex:
 	f = n^2 - 1 ---> f = Ω(n^2)
+	f = n^2 - 1 ---> f = Ω(n)
+	f = n^2 - 1 ---> f = Ω(1)
+	...
 
 
+Notação Θ (Theta): Limitante SUPERIOR JUSTO (IGUAL)
 
+Será o limitante superior justo, ou seja será igual à variável de maior peso, exatamente igual, ex:
+	f = n^2 ---> f = Θ(n^2)
+	f = n^2 - 1 ---> f = Θ(n^2)
+	f = n^3 ---> f = Θ(n^3)
 
 
 
@@ -45,3 +53,26 @@ for (int i = 0; i < n; i++)
 		operacao 2
 
 custo = n^2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
