@@ -2,9 +2,8 @@ package entities.hamburguerTypes;
 
 import entities.*;
 import fillingsTypes.*;
-import interfaces.HamburguerInterface;
 
-public class HamburguerBauru extends Hamburguer {
+public class HamburgerBauru extends Hamburguer {
 
 
     @Override

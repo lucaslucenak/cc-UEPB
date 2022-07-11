@@ -3,7 +3,7 @@ package entities.hamburguerTypes;
 import entities.*;
 import fillingsTypes.*;
 
-public class HamburguerFitness extends Hamburguer{
+public class HamburgerFitness extends Hamburguer{
 
     @Override
     public void setBreadType() {
