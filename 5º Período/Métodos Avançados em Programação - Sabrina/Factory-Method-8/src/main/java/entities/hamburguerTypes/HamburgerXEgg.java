@@ -2,24 +2,22 @@ package entities.hamburguerTypes;
 
 import entities.*;
 import fillingsTypes.*;
-import interfaces.HamburguerInterface;
 
-public class HamburguerBauru extends Hamburguer {
-
+public class HamburgerXEgg extends Hamburguer {
 
     @Override
     public void setBreadType() {
-        setBread(new Bread(BreadTypeEnum.Frances));
+        setBread(new Bread(BreadTypeEnum.Bola));
     }
 
     @Override
     public void setCheeseType() {
-        setCheese(new Cheese(CheeseTypeEnum.Mussarela));
+        setCheese(new Cheese(CheeseTypeEnum.Cheddar));
     }
 
     @Override
     public void setEggType() {
-        setEgg(new Egg(EggTypeEnum.Granja));
+        setEgg(new Egg(EggTypeEnum.Capoeira));
     }
 
     @Override

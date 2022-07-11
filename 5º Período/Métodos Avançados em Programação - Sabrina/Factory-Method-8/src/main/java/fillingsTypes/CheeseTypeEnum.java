@@ -3,5 +3,6 @@ package fillingsTypes;
 public enum CheeseTypeEnum {
     Prato,
     Mussarela,
-    Cheddar
+    Cheddar,
+    Ricota
 }
