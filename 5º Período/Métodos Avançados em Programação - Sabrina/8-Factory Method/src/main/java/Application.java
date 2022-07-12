@@ -7,27 +7,26 @@ public class Application {
 
         HamburgerBauru hamburgerBauru = new HamburgerBauru();
         hamburgerBauru.setBread(hamburgerBauru.breadFactory());
-        hamburgerBauru.breadFactory();
-        hamburgerBauru.cheeseFactory();
-        hamburgerBauru.setHamType();
-        hamburgerBauru.eggFactory();
-        hamburgerBauru.addTomato();
-        System.out.println(hamburgerBauru.getBread().getBreadTypeEnum());
+        hamburgerBauru.setCheese(hamburgerBauru.cheeseFactory());
+        hamburgerBauru.setHam(hamburgerBauru.hamFactory());
+        hamburgerBauru.setEgg(hamburgerBauru.eggFactory());
+        hamburgerBauru.setTomato(hamburgerBauru.tomatoFactory());
+        System.out.println(hamburgerBauru);
 
         HamburgerXEgg hamburgerXEgg = new HamburgerXEgg();
-        hamburgerXEgg.breadFactory();
-        hamburgerXEgg.cheeseFactory();
-        hamburgerXEgg.setHamType();
-        hamburgerXEgg.eggFactory();
-        hamburgerXEgg.addTomato();
-//        System.out.println(hamburgerXEgg.toString());
+        hamburgerXEgg.setBread(hamburgerXEgg.breadFactory());
+        hamburgerXEgg.setCheese(hamburgerXEgg.cheeseFactory());
+        hamburgerXEgg.setHam(hamburgerXEgg.hamFactory());
+        hamburgerXEgg.setEgg(hamburgerXEgg.eggFactory());
+        hamburgerXEgg.setTomato(hamburgerXEgg.tomatoFactory());
+        System.out.println(hamburgerXEgg);
 
         HamburgerFitness hamburgerFitness = new HamburgerFitness();
-        hamburgerFitness.breadFactory();
-        hamburgerFitness.cheeseFactory();
-        hamburgerFitness.setHamType();
-        hamburgerFitness.eggFactory();
-        hamburgerFitness.addTomato();
-//        System.out.println(hamburgerFitness.toString());
+        hamburgerFitness.setBread(hamburgerFitness.breadFactory());
+        hamburgerFitness.setCheese(hamburgerFitness.cheeseFactory());
+        hamburgerFitness.setHam(hamburgerFitness.hamFactory());
+        hamburgerFitness.setEgg(hamburgerFitness.eggFactory());
+        hamburgerFitness.setTomato(hamburgerFitness.tomatoFactory());
+        System.out.println(hamburgerFitness);
     }
 }

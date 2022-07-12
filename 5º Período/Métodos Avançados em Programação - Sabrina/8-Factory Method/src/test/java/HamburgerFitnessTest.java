@@ -32,13 +32,13 @@ public class HamburgerFitnessTest {
 
     @Test
     public void shouldSetPeruHamType() {
-        hamburgerFitness.setHamType();
+        hamburgerFitness.hamFactory();
         Assertions.assertEquals(HamTypeEnum.Peru, hamburgerFitness.getHam().getHamTypeEnum());
     }
 
     @Test
     public void shouldAddTomato() {
-        hamburgerFitness.addTomato();
+        hamburgerFitness.tomatoFactory();
         Assertions.assertEquals(TomatoTypeEnum.TomateVermelho, hamburgerFitness.getTomato().getTomatoTypeEnum());
     }
 }

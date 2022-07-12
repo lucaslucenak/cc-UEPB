@@ -1,8 +1,6 @@
 package entities;
 
-import fillingsTypes.BreadTypeEnum;
-import fillingsTypes.CheeseTypeEnum;
-import fillingsTypes.EggTypeEnum;
+import fillingsTypes.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -31,12 +29,14 @@ abstract public class Hamburguer {
         return new Egg(EggTypeEnum.Padrao);
     }
 
-    public void setHamType() {
+    public Ham hamFactory() {
 //        ham.setHamTypeEnum(HamTypeEnum.Frango);
+        return new Ham(HamTypeEnum.Padrao);
     }
 
-    public void addTomato() {
+    public Tomato tomatoFactory() {
 //        tomato.setTomatoTypeEnum(TomatoTypeEnum.TomateVermelho);
+        return new Tomato(TomatoTypeEnum.Padrao);
     }
 
 //    @Override

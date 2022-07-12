@@ -24,12 +24,14 @@ public class HamburgerFitness extends Hamburguer{
     }
 
     @Override
-    public void setHamType() {
-        setHam(new Ham(HamTypeEnum.Peru));
+    public Ham hamFactory() {
+//        setHam(new Ham(HamTypeEnum.Peru));
+        return new Ham(HamTypeEnum.Peru);
     }
 
     @Override
-    public void addTomato() {
-        setTomato(new Tomato(TomatoTypeEnum.TomateVermelho));
+    public Tomato tomatoFactory() {
+//        setTomato(new Tomato(TomatoTypeEnum.TomateVermelho));
+        return new Tomato(TomatoTypeEnum.TomateVermelho);
     }
 }
