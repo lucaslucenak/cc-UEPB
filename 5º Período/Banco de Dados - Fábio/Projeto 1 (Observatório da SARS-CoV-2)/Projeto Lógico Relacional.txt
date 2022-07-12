@@ -7,12 +7,12 @@ Sintoma (_id, nome, descricao)
 Leito (_id, descricao, localizacao, #id_hospital)
 Registro_Desfecho(_id, situacao, #crm_medico)
 Ficha_Clinica(_id, massa, altura, pressao, oxigenacao_sangue, data_entrada, data_saida, #id_paciente, #id_registro_desfecho, #id_leito)
-Hospital_Cadastra_Médico(_#id_hospital, _#crm_medico)
-Hospital_Atende_Paciente(_#id_hospital, _#id_paciente)
-Hospital_Cadastra_Enfermeiro(_#id_hospital, _#coren_enfermeiro)
-Ficha_clinica_tem_sintoma (_#id_sintoma, _#id_ficha_clinica, data_sintoma)
-Enfermeiro_Difere_Ficha_Clinica (_#id_ficha_clinica, _#coren_enfermeiro)
-Medico_Visita_Paciente (_#crm_medico, _#id_paciente, data_visita)
-Medico_Prescreve_Tratamento (_#crm_medico, _#id_paciente, _id, nome, descricao, data_prescricao, data_realizacao)
-Medico_Prescreve_Exame (_#crm_medico, _#id_paciente, _id, nome, descricao, data_prescricao, data_realizacao)
+Hospital_Cadastra_Médico(_#id_hospital, _#crm_medico, _data_cadastro)*
+Hospital_Atende_Paciente(_#id_hospital, _#id_paciente, _data_atendimento)*
+Hospital_Cadastra_Enfermeiro(_#id_hospital, _#coren_enfermeiro, _data_cadastro)*
+Ficha_clinica_tem_sintoma (_#id_sintoma, _#id_ficha_clinica, _data_sintoma)*
+Enfermeiro_Difere_Ficha_Clinica (_#id_ficha_clinica, _#coren_enfermeiro, _data_diferimento)*
+Medico_Visita_Paciente (_#crm_medico, _#id_paciente, _data_visita)
+Medico_Prescreve_Tratamento (_#crm_medico, _#id_paciente, _data_realizacao, nome, descricao, data_prescricao)
+Medico_Prescreve_Exame (_#crm_medico, _#id_paciente, _data_realizacao, nome, descricao, data_prescricao)
 
