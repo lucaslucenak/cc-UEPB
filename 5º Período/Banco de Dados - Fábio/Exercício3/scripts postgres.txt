@@ -16,7 +16,7 @@ CREATE TABLE dependente (
 	endereco VARCHAR(255),
 	sexo VARCHAR(30),	
 	email VARCHAR(100),
-	PRIMARY KEY (id),
+	PRIMARY KEY (id, mat_cliente),
 	FOREIGN KEY (mat_cliente) REFERENCES cliente(mat)
 	);
 
@@ -96,7 +96,7 @@ CREATE TABLE aluga (
   data_out DATE,
   data_in DATE,
   multa DECIMAL,
-  PRIMARY KEY (mat_cliente, oid_copia),
+  PRIMARY KEY (mat_cliente, oid_copia, data_out),
   FOREIGN KEY (mat_cliente) references cliente(mat),
   FOREIGN KEY (oid_copia) REFERENCES copia(oid)
   );

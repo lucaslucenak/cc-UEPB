@@ -20,7 +20,7 @@ Ator (_#id_profissional, num_oscars)
 
 Diretor (_#id_profissional, especialidades)
 
-Aluga (_#mat_cliente, _#oid_copia, data_out, data_in, multa)
+Aluga (_#mat_cliente, _#oid_copia, _data_out, data_in, multa)
 
 Reserva (_#mat_cliente, _#cod_filme, data_reserva)
 
