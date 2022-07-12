@@ -6,27 +6,28 @@ public class Application {
     public static void main(String[] args) {
 
         HamburgerBauru hamburgerBauru = new HamburgerBauru();
-        hamburgerBauru.setBreadType();
-        hamburgerBauru.setCheeseType();
+        hamburgerBauru.setBread(hamburgerBauru.breadFactory());
+        hamburgerBauru.breadFactory();
+        hamburgerBauru.cheeseFactory();
         hamburgerBauru.setHamType();
-        hamburgerBauru.setEggType();
+        hamburgerBauru.eggFactory();
         hamburgerBauru.addTomato();
-        System.out.println(hamburgerBauru);
+        System.out.println(hamburgerBauru.getBread().getBreadTypeEnum());
 
         HamburgerXEgg hamburgerXEgg = new HamburgerXEgg();
-        hamburgerXEgg.setBreadType();
-        hamburgerXEgg.setCheeseType();
+        hamburgerXEgg.breadFactory();
+        hamburgerXEgg.cheeseFactory();
         hamburgerXEgg.setHamType();
-        hamburgerXEgg.setEggType();
+        hamburgerXEgg.eggFactory();
         hamburgerXEgg.addTomato();
-        System.out.println(hamburgerXEgg);
+//        System.out.println(hamburgerXEgg.toString());
 
         HamburgerFitness hamburgerFitness = new HamburgerFitness();
-        hamburgerFitness.setBreadType();
-        hamburgerFitness.setCheeseType();
+        hamburgerFitness.breadFactory();
+        hamburgerFitness.cheeseFactory();
         hamburgerFitness.setHamType();
-        hamburgerFitness.setEggType();
+        hamburgerFitness.eggFactory();
         hamburgerFitness.addTomato();
-        System.out.println(hamburgerFitness);
+//        System.out.println(hamburgerFitness.toString());
     }
 }

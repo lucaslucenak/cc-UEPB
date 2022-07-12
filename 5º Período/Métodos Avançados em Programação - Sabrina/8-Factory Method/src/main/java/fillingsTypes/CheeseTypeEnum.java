@@ -4,5 +4,6 @@ public enum CheeseTypeEnum {
     Prato,
     Mussarela,
     Cheddar,
-    Ricota
+    Ricota,
+    Padrao
 }

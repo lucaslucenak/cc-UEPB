@@ -6,18 +6,21 @@ import fillingsTypes.*;
 public class HamburgerXEgg extends Hamburguer {
 
     @Override
-    public void setBreadType() {
-        setBread(new Bread(BreadTypeEnum.Bola));
+    public Bread breadFactory() {
+//        setBread(new Bread(BreadTypeEnum.Bola));
+        return new Bread(BreadTypeEnum.Bola);
     }
 
     @Override
-    public void setCheeseType() {
-        setCheese(new Cheese(CheeseTypeEnum.Cheddar));
+    public Cheese cheeseFactory() {
+//        setCheese(new Cheese(CheeseTypeEnum.Cheddar));
+        return new Cheese(CheeseTypeEnum.Cheddar);
     }
 
     @Override
-    public void setEggType() {
-        setEgg(new Egg(EggTypeEnum.Capoeira));
+    public Egg eggFactory() {
+//        setEgg(new Egg(EggTypeEnum.Capoeira));
+        return new Egg(EggTypeEnum.Capoeira);
     }
 
     @Override

@@ -14,19 +14,19 @@ public class HamburgerFitnessTest {
 
     @Test
     public void shouldSetIntegralBreadType() {
-        hamburgerFitness.setBreadType();
+        hamburgerFitness.breadFactory();
         Assertions.assertEquals(BreadTypeEnum.Integral, hamburgerFitness.getBread().getBreadTypeEnum());
     }
 
     @Test
     public void shouldSetRicotaCheeseType() {
-        hamburgerFitness.setCheeseType();
+        hamburgerFitness.cheeseFactory();
         Assertions.assertEquals(CheeseTypeEnum.Ricota, hamburgerFitness.getCheese().getCheeseTypeEnum());
     }
 
     @Test
     public void shouldSetCapoeiraEggType() {
-        hamburgerFitness.setEggType();
+        hamburgerFitness.eggFactory();
         Assertions.assertEquals(EggTypeEnum.Capoeira, hamburgerFitness.getEgg().getEggTypeEnum());
     }
 

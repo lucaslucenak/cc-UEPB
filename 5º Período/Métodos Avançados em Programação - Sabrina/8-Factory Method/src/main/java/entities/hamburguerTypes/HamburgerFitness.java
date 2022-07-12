@@ -6,18 +6,21 @@ import fillingsTypes.*;
 public class HamburgerFitness extends Hamburguer{
 
     @Override
-    public void setBreadType() {
-        setBread(new Bread(BreadTypeEnum.Integral));
+    public Bread breadFactory() {
+//        setBread(new Bread(BreadTypeEnum.Integral));
+        return new Bread(BreadTypeEnum.Integral);
     }
 
     @Override
-    public void setCheeseType() {
-        setCheese(new Cheese(CheeseTypeEnum.Ricota));
+    public Cheese cheeseFactory() {
+//        setCheese(new Cheese(CheeseTypeEnum.Ricota));
+        return new Cheese(CheeseTypeEnum.Ricota);
     }
 
     @Override
-    public void setEggType() {
-        setEgg(new Egg(EggTypeEnum.Capoeira));
+    public Egg eggFactory() {
+//        setEgg(new Egg(EggTypeEnum.Capoeira));
+        return new Egg(EggTypeEnum.Capoeira);
     }
 
     @Override

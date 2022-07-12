@@ -1,5 +1,8 @@
 package entities;
 
+import fillingsTypes.BreadTypeEnum;
+import fillingsTypes.CheeseTypeEnum;
+import fillingsTypes.EggTypeEnum;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,16 +16,19 @@ abstract public class Hamburguer {
     private Ham ham;
     private Tomato tomato;
 
-    public void setBreadType() {
+    public Bread breadFactory() {
+        return new Bread(BreadTypeEnum.Padrao);
 //        bread.setBreadTypeEnum(BreadTypeEnum.Bola);
     }
 
-    public void setCheeseType() {
+    public Cheese cheeseFactory() {
 //        cheese.setCheeseTypeEnum(CheeseTypeEnum.Mussarela);
+        return new Cheese(CheeseTypeEnum.Padrao);
     }
 
-    public void setEggType() {
+    public Egg eggFactory() {
 //        egg.setEggTypeEnum(EggTypeEnum.Granja);
+        return new Egg(EggTypeEnum.Padrao);
     }
 
     public void setHamType() {
@@ -32,6 +38,17 @@ abstract public class Hamburguer {
     public void addTomato() {
 //        tomato.setTomatoTypeEnum(TomatoTypeEnum.TomateVermelho);
     }
+
+//    @Override
+//    public String toString() {
+//        return "Hamburguer{" +
+//                "bread=" + bread.getBreadTypeEnum() +
+//                ", cheese=" + cheese.getCheeseTypeEnum() +
+//                ", egg=" + egg.getEggTypeEnum() +
+//                ", ham=" + ham.getHamTypeEnum() +
+//                ", tomato=" + tomato.getTomatoTypeEnum() +
+//                '}';
+//    }
 
     @Override
     public String toString() {
