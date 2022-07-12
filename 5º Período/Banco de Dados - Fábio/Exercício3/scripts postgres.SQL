@@ -96,7 +96,7 @@ CREATE TABLE aluga (
   data_out DATE,
   data_in DATE,
   multa DECIMAL,
-  PRIMARY KEY (mat_cliente, oid_copia),
+  PRIMARY KEY (mat_cliente, oid_copia, data_out),
   FOREIGN KEY (mat_cliente) references cliente(mat),
   FOREIGN KEY (oid_copia) REFERENCES copia(oid)
   );
@@ -105,7 +105,7 @@ CREATE TABLE reserva (
   mat_cliente INT,
   cod_filme INT,
   data_reserva DATE,
-  PRIMARY KEY (mat_cliente, cod_filme),
+  PRIMARY KEY (mat_cliente, cod_filme, data_reserva),
   FOREIGN KEY (mat_cliente) references cliente(mat),
   FOREIGN KEY (cod_filme) REFERENCES filme(cod)
   );

@@ -1,29 +1,32 @@
-Cliente (_mat, nome, profissao, endereco, sexo, email, telefone)
+Projeto Lógico Relacional
 
-Dependente (_id, #mat_cliente, nome, endereco, sexo, email)
+Cliente (mat, nome, profissao, endereco, sexo, email, telefone)
 
-Categoria (_id, nome)
+Dependente (id, #mat_cliente, nome, endereco, sexo, email)
 
-Filme (_cod, titulo, ano, num_oscars, #id_categoria)
+Categoria (id, nome)
 
-Copia (_oid, fabricante, #cod_filme)
+Filme (cod, titulo, ano, num_oscars, #id_categoria)
 
-VHS (_#oid_copia, data_grav)
+Copia (oid, fabricante, #cod_filme)
 
-DVD (_#oid_copia, zonas, idiomas)
+VHS (#oid_copia, data_grav)
 
-Profissional (_id, nome, foto, home_page)
+DVD (#oid_copia, zonas, idiomas)
 
-Trabalham (_#cod_filme, _#id_profissional)
+Profissional (id, nome, foto, home_page)
 
-Ator (_#id_profissional, num_oscars)
+Trabalham (#cod_filme, #id_profissional)
 
-Diretor (_#id_profissional, especialidades)
+Ator (#id_profissional, num_oscars)
 
-Aluga (_#mat_cliente, _#oid_copia, _data_out, data_in, multa)
+Diretor (#id_profissional, especialidades)
 
-Reserva (_#mat_cliente, _#cod_filme, data_reserva)
+Aluga (#mat_cliente, #oid_copia, data_out, data_in, multa)
 
-Opina (_#mat_cliente, _#cod_filme, opiniao, data_opiniao)
+Reserva (#mat_cliente, #cod_filme, data_reserva)
 
-Gosta (_#mat_cliente, _#id_categoria)
+Opina (#mat_cliente, #cod_filme, opiniao, data_opiniao)
+
+Gosta (#mat_cliente, #id_categoria)
+

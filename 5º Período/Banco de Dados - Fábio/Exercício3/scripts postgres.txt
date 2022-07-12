@@ -16,7 +16,7 @@ CREATE TABLE dependente (
 	endereco VARCHAR(255),
 	sexo VARCHAR(30),	
 	email VARCHAR(100),
-	PRIMARY KEY (id, mat_cliente),
+	PRIMARY KEY (id),
 	FOREIGN KEY (mat_cliente) REFERENCES cliente(mat)
 	);
 
@@ -105,7 +105,7 @@ CREATE TABLE reserva (
   mat_cliente INT,
   cod_filme INT,
   data_reserva DATE,
-  PRIMARY KEY (mat_cliente, cod_filme),
+  PRIMARY KEY (mat_cliente, cod_filme, data_reserva),
   FOREIGN KEY (mat_cliente) references cliente(mat),
   FOREIGN KEY (cod_filme) REFERENCES filme(cod)
   );
