@@ -14,31 +14,31 @@ public class HamburgerBauruTest {
 
     @Test
     public void shouldSetFrancesBreadType() {
-        hamburgerBauru.breadFactory();
+        hamburgerBauru.setBread(hamburgerBauru.breadFactory());
         Assertions.assertEquals(BreadTypeEnum.Frances, hamburgerBauru.getBread().getBreadTypeEnum());
     }
 
     @Test
     public void shouldSetMussarelaCheeseType() {
-        hamburgerBauru.cheeseFactory();
+        hamburgerBauru.setCheese(hamburgerBauru.cheeseFactory());
         Assertions.assertEquals(CheeseTypeEnum.Mussarela, hamburgerBauru.getCheese().getCheeseTypeEnum());
     }
 
     @Test
     public void shouldSetGranjaEggType() {
-        hamburgerBauru.eggFactory();
+        hamburgerBauru.setEgg(hamburgerBauru.eggFactory());
         Assertions.assertEquals(EggTypeEnum.Granja, hamburgerBauru.getEgg().getEggTypeEnum());
     }
 
     @Test
     public void shouldSetPeruHamType() {
-        hamburgerBauru.hamFactory();
+        hamburgerBauru.setHam(hamburgerBauru.hamFactory());
         Assertions.assertEquals(HamTypeEnum.Peru, hamburgerBauru.getHam().getHamTypeEnum());
     }
 
     @Test
     public void shouldAddTomato() {
-        hamburgerBauru.tomatoFactory();
+        hamburgerBauru.setTomato(hamburgerBauru.tomatoFactory());
         Assertions.assertEquals(TomatoTypeEnum.TomateVermelho, hamburgerBauru.getTomato().getTomatoTypeEnum());
     }
 }
