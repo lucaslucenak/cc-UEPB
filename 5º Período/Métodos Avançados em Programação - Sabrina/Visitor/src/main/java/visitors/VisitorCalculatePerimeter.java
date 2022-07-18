@@ -15,7 +15,7 @@ public class VisitorCalculatePerimeter implements VisitorIF {
 
     @Override
     public Double visitTriangle(Triangle triangle) {
-        return  triangle.getBase() + (2 * triangle.getHeight());
+        return triangle.getBase() + (2 * triangle.getHeight());
     }
 
     @Override

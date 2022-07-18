@@ -20,7 +20,7 @@ public class VisitorCalculateArea implements VisitorIF {
 
     @Override
     public Double visitCircle(Circle circle) {
-        return 3.14 * Math.pow(circle.getRadius(), 2);
+        return Math.PI * Math.pow(circle.getRadius(), 2);
     }
 
     @Override
