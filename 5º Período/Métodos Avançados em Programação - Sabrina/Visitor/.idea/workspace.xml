@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f8bc0ae-2eef-45ed-8de4-4a77d0e4d9e4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/visitors/VisitorCalculateArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/visitors/VisitorCalculateArea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/visitors/VisitorCalculatePerimeter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/visitors/VisitorCalculatePerimeter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/visitors/VisitorCalculateArea.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/visitors/VisitorCalculateArea.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/visitors/VisitorMaximize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/visitors/VisitorMaximize.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/visitors/VisitorMaximizeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/visitors/VisitorMaximizeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/visitors/VisitorMaximize.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/visitors/VisitorMaximize.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/visitors/VisitorMaximizeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/visitors/VisitorMaximizeTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,41 +54,11 @@
       <recent name="E:\workspace\cc-UEPB\5º Período\Métodos Avançados em Programação - Sabrina\Visitor\src\main\java\assets\img" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in Visitor">
+  <component name="RunManager" selected="JUnit.VisitorMaximizeTest">
     <configuration name="All in Visitor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Visitor" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VisitorCalculateAreaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Visitor" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="visitors.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="visitors" />
-      <option name="MAIN_CLASS_NAME" value="visitors.VisitorCalculateAreaTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VisitorDrawFigureTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Visitor" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="visitors.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="visitors" />
-      <option name="MAIN_CLASS_NAME" value="visitors.VisitorDrawFigureTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -125,13 +94,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="VisitorMaximizeTest.shouldMaximizeRectangle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Visitor" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="visitors.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="visitors" />
+      <option name="MAIN_CLASS_NAME" value="visitors.VisitorMaximizeTest" />
+      <option name="METHOD_NAME" value="shouldMaximizeRectangle" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VisitorMaximizeTest.shouldMaximizeTriangle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Visitor" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="visitors.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="visitors" />
+      <option name="MAIN_CLASS_NAME" value="visitors.VisitorMaximizeTest" />
+      <option name="METHOD_NAME" value="shouldMaximizeTriangle" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in Visitor" />
         <item itemvalue="JUnit.VisitorMaximizeTest" />
+        <item itemvalue="JUnit.VisitorMaximizeTest.shouldMaximizeRectangle" />
+        <item itemvalue="JUnit.VisitorMaximizeTest.shouldMaximizeTriangle" />
+        <item itemvalue="JUnit.All in Visitor" />
         <item itemvalue="JUnit.VisitorMaximizeTest.shouldMaximizeCircle" />
-        <item itemvalue="JUnit.VisitorDrawFigureTest" />
-        <item itemvalue="JUnit.VisitorCalculateAreaTest" />
       </list>
     </recent_temporary>
   </component>
@@ -143,7 +144,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1658152274898</updated>
-      <workItem from="1658152276168" duration="12266000" />
+      <workItem from="1658152276168" duration="13796000" />
     </task>
     <servers />
   </component>

@@ -21,6 +21,9 @@ public class VisitorMaximize implements VisitorIF {
     public Double visitTriangle(Triangle triangle) {
         triangle.setBase(triangle.getBase() * 2);
         triangle.setHeight(triangle.getHeight() * 2);
+        triangle.setSide1(triangle.getSide1() * 2);
+        triangle.setSide2(triangle.getSide2() * 2);
+        triangle.setSide3(triangle.getSide3() * 2);
 
         DisplayImage displayImage = new DisplayImage("src/main/java/assets/img/triangleMaximized.png");
         displayImage.show();

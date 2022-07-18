@@ -28,21 +28,38 @@ public class VisitorMaximizeTest {
 
     @Test
     public void shouldMaximizeTriangle() {
+        visitorMaximize.visitTriangle(triangle);
+        Assertions.assertEquals(12.0, triangle.getSide1());
+        Assertions.assertEquals(12.0, triangle.getSide2());
+        Assertions.assertEquals(12.0, triangle.getSide3());
+        Assertions.assertEquals(12.0, triangle.getBase());
+        Assertions.assertEquals(((6 * Math.cbrt(3)) / 2) * 2, triangle.getHeight());
         Assertions.assertEquals(0.0, visitorMaximize.visitTriangle(triangle));
     }
 
     @Test
     public void shouldMaximizeRectangle() {
+        visitorMaximize.visitRectangle(rectangle);
+        Assertions.assertEquals(12.0, rectangle.getHeight());
+        Assertions.assertEquals(10.0, rectangle.getWidth());
         Assertions.assertEquals(0.0, visitorMaximize.visitRectangle(rectangle));
     }
 
     @Test
     public void shouldMaximizeCircle() {
+        visitorMaximize.visitCircle(circle);
+        Assertions.assertEquals(12.0, circle.getRadius());
         Assertions.assertEquals(0.0, visitorMaximize.visitCircle(circle));
     }
 
     @Test
     public void shouldMaximizeTrapezium() {
-        Assertions.assertEquals(0.0, visitorMaximize.visitTrapezium(trapezium));
+        visitorMaximize.visitTrapezium(trapezium);
+        Assertions.assertEquals(12.0, trapezium.getSmallestBase());
+        Assertions.assertEquals(28.0, trapezium.getBiggestBase());
+        Assertions.assertEquals(10.0, trapezium.getSide1());
+        Assertions.assertEquals(10.0, trapezium.getSide2());
+        Assertions.assertEquals(10.0, trapezium.getSide1());
+        Assertions.assertEquals(((6.0 + 14.0) / 2) * 2, trapezium.getHeight());
     }
 }
