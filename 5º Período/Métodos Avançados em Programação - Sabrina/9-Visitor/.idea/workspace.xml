@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2f8bc0ae-2eef-45ed-8de4-4a77d0e4d9e4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/visitors/VisitorMaximize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/visitors/VisitorMaximize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/visitors/VisitorMaximizeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/visitors/VisitorMaximizeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/visitors/VisitorMaximize.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/visitors/VisitorMaximize.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/visitors/VisitorMaximizeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/visitors/VisitorMaximizeTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +140,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1658152274898</updated>
-      <workItem from="1658152276168" duration="13796000" />
+      <workItem from="1658152276168" duration="14425000" />
     </task>
     <servers />
   </component>
