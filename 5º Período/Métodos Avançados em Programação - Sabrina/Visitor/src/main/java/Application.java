@@ -35,6 +35,7 @@ public class Application {
 
         sc.nextLine();
 
+
         System.out.println("Perimetro das figuras:");
         System.out.print("Retangulo: ");
         triangle.acceptVisit(perimeter);
@@ -61,5 +62,6 @@ public class Application {
         circle.acceptVisit(maximize);
         triangle.acceptVisit(maximize);
 
+        sc.nextLine();
     }
 }
