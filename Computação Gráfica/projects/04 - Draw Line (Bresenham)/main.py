@@ -9,8 +9,8 @@ monitor_height = tkinter_root.winfo_screenheight() - 100  # Altura do monitor
 monitor_width = tkinter_root.winfo_screenwidth() - 100  # Largura do monitor
 print("width x height = %d x %d (pixels)" % (monitor_width, monitor_height))
 
-p1 = (20, 10)  # Ponto 1
-p2 = (30, 18)  # Ponto 2
+p1 = [20, 10]  # Ponto 1
+p2 = [30, 18]  # Ponto 2
 x_min = min([p1[0], p2[0]])
 x_max = max([p1[0], p2[0]])
 y_min = min([p1[1], p2[1]])
@@ -52,23 +52,24 @@ def draw_pixel(x, y):
     dc_coordinates = ndc_to_dc(ndc_coordinates[0], ndc_coordinates[1], monitor_width, monitor_height)
     pg.draw.rect(window, (0, 255, 0), (dc_coordinates[0], dc_coordinates[1], 11, 11))
 
-
 if __name__ == '__main__':
     pg.init()
     window = pg.display.set_mode((monitor_width, monitor_height))
 
-    #  Variações
-    dx = p2[0] - p1[0]
-    dy = p2[1] - p1[1]
+    dx = abs(p2[0] - p1[0])
+    dy = abs(p2[1] - p1[1])
+    p = 2 * (dy - dx)
+    two_dy = 2 * dy
+    two_dy_minus_dx = 2 * (dy - dx)
 
-    # d = 2 * dy - dx
-    d = dy - (dx / 2)
+    if p1[0] > p2[0]:
+        actual_x = p2[0]
+        actual_y = p2[1]
+        p2[0] = p1[0]
 
-    incremento_e = 2 * dy
-    incremento_ne = 2 * (dy - dx)
-
-    actual_x = p1[0]
-    actual_y = p1[1]
+    else:
+        actual_x = p1[0]
+        actual_y = p1[1]
 
     draw_pixel(actual_x, actual_y)
     mpl.plot(actual_x, actual_y, 'or')
@@ -80,16 +81,15 @@ if __name__ == '__main__':
                 exit(0)
 
         while actual_x < p2[0]:
-            if d <= 0:  # Escolher posição à Direita (E)
-                d += incremento_e
-                actual_x += 1
-            else:  # Escolher posição à diagonal Direita (E)
-                d += incremento_ne
-                actual_x += 1
+            actual_x += 1
+            if p < 0:
+                p += two_dy
+            else:
                 actual_y += 1
-            print(f'd: {d} | x: {actual_x} | y: {actual_y}')
+                p += two_dy_minus_dx
+
+            print(f'd: {p} | x: {actual_x} | y: {actual_y}')
             draw_pixel(actual_x, actual_y)
             mpl.plot(actual_x, actual_y, 'or')
 
-        mpl.show()
         pg.display.update()
