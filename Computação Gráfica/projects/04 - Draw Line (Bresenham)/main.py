@@ -11,10 +11,10 @@ print("width x height = %d x %d (pixels)" % (monitor_width, monitor_height))
 
 p1 = [20, 10]  # Ponto 1
 p2 = [30, 18]  # Ponto 2
-x_min = min([p1[0], p2[0]])
-x_max = max([p1[0], p2[0]])
-y_min = min([p1[1], p2[1]])
-y_max = max([p1[1], p2[1]])
+x_min = 1
+x_max = monitor_width
+y_min = 1
+y_max = monitor_height
 
 
 def wc_to_ndc(x, y, x_min, x_max, y_min, y_max):
@@ -50,7 +50,7 @@ def ndc_to_dc(ndc_x, ndc_y, ndh, ndv):  # ndh -> horizontal pixel size; ndv -> v
 def draw_pixel(x, y):
     ndc_coordinates = wc_to_ndc(x, y, x_min, x_max, y_min, y_max)
     dc_coordinates = ndc_to_dc(ndc_coordinates[0], ndc_coordinates[1], monitor_width, monitor_height)
-    pg.draw.rect(window, (0, 255, 0), (dc_coordinates[0], dc_coordinates[1], 11, 11))
+    pg.draw.rect(window, (0, 255, 0), (dc_coordinates[0], dc_coordinates[1], 1, 1))
 
 if __name__ == '__main__':
     pg.init()
