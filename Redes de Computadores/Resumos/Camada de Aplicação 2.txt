@@ -1,0 +1,55 @@
+Visão Geral do HTTP:
+	- Uma página Web consiste em arquivos HTML disponibilizados em uma URL ("www.someschool.edu/""someDept/pic.gif") [domínio + path], acessíveis a partir do protocolo HTTP
+	- Utiliza a arquitetura cliente-servidor, onde o cliente (browser) faz as requisições para exibir objetos web e o servidor responde a elas
+	- Utiliza TCP, logo, o cliente cria um socket (inicia conexão TCP) para o servidor, o servidor aceita a conexão, mensagens HTTP são trocadas e por fim, a conexão fecha
+	- É um protocolo stateless, logo não mantém informações sobre pedidos passados
+	
+Tempo de Resposta HTTP:
+	- Round-Trip Time (RTT): É o tempo levado para enviar um pacote entre o cliente e o servidor
+	- Tempo de resposta: É um RTT relacionado à demora entre a resposta da requisição começar a acontecer
+	- Tempo de transmissão de arquivo: Tempo levado para transferir todo o objeto
+	- TOTAL: 2 RTT + Tempo de transmissão
+
+Conexões do HTTP:
+	- Conexão Não-Persistente:
+		- Há um envio por vez dos objetos na conexão TCP
+		- Múltiplos downloads necessitam de múltiplas conexões
+		- Necessita de 2 RTTs por objeto
+		- SO deve ministrar recursos do hospedeiro para cada conexão TCP, como algo que o browser faz
+
+	- Conexão Persistente:
+		- Vários objetos podem ser enviados ao mesmo tempo em uma única conexão TCP
+		- A conexão do servidor se mantém aberta após o envio da resposta
+		- As mensagens HTTP entre o cliente o servidor são enviadas pela conexão TCP
+
+		- Conexão Persistente sem Pipelining:
+			- Novas requisições são realizadas quando a anterior obtiver resposta
+			- Necessita de um RTT para cada objeto
+
+		- Conexão Persistente com Pipelining:
+			- Segue o HTTP/1.1
+			- O cliente faz o envio das requisições sempre que encontra um objeto referente
+			- Mais curto que um RTT para todos os objetos
+
+Formato de Mensagem:
+	- Linha de requisição ( Método + URL + Versão) (Ex: GET /somedir/page.html HTTP/1.1)
+	- Linhas de cabeçalho ( Nome do campo do cabeçadlho + Valor) (Ex: Host: www.someschool.edu) (Ex: Connection: Close) (Ex: User-agent: Mozilla/5.0)
+	- Linha em branco
+	- Corpo da entidade
+
+	- Resposta da Mensagem:
+		- HTTP Response message (Versão + Código de estado + Frase) (Ex: HTTP/1.1 200 OK)
+		- Linha de status
+		- Linhas de cabeçalho (Nome do campo do cabeçadlho + Valor) (Ex: Date: Tue, 18 Aug 2015 15:44:04 GMT) (Ex: Server: Apache/2.2.3 (CentOS))
+		- Linha em branco
+
+Uso de Cookies:
+	- É composto por 4 componentes:
+		- Linha de cabeçalho na mensagem HTTP response e request
+		- Arquivo cookie é mantido no hospedeiro do usuário e é manipulado pelo browser dele
+	- Pode trazer autorização, cartões, recomendações, estados de sessão (E-mail)
+	- É uma forma dos sites saberem muito sobre a pessoa
+	- Mecanismos de busca utilizam os cookies e empresas de propaganda buscam informações a partir deles
+	- Uma requisião HTTP chega ao site e ele cria um ID juntamente com uma entrada do banco de dados referente a esse ID
+
+
