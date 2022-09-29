@@ -39,7 +39,6 @@ Arquitetura Cliente-Servidor:
 		- Estruturar aplicações Web
 		- Integrar outros servidores
 
-
 Arquitetura Peer-to-Peer (P2P):
 	- Não tem um servidor ativo
 	- Há a comunicação entre dois sistemas
@@ -91,6 +90,6 @@ Serviços de Transporte:
 		- Não há sobrecarga no receptor
 		- Há o controle de congestionamento
 		- Não oferece garantias de temporização e banda mínima
-	Serviço UDP:
+	 - Serviço UDP:
 		- A transferência de dados não é confiável
 		- Não oferece uma conexão estável, controle de fluxo, garantia de temporização e banda mínima
