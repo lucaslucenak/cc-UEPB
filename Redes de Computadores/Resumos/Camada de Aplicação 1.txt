@@ -62,3 +62,35 @@ Comunicação entre Processos:
 		- Um processo de envio empurra a mensagem para fora da porta
 	- Para que haja o recebimento de mensagems, o endereço de IP´não é um identificador suficiente, pois muitos processos podem ser executados pelo mesmo host
 	- Por isso o identificador inclui o IP + números de porta associados ao processo no host, Ex: Server HTTP: 80; Server E-mail: 25
+
+Definições da Camada:
+	- Protocolos de domínio público:
+		-Definidos nas RFCs
+		-Ex: HTTP, SMTP, DNS, SSH
+	- Protocolos proprietários:
+		-Ex: Skype, Zoom
+
+Camada de Aplicação:
+	- As camadas abaixo dela t~em a função de disponibilizar um serviço confiável, porém não executam tarefas de forma propriamente ditas
+	- Abrange aplicações reais de redes, há a necessidade de protocoludos de suporte para garantir o funcionamento das aplicações
+	- Interage com serviços de transporte
+
+Serviços de Transporte:
+	- Necessitam de:
+		- Integridade dos dados:
+			-Serviços de streaming tem tolerância para a perda de dados
+			- Outras aplicações necessitam de 100% de confiança na transferência de dados
+		- Tempo:
+			- Aplicações como jogos precisam de baixos atrasos para terem uma boa eficiência
+		- Vazão:
+			- Aplicações multimídia precisam de uma banda mínima para uma boa eficiência
+			- As aplicações "elásticas" melhoram a partir da banda melhorar
+	- Serviço TCP:
+		- É orientado a conexão, ou seja, há a necessidade de uma conexão entre o cliente e o servidor
+		- É confiável
+		- Não há sobrecarga no receptor
+		- Há o controle de congestionamento
+		- Não oferece garantias de temporização e banda mínima
+	Serviço UDP:
+		- A transferência de dados não é confiável
+		- Não oferece uma conexão estável, controle de fluxo, garantia de temporização e banda mínima
