@@ -1,0 +1,64 @@
+Exemplos de aplicações;
+	- E-mail
+	- Web (Portais, buscadores)
+	- Redes Sociais e Mensageria
+	- Jogos Multi-usuário
+	- Streming Stored Video (Netflix, Youtube)
+	- Compartilhamento de arquivos P2P
+	- Voz sobre IP (Skype, Teams)
+	- Conferência em tempo real (Meet, Zoom)
+	- Acesso remoto
+
+Arquitetura Cliente-Servidor:
+	- Há a paralelização de processos
+	- Tem um sistema escalavél com bom reuso
+	- Tem todos os recursos centralizados
+
+	Cliente:
+	- O cliente tem a obtenção de informaçõesa a partir de um processo ativo
+	- Estavelece múltiplas conexões com diversos servidores
+	- Funcionamento:
+		- Endereço de IP dinâmico
+		- Se comunica com servidores apenas
+	- Tarefas:
+		- Manipular tela
+		- Validar entrada de dados
+		- Gerenciamenteo de mídia
+		- Interpretação de comandos e menus
+		- Recuperação de erro
+
+	Servidor:
+	- O servidor realiza a manutenção das informações a partir de um processo reativo
+	- Responde a serviços compartilhados com diversos clientes
+	- Funcionamento:
+		- Endereço de IP fixo e permanente
+		- Se integra a outros servidores
+	- Tarefas:
+		- Realizar pesquisas, filtragesn e autorizações
+		- Gerenciar recursos compartilhados
+		- Estruturar aplicações Web
+		- Integrar outros servidores
+
+
+Arquitetura Peer-to-Peer (P2P):
+	- Não tem um servidor ativo
+	- Há a comunicação entre dois sistemas
+	- Os pares conectados trocam endereços de IP
+	- É autoescalavél, ou seja, novos pares trazem uma nova capacidade de serviço, assim como novas demandas
+
+Arquiteturas Híbridas:
+	- Napster:
+		- Tranferência de arquivo P2P
+		- Busca centralizada de arquivos
+
+	- Instant messaging:
+		- Bate-papo entre dois usuários é P2P
+		- Detecção/localização de presença é centralizada, ou seja, o user registra seu endereço de IP com o servidor central quando fica online
+
+
+Comunicação entre Processos:
+	- Um processo é um programa que está rodando em um host
+	- Socket: É o meio de envio de dados entre os processos (Funcionamento análogo ao da porta)
+		- Um processo de envio empurra a mensagem para fora da porta
+	- Para que haja o recebimento de mensagems, o endereço de IP´não é um identificador suficiente, pois muitos processos podem ser executados pelo mesmo host
+	- Por isso o identificador inclui o IP + números de porta associados ao processo no host, Ex: Server HTTP: 80; Server E-mail: 25
