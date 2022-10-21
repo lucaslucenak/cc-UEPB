@@ -1,0 +1,90 @@
+Protocolo UDP (User Datagram Protocol):
+	- Não é orientado a conexão
+	- Não há garantias para as camadas superiores
+	- A aplicação interage quase que diretamente com o IP
+	- Segmentos podem ser perdidos ou entregues fora de ordem
+	- Utilizado para serviços de streaming, pois são tolerantes a perdas de pacotes, precisam de velocidade e são sensíveis
+	- Utilizados em DNS e SNMP também
+	- Pode aplicar segurança na camada de aplicação
+
+	- UDP Checksum:
+		- Detecta "erros", como bits trocados no segmento transmitido:
+			- Transmissor:
+				- Faz complemento de 1 da soma da sequência
+				- Adiciona o valor do checksum no campo do UDP
+			- Receptor:
+				- Computa o checksum e valida o checksum recebido
+	- Usos:
+		- Streaming
+		- Jogos
+
+Protocolo TCP:
+	- É orientado a conexão
+	- É ponto-a-ponto: Um transmissor e um receptor
+	- Confiável
+	- Pipelined: Transmite vários pacotes sem confirmações (ACKs cumulativos)
+	- Há controle de congestionamento, ele juntamento com o fluxo definem o tamanho da janela
+	- Existem os buffers de transmissão e de recepção
+	- Dados full-duplex: É uma trasmissão bidirecional na conexão
+	- Cria um local de transferência confiável acima de um serviço não-confiável IP
+	- MMS: maximum segment size
+	- Há controle de fluxo, ou seja, o transmissor não esgota o receptor
+	- A retransmissão pode ser disparada por eventos de timeout ou ACKs duplicados
+
+	- Ex comunicação TCP:
+		Hospedeiro A -> envia: Seq=42, ACK=79, data="arroz" -> Hospedeiro B
+		Hospedeiro B -> envia: Seq=79, ACK=43, data="arroz" -> Hospedeiro A
+		Hospedeiro A -> envia: Seq=43, ACK=80 -> Hospedeiro B
+		- É possível observar que o ack do envio vira o número de sequência de A -> B
+
+	- Estabelecimento da Conexão:
+		- SYN, SYN-ACK, ACK (SYNchronize, ACKnowledgment)
+'		1 - Cliente envia um segmento SYN especificando a porta do servidor que quer se conectar e o num de sequência inicial
+		2 - O servidor responde com o envio de outro segmento SYN com o ACK do segmento recebido e o num de sequência recebido
+		3 - O cliente retorna um ACK e a conexão é estabelecida
+		- Ex de estabelecimento:
+			Cliente -> SYN=1, Seq=client_isn -> Servidor
+			Servidor -> SYN=1, Seq=server_isn, ACK=client_isn+1 -> Cliente
+			Cliente -> SYN=0, Seq=client_isn+1, ACK=server_isn+1 -> Servidor
+	- Término da Conexão:
+		1 - O cliente envia um segmento FIN
+		2 - O servidor retorna um FIN e um ACK para o cliente
+		3 - O cliente envia um ACK e a conexão é encerrada
+		- É possível estabelecer uma conexão "half close", tendo uma conexão simplex
+		- Ex de fechamento:
+			Cliente -> FIN -> Servidor
+			Servidor -> ACK -> Cliente
+			Servidor -> FIN -> Cliente
+			Cliente -> ACK -> Servidor
+	- Usos:
+		- Aplicações WEB
+		- Correio eletrônico
+		- Transferências de arquivos
+
+Controle de Fluxo:
+	- Controle fim a fim dos dados entregues ao destinatario, uso do buffer
+	- Um segmento é enviado por vez e o próximo só é enviado após seu reconhecimento
+	- GO BACK N: Quando um pacote se perde, todos são mandados novamente
+
+	- Pare e espere:
+		- É enviado um segmento por vez
+		- Com o controle de fluxo, mais seguimentos seriam enviados, de forma paralela
+	- Paralelismo:
+		- São enviados vários pacotes de forma paralela
+	- Go-Back-N:
+		- O remetente envia vários pacotes sem esperar reconhecimento
+		- Ao final do envio, é verificado se houve algum número de sequência errado entre os pacotes e envia todos novamente
+	- Repetição Seletiva:
+		- Evita reenviar pacotes desnecessários, retransmitindo individualmente, apenas os pacotes corretos
+
+	- Em uma conexão TCP, o número de transmissões sem confimações são controlados (tamanho de janela)
+	- O número máximo de segmentos não confirmados é dado pelo mínimo entre os tamanhos das janelas de congestionamento do receptor
+	- Ou seja, mesmo com uma banda larga, o receptor pode ser um gargalo
+	
+	- No inicio a janela de congestionamento tem um tamanho x
+	- Caso todos os segmentos enviados cheguem antes do timeout, a janela duplica, passando a ser 2x
+	- Assim progressivamente, podendo aumentar para 2(2x)...
+	- Quando chega à quantidade de pacotes definida no limiar, o aumento passa a ser gradativo
+	- Esse processo continua até que a janela de congestionamento seja maior que o limiar (tamanho limite definido), ou seja maior que a janela do receptor
+	- Ou tenha algum timeout
+	- Caso ocorra algum timeout, o TCP vai configurar um novo valor para o limiar, sendo ele metade do tamanho atual da janela de congestionamento

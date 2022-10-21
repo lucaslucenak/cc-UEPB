@@ -1,0 +1,71 @@
+Fornece a comuncação lógica entre os processos de aplicação
+Divide os dados da camada de aplicação em mensagens que serão transmitidas na rede
+Coisas como porta de origem e de destino são adicionadas
+Lado Emissor: Quebra a mensagem da aplicação em segmentos e transmite para a camada de rede
+Lado Receptor: Recebe a mensagem quebrada, remonta e passa para a camada de aplicação
+
+Relação Entre as Camadas
+	- Informações:
+		- Camada de Aplicação -> Mensagem
+		- Camada de Transporte -> Segmentos
+	- Comunicação:
+		- Socket dispõe a comunitação entre a fonte e o destino
+		- Ex de da representação de socket: 127.0.0.1:447 (ip:porta)
+	- Funcionamento semelhante à camada de Rede:
+		- Transporte: Hospedeiro
+		- Rede: Roteadores
+	- Camadas superiores são usuários de transporte (SU)
+	- Camadas inferiores são provedores de transporte (IP)
+
+Multiplexação e Demultiplexação:
+	- O tipo de protocolo é indicado no cabeçalho do IP
+	- Cada apluicação tem uma porta única no host
+	- Alguns serviços tem portas convencionadas
+
+	- Multiplexação:
+		- Ocorre da Aplicação para baixo
+		- Reune dados de diferentes sockets
+		- Encapsula os dados (payload) com cabeçalhos para criar segmentos e entrega ao socket correto
+		- Passa para a camada de rede (Varios-para-um)
+
+	- Demultiplexação:
+		- Ocorre da baixo para a Aplicação
+		- Receptor recebe os dados e os distribui:
+			- Vê número de porta do pacotr
+			- Entrega os dados para o socket
+			- Encaminha processos para o socket
+		- PC recebe datagramas com IP de origem e de destino
+		- Cada segmento tem uma porta de origem e uma de destino
+		- Utiliza os IPs e número de porta para direcionar os segmentos ao socket correto
+
+Princípios de Transferência Confiável de Dados:
+	- Em um canal de transferência confiável, não há erros de bits e nem perdas de pacotes
+		- Há um checksum para detectar erros nos bits
+	- Em casos de erro:
+		- Há o reconhecimento dos ACKs: O receptor diz qual pacote tem erro e o trnsmissor reenvia um pacote ao receber um NAK
+	- rdt 2.0:
+		- Detecção de erros
+		- Rtorno do receptor: mensagens de controle (ACK, NAK) reciver -> sender
+	- rdt 2.2:
+		- Não utiliza NAK
+		- Mesma funcionalidade do rdt 2.1, só com ACKs
+		- O receptor deve incluir o númere do pacote sendo reconhecido
+		- ACKs duplicados no transmissor resultam na mesma ação: retransmissão do pacote
+	- rdt 3.0:
+		- Canal com erros e perdas
+		- Checksum não é suficiente, há uma espera até que os dados ou ACKs sejam perdidos, para que sejam retransmitidos
+		- Utiliza um temporizador descresente
+
+	- Soma de Verificação:
+		- Detecta erros de bits
+	- Temporizador:
+		- Controla a retransmissão de um pacote a partir de um tempo sem confirmação de recepção
+	- Número de Sequência:
+		- Define numeração dos pacotes
+		- Permite paralelismo no envio dos pacotes
+		- Envia mesmo sem o ACK de cada pacote
+	- Reconhecimento Positivo:
+		- Avisa ao remetente que um pacote chegou (ACK)
+	- Reconhecimento Negativo:
+		- Avisa que um pacote não chegou (NAK)
+
