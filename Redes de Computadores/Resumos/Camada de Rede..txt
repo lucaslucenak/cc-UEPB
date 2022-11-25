@@ -1,0 +1,67 @@
+* Repasse e Roteamento:
+	- Repasse de Pacotes:
+		Conduz os enlaces apropriados e faz o despacho de cada pacote ao seu destino ou sistema intermediário
+		Cada roteador tem examenina o cabeçalho.
+		Algoritmo de inserção centralizado:
+			Roda em um local central e descarrega informações de roteamento em cada roteador.
+		Algoritmo de roteamento descentralizado:
+			Roda localmente em cada um dos elementos e comutação de pacotes para gerar a tabela de rotas.
+	- Roteamento de Pacotes:
+		Estabelece as melhores rotas usando altoritmos de roteamento
+
+* Diferença entre circuito virtual e rede datagrama:
+	- Rede de computador que fornece serviço orientado à conexão: Circuitos Virtuais.
+	- Rede de computador que fornece serviço orientado NÃO à conexão: Redes de datagrama.
+	
+* Formas de comutação (roteamento de pacotes) de um roteador:
+	- Por memória:
+		- Processador de roteamento copia um pacote do "buffer" da porta de entrada para a memória.
+		- Consulta a tabela de repasse e efetua a cópia da memória para o "buffer" da porta de saída.
+	- Por barramento:
+		- As portas de entrada transferem o pacote diretamente para a porta de saída por um barramento compartilhado.
+		- Não há intervenção do processador de roteamento.
+		- Enlaces disputam acesso ao barramento
+	- Por Interconexão:
+		- Interconexão de 2n barramentos conectam n portas de entrada com n portas de saída.
+
+* Como é feito o empasse, enlace de entrada e saída:
+
+* Protocolo IP - ICMP (Internet Control Message Protocol)	
+	- Utilizado para comunicar erros ao processar um datagrama
+	- Apenas informa os erros, não os corrije.
+	- Contempla os 8´primeiros bytes do datagrama IP, tornando possível a identificação do datagrama falho.
+
+* Diferença entre IPv4 e IPv6
+	- IPv4:
+		- Endereços com 4 bytes de tamanho
+		- Cada endereço corresponde a uma conexão, mas que pode ser dividida entre vários computadores
+		- Utiliza o sistema binário mas pode ser convertido para decimal para a leitura humana
+		- IPSec é opcional e suportado externamento
+		- Pode ser configurado manualmente ou por DHCP
+		- Suporta pacotes de 576 butes (possivelmente fragmentados)
+	IPv6:
+		- Endereços com 16 bytes de tamanho
+		- Endereço real na internet, por ter muitos no total
+		- Utiliza sistema hexadecimal
+		- Necessita de suporte IPSec
+		- Não precisa de configuração manual ou de DHCP
+		- Suporta pacotes com 1280 bytes (sem fragmentação)
+		
+* MTU: Quantidade de saltos até o destindo ou até que o tempo acabe.
+
+* Redes Locais e Redes Globais:
+* NAT (Network Address Translation):
+	- Permite com que uma rede privada esteja escondida detrás de um roteador, não estando visível para o exterior.
+	- É uma espécie de intermédio, sendo um roteador NAT, que vai realizar a intermediação entre as redes públicas e privadas pro exemplo.
+	- O NAT deve ser levado em conta pelos desenvolvedores
+	- Há a escasses de endereços, podendo ser resolvido com o IPv6.
+
+* DHCP (Dynamic Host Configuration Protocol):
+	- Permite com que um host receba um IP dinâmico de forma automática.
+	- Descoberta do servidor DHCP > Oferta do servidor DHCP > Solicitação DHCP > Confirmação DHCP (ACK).
+	- Segurança falha, é possível forjar um DHCP e o cliente não pdoe confiar no servidor e vice-versa.
+
+	- Configuração para redes com mais de um servidor:
+		- Servidores não podem trocar informações na rede.
+		- Devem evitar a distribuição de IPs duplicados.
+		- Servidores necessitam de configuração manual
