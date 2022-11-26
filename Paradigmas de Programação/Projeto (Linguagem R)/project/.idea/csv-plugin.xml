@@ -3,6 +3,13 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="\data\2019_nCoV_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\data\montgomery_6-26.csv">
           <value>
             <Attribute>
@@ -10,10 +17,10 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\data\new-data.csv">
+        <entry key="\data\testeee.csv">
           <value>
             <Attribute>
-              <option name="separator" value="," />
+              <option name="separator" value=":" />
             </Attribute>
           </value>
         </entry>
